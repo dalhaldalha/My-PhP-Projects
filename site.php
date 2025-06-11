@@ -46,6 +46,7 @@
                 }         
             }
     ?>
+    <h1>Calculator</h1>
     <form action="site.php" method="post" >
         <!-- <input type="number" name="num1" required>
         <input type="number" name="num2" required>
