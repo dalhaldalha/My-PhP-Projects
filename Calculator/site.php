@@ -22,18 +22,37 @@
 -->
     <?php
         $input = $_POST['input'] ?? null;
-        $expression = $_POST['expression'] ?? null;
-        // echo "Your number is: " . $_POST['input'];
+        $expression = $_POST['expression'] ?? '';
+        
+        if ($input !== null) {
+            if ($input === 'C') {
+                $expression = '';
+            } else {
+                $expression .= $input;
+            }
+            
+        }
 
     ?>
     <h1>Calculator</h1>
     <form action="site.php" method="post">
-        <button type="submit" name="input" value="1">1</button>
-        <input type="hidden" name="input" value="<?php echo htmlspecialchars($input); ?>">
-        <button type="submit" name="input" value="2">2</button>
-        <input type="hidden" name="input" value="<?php echo htmlspecialchars($input); ?>">
-        <input type="hidden" name="expression" value="<?php echo htmlspecialchars($input); ?>">
+        <input type="hidden" name="expression" value="<?php echo htmlspecialchars($expression); ?>">
         <input readonly type="text" value="<?php echo htmlspecialchars($expression); ?>" placeholder="Enter a number">
+        <br>
+        <button type="submit" name="input" value="1">1</button>
+        <button type="submit" name="input" value="2">2</button>
+        <button type="submit" name="input" value="3">3</button>
+        <button type="submit" name="input" value="C">C</button>
+        <br><br>
+        <button type="submit" name="input" value="4">4</button>
+        <button type="submit" name="input" value="5">5</button>
+        <button type="submit" name="input" value="6">6</button>
+        <br><br>
+        <button type="submit" name="input" value="7">7</button>
+        <button type="submit" name="input" value="8">8</button>
+        <button type="submit" name="input" value="9">9</button>
+
+        
 
     </form>
 
