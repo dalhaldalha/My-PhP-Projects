@@ -27,11 +27,14 @@
         if ($input !== null) {
             if ($input === 'C') {
                 $expression = '';
+            } elseif ($input === '+' || $input === '-' || $input === '*' || $input === '/') {
+                $expression = '';
             } else {
                 $expression .= $input;
-            }
-            
+                
+            } 
         }
+            
 
     ?>
     <h1>Calculator</h1>
@@ -51,6 +54,12 @@
         <button type="submit" name="input" value="7">7</button>
         <button type="submit" name="input" value="8">8</button>
         <button type="submit" name="input" value="9">9</button>
+        <br><br>
+        <button type="submit" name="input" value="+">+</button>
+        <button type="submit" name="input" value="-">-</button>
+        <button type="submit" name="input" value="*">x</button>
+        <button type="submit" name="input" value="/">/</button>
+        <button type="submit" name="input" value="="></button>
 
         
 
