@@ -29,16 +29,15 @@
         if ($input !== null) {
             if ($input === 'C') {
                 $expression = '';
-            } elseif ($input === '+' || $input === '-' || $input === '*' || $input === '/'){
-                if ($expression !== '' && substr($expression, -1) !== '+'||'-'||'*'||'/') {
+            } elseif (in_array($input, $opr)){
+                if($expression !== '' && !in_array($lastChar, $opr)) {
                     $expression .= $input;
-                } else {
-                    
-                }    
+                }
+
             } else {
                 $expression .= $input;
             }
-        }    
+        }   
 
     ?>
     <h1>Calculator</h1>
@@ -63,7 +62,7 @@
         <button type="submit" name="input" value="-">-</button>
         <button type="submit" name="input" value="*">x</button>
         <button type="submit" name="input" value="/">/</button>
-        <button type="submit" name="input" value="="></button> 
+        <button type="submit" name="input" value="=">=</button> 
 
     </form>
 
