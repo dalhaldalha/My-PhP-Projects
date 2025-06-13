@@ -59,9 +59,7 @@
         <button type="submit" name="input" value="-">-</button>
         <button type="submit" name="input" value="*">x</button>
         <button type="submit" name="input" value="/">/</button>
-        <button type="submit" name="input" value="="></button>
-
-        
+        <button type="submit" name="input" value="="></button> 
 
     </form>
 
