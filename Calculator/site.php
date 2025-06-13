@@ -23,19 +23,22 @@
     <?php
         $input = $_POST['input'] ?? null;
         $expression = $_POST['expression'] ?? '';
-        $op;
+        $lastChar = substr($expression, -1);
+        $opr = ['+', '-', '*', '/'];
         
         if ($input !== null) {
             if ($input === 'C') {
                 $expression = '';
+            } elseif ($input === '+' || $input === '-' || $input === '*' || $input === '/'){
+                if ($expression !== '' && substr($expression, -1) !== '+'||'-'||'*'||'/') {
+                    $expression .= $input;
+                } else {
+                    
+                }    
             } else {
                 $expression .= $input;
-                
-            } 
-        } elseif ($input === '+' || $input === '-' || $input === '*' || $input === '/') {
-            
-        }
-                       
+            }
+        }    
 
     ?>
     <h1>Calculator</h1>
