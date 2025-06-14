@@ -1,4 +1,4 @@
-# PHP Dark Mode Calculator
+# PHP Calculator
 
 This is a simple calculator web application built with PHP. It allows users to perform basic arithmetic operations (+, -, *, /) in a classic calculator interface, with support for light and dark mode.
 
@@ -39,7 +39,3 @@ This is a simple calculator web application built with PHP. It allows users to p
 ## Customization
 
 - You can edit `style/site.css` to change the appearance or add a dark mode toggle.
-
----
-
-*This project is for learning and demonstration purposes. Use with caution if deploying publicly, as it uses `eval()` for expression evaluation.*
