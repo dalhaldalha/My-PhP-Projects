@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Mode Calculator</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style/site.css">
 </head>
-<body>   
+<body class="<?php echo htmlspecialchars($mode); ?>">
 <?php
 // Calculator Algorithm
 // 1. Display all number and operator buttons (+, -, *, /), as well as "=", and "C" (clear) on the screen.
@@ -21,12 +21,25 @@
 // 8. Display the current expression or result in a readonly input box.
 // Extras
 // 1. Allow the user to toggle between light and dark mode.
-
+        $mode = $_POST['mode'] ?? 'dark';  // Default mode
+        if (isset($_POST['light'])) {
+            $mode = 'light';
+        } 
+        if (isset($_POST['dark'])) {
+            $mode = 'dark';
+        }
+        
         $input = $_POST['input'] ?? null;
         $expression = $_POST['expression'] ?? '';
         $lastChar = substr($expression, -1);
         $opr = ['+', '-', '*', '/'];
         
+        if (isset($_POST['light'])){
+            $mode = 'light';
+        } 
+        if (isset($_POST['dark'])){
+            $mode = 'dark';
+        }
         
         if ($input !== null) {
             if ($input === 'C') {
@@ -49,7 +62,21 @@
 
     ?>
     <h1>Calculator</h1>
+    <!-- Mode toggle forms -->
+    <form action="site.php" method="post" style="display:inline;">
+        <input type="hidden" name="mode" value="<?php echo htmlspecialchars($mode); ?>">
+        <input type="hidden" name="expression" value="<?php echo htmlspecialchars($expression); ?>">
+        <button type="submit" name="light">Light Mode</button>
+    </form>
+    <form action="site.php" method="post" style="display:inline;">
+        <input type="hidden" name="mode" value="<?php echo htmlspecialchars($mode); ?>">
+        <input type="hidden" name="expression" value="<?php echo htmlspecialchars($expression); ?>">
+        <button type="submit" name="dark">Dark Mode</button>
+    </form>
+    
+    <!-- Calculator form stays the same -->
     <form action="site.php" method="post">
+        <input type="hidden" name="mode" value="<?php echo htmlspecialchars($mode); ?>">
         <input type="hidden" name="expression" value="<?php echo htmlspecialchars($expression); ?>">
         <input readonly type="text" value="<?php echo htmlspecialchars($expression); ?>" placeholder="Enter a number">
         <br>
@@ -71,6 +98,7 @@
         <button type="submit" name="input" value="*">x</button>
         <button type="submit" name="input" value="/">/</button>
         <button type="submit" name="input" value="=">=</button> 
+        
 
     </form>
 
