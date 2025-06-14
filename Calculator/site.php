@@ -26,6 +26,7 @@
         $lastChar = substr($expression, -1);
         $opr = ['+', '-', '*', '/'];
         
+        
         if ($input !== null) {
             if ($input === 'C') {
                 $expression = '';
@@ -34,6 +35,12 @@
                     $expression .= $input;
                 }
 
+            } elseif($input === '='){
+                if ($lastChar !== '' && !in_array($lastChar, $opr)){
+                    $expression = eval('return ' . $expression .  ';');
+                } else {
+                    $expression = 'Error: Invalid Expression';
+                }
             } else {
                 $expression .= $input;
             }
