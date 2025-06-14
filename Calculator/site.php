@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="style/site.css">
 </head>
 <body>   
-<!--
+<?php
 // Calculator Algorithm
-// 1. Display number buttons for the user to select the first number.
-// 2. When a number is selected, store it in a variable.
-// 3. Display operator buttons (+, -, *, /) for the user to select an operation.
-// 4. When an operator is selected, store it in a variable and display number buttons for the second number.
-// 5. When the second number is selected, store it in a variable.
-// 6. Perform the calculation using the two numbers and the selected operator.
-// 7. Display the result to the user.
-// 8. Provide a button to clear/reset the calculator to start over.
+// 1. Display all number and operator buttons (+, -, *, /), as well as "=", and "C" (clear) on the screen.
+// 2. When a button is clicked, its value is sent to the server as 'input'.
+// 3. If a number is clicked, append it to the current expression.
+// 4. If an operator is clicked, append it to the expression only if the expression is not empty and the last character is not already an operator.
+// 5. If "C" is clicked, clear the expression.
+// 6. If "=" is clicked, check that the expression is valid (does not end with an operator).
+//    a. If valid, evaluate the expression and display the result.
+//    b. If invalid, display an error message.
+// 7. Store the current expression in a hidden input so it persists between button clicks.
+// 8. Display the current expression or result in a readonly input box.
 // Extras
 // 1. Allow the user to toggle between light and dark mode.
--->
-    <?php
+
         $input = $_POST['input'] ?? null;
         $expression = $_POST['expression'] ?? '';
         $lastChar = substr($expression, -1);
