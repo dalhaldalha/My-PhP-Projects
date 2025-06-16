@@ -14,19 +14,25 @@
     // 3. Program Displays the BMI Value and tell you what class you fall into.
     // 4. Program should display all categories of BMI. together with repective colors. 
 
-        $weight = $_Post['weight'] ?? '';
-        $height = $_Post['height'] ?? '';
-
-        echo $_Post['weight'] ?? 'Weight not set';
+        $weight = (float)$_POST['weight'];
+        $height = (float)$_POST['height'];
+        $BMI = $weight/ ($height ** 2);
+        
     ?>
 
     <form action="site.php" method='post'>
         <label for="weight">Weight (kg):</label>
-        <input type="number" name="weight" placeholder="Enter your weight" required>
+        <input type="number" name="weight" step="0.01" min="0.01" placeholder="Enter your weight" required>
         <br><br>
         <label for="height">Height (m):</label>
-        <input type="number" name="height" placeholder="Enter your height" required>
-
+        <input type="number" name="height" step="0.01" min="0.01" placeholder="Enter your height" required>
+        <br>
+        <button type="submit">Calculate BMI</button>
     </form>
+
+    <?php
+        echo round($BMI, 2);
+    ?>
+
 </body>
 </html>
