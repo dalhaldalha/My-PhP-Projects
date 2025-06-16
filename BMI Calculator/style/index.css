@@ -1,0 +1,23 @@
+.bmi-category {
+    display: flex;
+    width: 20rem;
+    justify-content: space-between;
+
+}
+
+.category-1 {
+    background-color: yellow;
+    padding: 3rem;
+}
+
+.category-2 {
+    background-color: green;
+}
+
+.category-3 {
+    background-color: darkorange;
+}
+
+.category-4 {
+    background-color: red;
+}

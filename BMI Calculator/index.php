@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
     <title>BMI App</title>
 </head>
 <body>
@@ -27,12 +28,18 @@
         <label for="height">Height (m):</label>
         <input type="number" name="height" step="0.01" min="0.01" placeholder="Enter your height" required>
         <br>
-        <button type="submit">Calculate BMI</button>
+        <button type="submit">Calculate BMI</button> 
     </form>
-
+    <br>
     <?php
         echo round($BMI, 2);
     ?>
 
+    <div class="bmi-category">
+        <div class="category-1">< 18.5</div>
+        <div class="category-2">18.5 - 25</div>
+        <div class="category-3">25 - 30</div>
+        <div class="category-4">> 30</div>
+    </div>
 </body>
 </html>
