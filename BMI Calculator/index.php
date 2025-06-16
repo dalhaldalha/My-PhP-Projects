@@ -7,5 +7,15 @@
 </head>
 <body>
     Calculate your BMI:
+    <?php 
+    $weight = $_Post['weight'] ?? '';
+    $height = $_Post['height'] ?? '';
+    ?>
+
+    <form action="site.php" method='post'>
+        <label for="weight">Weight (kg):</label>
+        
+
+    </form>
 </body>
 </html>
