@@ -36,10 +36,22 @@
     ?>
 
     <div class="bmi-category">
-        <div class="category-1">< 18.5</div>
-        <div class="category-2">18.5 - 25</div>
-        <div class="category-3">25 - 30</div>
-        <div class="category-4">> 30</div>
+        <div class="category-1 borders">
+            <p>Underweight</p>
+            <p>< 18.5</p>
+        </div>
+        <div class="category-2 borders">
+            <p>Underweight</p>
+            <p>18.5 - 25</p>
+        </div>
+        <div class="category-3 borders">
+            <p>Underweight</p>
+            <p>25 - 30</p>
+        </div>
+        <div class="category-4 borders">
+            <p>Underweight</p>
+            <p>> 30</p>
+        </div>
     </div>
 </body>
 </html>
