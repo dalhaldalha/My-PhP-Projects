@@ -11,13 +11,17 @@ body {
     border: black 1rem solid;
     background-color: blue;
     margin: 0;
+    padding: 0;
     min-height: 100vh;
+    flex-wrap: wrap;
 }
 
 .bmi-category {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.2rem;
     justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
 
 }
 
@@ -27,6 +31,7 @@ body {
     padding: 0rem;
     gap: 0.5rem;
     display: flex;
+    flex: 1;
     flex-direction: column;
     padding: 1rem 2rem;
     border-radius: 1rem;
