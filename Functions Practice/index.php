@@ -7,12 +7,16 @@
 </head>
 <body>
     <?php 
-        function sayHi(){
-            echo "Hi";
-        }
-
-        sayHi();
     
     ?>
+    <form action="files/site.php" method="post">
+        <label for="userName">Your Username:</label>
+        <input type="text" name=userName>
+        <br>
+        <label for="password">Your Password:</label>
+        <input type="number" name=password>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
