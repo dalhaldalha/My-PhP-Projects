@@ -7,21 +7,26 @@
     <title>BMI App</title>
 </head>
 <body>
-    Calculate your BMI:
+    <h1>Calculate your BMI:</h1>
     <?php 
-    // How it should work:
-    // 1. User Should be able to enter their weight and height.
-    // 2. Program should be able to calculate BMI using the two inputs.
-    // 3. Program Displays the BMI Value and tell you what class you fall into.
-    // 4. Program should display all categories of BMI. together with repective colors. 
-
-        $weight = (float)$_POST['weight'];
-        $height = (float)$_POST['height'];
-        $BMI = $weight/ ($height ** 2);
-        
+    $BMI = null;
+    $category = "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $weight = (float)($_POST['weight'] ?? 0);
+        $height = (float)($_POST['height'] ?? 0);
+        if ($weight > 0 && $height > 0) {
+            $BMI = $weight / ($height ** 2);
+            if ($BMI < 18.5) $category = "Underweight";
+            elseif ($BMI < 25) $category = "Normal Weight";
+            elseif ($BMI < 30) $category = "Overweight";
+            else $category = "Obese";
+        } else {
+            echo "<p style='color:red;'>Please enter valid weight and height.</p>";
+        }
+    }
     ?>
 
-    <form action="site.php" method='post'>
+    <form action="index.php" method='post'>
         <label for="weight">Weight (kg):</label>
         <input type="number" name="weight" step="0.01" min="0.01" placeholder="Enter your weight" required>
         <br><br>
@@ -32,25 +37,28 @@
     </form>
     <br>
     <?php
-        echo round($BMI, 2);
+        if ($BMI) {
+            echo "<p>Your BMI is: <strong>" . round($BMI, 2) . "</strong></p>";
+            echo "<p>Category: <strong>$category</strong></p>";
+        }
     ?>
 
     <div class="bmi-category">
         <div class="category-1 borders">
             <p>Underweight</p>
-            <p>< 18.5</p>
+            <p>&lt; 18.5</p>
         </div>
         <div class="category-2 borders">
-            <p>Underweight</p>
-            <p>18.5 - 25</p>
+            <p>Normal Weight</p>
+            <p>18.5 - 24.9</p>
         </div>
         <div class="category-3 borders">
-            <p>Underweight</p>
-            <p>25 - 30</p>
+            <p>Overweight</p>
+            <p>25 - 29.9</p>
         </div>
         <div class="category-4 borders">
-            <p>Underweight</p>
-            <p>> 30</p>
+            <p>Obese</p>
+            <p>&ge; 30</p>
         </div>
     </div>
 </body>
