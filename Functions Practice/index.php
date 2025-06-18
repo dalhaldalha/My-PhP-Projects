@@ -6,9 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-    
-    ?>
     <form action="files/site.php" method="post">
         <label for="userName">Your Username:</label>
         <input type="text" name=userName>
@@ -18,5 +15,12 @@
         <br>
         <button type="submit">Submit</button>
     </form>
+    <?php
+    $a = 3;
+    $b = 2;
+    $a *= 4;
+
+    echo $a;
+    ?>
 </body>
 </html>
