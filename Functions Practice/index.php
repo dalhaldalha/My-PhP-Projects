@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="files/site.php" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["files/site.php"]) ?>" method="post">
         <label for="userName">Your Username:</label>
         <input type="text" name=userName>
         <br>
