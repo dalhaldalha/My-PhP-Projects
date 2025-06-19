@@ -16,11 +16,16 @@
         <button type="submit">Submit</button>
     </form>
     <?php
-    $a = 3;
-    $b = 2;
-    $a *= 4;
+   $a = 2;
 
-    echo $a;
+   $result = match ($a) {
+    2=> "Hi",
+    3=> "Bye",
+    1=> "Correct",
+    default => "Wrong value",
+   };
+
+    echo $result;
     ?>
 </body>
 </html>
