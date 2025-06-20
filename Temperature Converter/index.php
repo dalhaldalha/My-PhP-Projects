@@ -43,7 +43,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             function convertTemperature($value, $from, $to) {
-                $value = $_POST["value"] ?? 0;;
+                $value = $_POST["value"] ?? 0;
                 $from = $_POST["from"] ?? " ";
                 $to = $_POST["to"] ?? " ";
 
