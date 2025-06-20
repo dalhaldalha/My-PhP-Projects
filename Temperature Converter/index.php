@@ -18,6 +18,7 @@
     <div class="temperatureConverter">
         <H1>Welcome to your go to Temperature converter</H1>
         <p>What would you like to covert today? &#128516;</p>
+        <p>Hi</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
             <label for="value">Value to Convert</label> <br>
             <input type="number" name="value" step="0.01"> <br>
