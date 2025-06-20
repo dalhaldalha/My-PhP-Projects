@@ -6,26 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="<?php echo htmlspecialchars($_SERVER["files/site.php"]) ?>" method="post">
-        <label for="userName">Your Username:</label>
-        <input type="text" name=userName>
-        <br>
-        <label for="password">Your Password:</label>
-        <input type="number" name=password>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-    <?php
-   $a = 2;
+    
+    <?php 
+        session_start();
 
-   $result = match ($a) {
-    2=> "Hi",
-    3=> "Bye",
-    1=> "Correct",
-    default => "Wrong value",
-   };
+        echo "Welcome to the random number generator" . "<br>"
+            . "Guess a number between 0 and 100" . "<br>";
 
-    echo $result;
+        if (!isset($_SESSION["randomNumber"])) {
+            $_SESSION["randomNumber"] = rand(0, 100);
+        } 
+
+        
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $guess = htmlspecialchars($_POST["guess"]);
+            $randomNumber = $_SESSION["randomNumber"];
+
+            if ($guess == $randomNumber) {
+                echo "Congratulations! You guessed the number: $randomNumber";
+                unset($_SESSION["randomNumber"]); // Reset the game
+            } else if ($guess < $randomNumber) {
+                echo "Your guess is too low.";
+            } else if ($guess > $randomNumber) {
+                echo "Your guess is too high.";
+            } else {
+                echo "Your guess is invalid.";
+            }
+
+        }
     ?>
+    
+    <form action="" method="post">
+        <label for="guess">Your Guess:</label>
+        <input type="number" name="guess">
+        <button type="submit">Submit</button>
+
+    </form>
+
+    
 </body>
 </html>
