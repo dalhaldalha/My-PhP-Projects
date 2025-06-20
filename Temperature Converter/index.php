@@ -41,41 +41,73 @@
 
     <?php 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // // 1. Get the input value
-            // 
-            // // 2. Get the "from" and "to" values
-            // 
 
-            function converTemperature($value, $from, $to) {
-                $value = $_POST["value"];
-                $from = $_POST["from"];
-                $to = $_POST["to"];
+            function convertTemperature($value, $from, $to) {
+                $value = $_POST["value"] ?? 0;;
+                $from = $_POST["from"] ?? " ";
+                $to = $_POST["to"] ?? " ";
 
+                // Checks if "from" is Celcius.
                 if ($from == "C") {
                     switch ($to) {
                         case "C":
-                            echo "$value °C is equal to $value °C";
+                            return "$value °C is equal to $value °C";
                             break;
                         case "F":
-                            echo "$value °C is equal to " . (($value*9/5)+32) . " °F";
+                            return "$value °C is equal to " . (($value*9/5)+32) . " °F";
                             break;
                         case "K":
-                            echo "$value °C is equal to " . ($value +273.15) . " K";
+                            return "$value °C is equal to " . ($value +273.15) . " K";
                             break;
                         default:
-                            echo "Invalid temperature scale selected.";
+                            return "Invalid temperature scale selected.";
                             break;
                     }
+
+                // Checks if "from" is Fahrenheit.
                 } else if ($from == "F") {
+                    switch ($to) {
+                        case "C":
+                            return "$value °F is equal to" . (($value-32)*5/9);
+                            break;
+                        case "F":
+                            return "$value °F is equal to $value °F";
+                            break;
+                        case "K":
+                            return "$value °F is equal to " . ((($value -32)/1.8)+273.15) . " K";
+                            break;
+                        default:
+                            return "Invalid temperature scale selected.";
+                            break;
+                    }
 
+                // Checks if "from" is Kelvin.
                 } else if ($from == "K") {
+                    switch ($to) {
+                        case "C":
+                            return "$value °K is equal to" . ($value - 273.15) . " °C";
+                            break;
+                        case "F":
+                            return "$value °K is equal to" . (($value - 273.15) * 9/5 + 32) . " °F";
+                            break;
+                        case "K":
+                            return "$value °K is equal to $value K";
+                            break;
+                        default:
+                            return "Invalid temperature scale selected.";
+                            break;
+                    }
 
+                // Default Output if non apply.
                 } else {
-                    echo "Invalid temperature scale selected.";
+                    return "Invalid temperature scale selected.";
                 }
 
-
             }
+
+            echo "<br>";
+            // Call the function and display the result.
+            echo convertTemperature($_POST["value"], $_POST["from"], $_POST["to"]);
         }
     ?>
 
