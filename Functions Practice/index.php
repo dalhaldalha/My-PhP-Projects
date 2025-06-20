@@ -10,11 +10,7 @@
 </head>
 <body>
     <?php 
-        function sayHello($name){
-            return "Hello " . $name . "!";
-        }
-    
-        echo sayHello("Dalha");
+        
     ?>
 </body>
 </html>

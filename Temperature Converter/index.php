@@ -39,13 +39,15 @@
         </form>
     </div>
 
-    <?php 
+    <?php
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             function convertTemperature($value, $from, $to) {
                 $value = $_POST["value"] ?? 0;
                 $from = $_POST["from"] ?? " ";
                 $to = $_POST["to"] ?? " ";
+
 
                 // Checks if "from" is Celcius.
                 if ($from == "C") {
@@ -109,6 +111,7 @@
             // Call the function and display the result.
             echo convertTemperature($_POST["value"], $_POST["from"], $_POST["to"]);
         }
+        
     ?>
 
 </body>
