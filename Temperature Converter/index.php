@@ -20,7 +20,7 @@
         <p>What would you like to covert today? &#128516;</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
             <label for="value">Value to Convert</label> <br>
-            <input type="number" name="value" step="0.01"> <br>
+            <input class="input" type="number" name="value" step="0.01"> <br>
             <label for="from">From: </label> <br>
             <select name="from" id="from">
                 <option value="C">Celsius</option>
