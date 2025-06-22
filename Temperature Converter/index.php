@@ -35,7 +35,7 @@
                 <option value="K">Kelvin</option>
             </select> <br>
 
-            <button type="submit">Calculate</button>
+            <button class="submit-btn" type="submit">Calculate</button>
         </form>
     </div>
 
@@ -110,6 +110,7 @@
             echo "<br>";
             // Call the function and display the result.
             echo convertTemperature($_POST["value"], $_POST["from"], $_POST["to"]);
+           
         }
         
     ?>
