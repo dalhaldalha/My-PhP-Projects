@@ -15,7 +15,7 @@
         <input type="text" name="username" placeholder="Username"> <br>
         <input type="password" name="pwd" placeholder="Password"> <br>
         <input type="text" name="email" placeholder="Email"> <br>
-        <button>Signup</button>
+        <button>Update</button>
     </form>
 
     <h3>Delete Account</h3>
