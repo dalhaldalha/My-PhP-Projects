@@ -42,6 +42,22 @@
 </head>
 <body>
     
+    <h3>Search Results</h3>
+
+    <?php 
+        if (empty($results)) {
+            echo "<div>";
+            echo "<p>There were no results!</p>";
+            echo "</div>";
+        } else {
+            foreach ($results as $row) {
+                echo htmlspecialchars($row["username"]); echo "<br>";
+                echo htmlspecialchars($row["comment_text"]); echo "<br>";
+                echo htmlspecialchars($row["created_at"]); echo "<br>";
+            }
+        }
+    
+    ?>
     
 </body>
 </html>
