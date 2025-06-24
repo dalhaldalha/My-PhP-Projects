@@ -42,22 +42,24 @@
 </head>
 <body>
     
-    <h3>Search Results</h3>
-
-    <?php 
-        if (empty($results)) {
+    <h2>Search Results</h2>
+    <section >
+        <?php 
             echo "<div>";
-            echo "<p>There were no results!</p>";
-            echo "</div>";
-        } else {
-            foreach ($results as $row) {
-                echo htmlspecialchars($row["username"]); echo "<br>";
-                echo htmlspecialchars($row["comment_text"]); echo "<br>";
-                echo htmlspecialchars($row["created_at"]); echo "<br>";
+            if (empty($results)) {
+                echo "<div>";
+                echo "<p>There were no results!</p>";
+                echo "</div>";
+            } else {
+                foreach ($results as $row) {
+                    echo "<h3>" . htmlspecialchars($row["username"]) . "</h3>";
+                    echo "<p>" . htmlspecialchars($row["comment_text"]) . "</p>";
+                    echo "<p>" . htmlspecialchars($row["created_at"]) . "</p>";
+                }
             }
-        }
-    
-    ?>
-    
+            echo "</div>";
+        
+        ?>
+    </section>    
 </body>
 </html>
