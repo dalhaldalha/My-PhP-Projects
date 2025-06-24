@@ -15,7 +15,7 @@
 
         $stmt->execute();
 
-        $stmt-> = $stmt->fetchAll();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $pdo = null;
         $stmt = null;
