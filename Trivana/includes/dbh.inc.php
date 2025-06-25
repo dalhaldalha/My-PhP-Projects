@@ -1,6 +1,6 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=trivanadatabase";
+$dsn = "mysql:host=localhost;dbname=brak";
 $dbusername = "root";
 $dbpassword = "";
 
