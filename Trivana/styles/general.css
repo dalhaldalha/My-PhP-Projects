@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 80vw;
+    border-radius: 1.5rem;
+    border: none;
+}
+
+.divider {
+    width: 90%;
+    height: 0.5px;
+    background-color: white;
+    margin: 0rem;
+    border-radius: 1rem;
+}
