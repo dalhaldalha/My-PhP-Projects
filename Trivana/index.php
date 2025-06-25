@@ -31,7 +31,7 @@
     <h2>Welcome to Trivana</h2>
     <p>To start off, Input your name and select and category...</p>
 
-    <form action="includes/dbh.inc.php" method="post">
+    <form action="includes/formhandler.inc.php" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">
         <label for="category">Category:</label>
