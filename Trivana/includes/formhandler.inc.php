@@ -1,14 +1,12 @@
 <?php
-session_start();
+session_start(); //starts session on this page
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $username = $_POST["username"];
-    $category = $_POST["category"];
-
-    $_SESSION["category"] = $category;
+if ($_SERVER['REQUEST_METHOD'] == "POST") { // Will only run this code if user accessed this page through a "post" method.
+    $username = $_SESSION["username"] = $_POST["username"]; //takes the "username" from the form and session and stores it as a variable.
+    $category = $_SESSION["category"] = $_POST["category"]; //takes the "category" from the form and session and stores it as a variable.
 
     try {
-        require_once "dbh.inc.php";
+        require_once "dbh.inc.php"; //links the codes from another file. In this context, it links to our database connection file.
 
         $query = "INSERT INTO users (username) 
             VALUES (:username);";
