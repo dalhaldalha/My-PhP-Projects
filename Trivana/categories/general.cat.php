@@ -9,14 +9,13 @@
 </head>
 <body>
     <section class="container">
-        <h2>General Knowledge</h2>
-        <hr class="divider">
-        <p>What is the capital of Australia?</p>
+        <h2 class="heading-txt">General Knowledge</h2>
+        <p class="question-p">What is the capital of Australia?</p>
         <div class="options-container">
-            <div class="option_1 options">option 1</div>
-            <div class="option_2 options">option 2</div>
-            <div class="option_3 options">option 3</div>
-            <div class="option_4 options">option 4</div>
+            <button class="option_1 options">option 1</button>
+            <button class="option_2 options">option 2</button>
+            <button class="option_3 options">option 3</button>
+            <button class="option_4 options">option 4</button>
         </div>
 
     </section>

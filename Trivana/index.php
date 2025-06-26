@@ -1,8 +1,8 @@
 <?php 
 //Trivia Quiz Algorithm
-// 1. User inputs their name and selects a category.
-      // a. Store the username and category in a database.
-      // b. Redirect the user to the quiz page.
+// 1. User inputs their name and selects a category. **
+      // a. Store the username and category in a database. *
+      // b. Redirect the user to the quiz page. *
 // 2. On the quiz page, fetch questions from the database based on the selected category.
       // a. Display one question at a time.
       // b. Allow the user to select an answer and submit it.
