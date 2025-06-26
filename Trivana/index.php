@@ -1,4 +1,5 @@
 <?php 
+      session_start();
 //Trivia Quiz Algorithm
 // 1. User inputs their name and selects a category. **
       // a. Store the username and category in a database. *
@@ -36,7 +37,7 @@
         <input type="text" id="username" name="username">
         <label for="category">Category:</label>
         <select id="category" name="category">
-            <option value="general">General Knowledge</option>
+            <option value="general knowledge">General Knowledge</option>
             <option value="science">Science</option>
             <option value="history">History</option>
             <option value="maths">Maths</option>

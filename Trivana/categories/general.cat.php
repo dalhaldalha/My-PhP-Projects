@@ -1,3 +1,29 @@
+<?php 
+session_start();
+
+
+    try {
+        require_once "../includes/dbh.inc.php";
+
+        $category = $_SESSION["category"];
+
+        $query = "SELECT name FROM categories WHERE name = :category;";
+
+        $stmt = $pdo->prepare($query);
+
+        $stmt->bindParam(":category", $category);
+        $stmt->execute();
+
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $pdo = null;
+        $stmt = null;
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +35,7 @@
 </head>
 <body>
     <section class="container">
-        <h2 class="heading-txt">General Knowledge</h2>
+        <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
         <p class="question-p">What is the capital of Australia?</p>
         <div class="options-container">
             <button class="option_1 options">option 1</button>

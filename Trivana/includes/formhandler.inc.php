@@ -1,8 +1,11 @@
 <?php
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = $_POST["username"];
     $category = $_POST["category"];
+
+    $_SESSION["category"] = $category;
 
     try {
         require_once "dbh.inc.php";
@@ -19,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $stmt = null;
 
         switch ($category) {
-            case "general":
+            case "general knowledge":
                 header("Location: ../categories/general.cat.php");
                 break;
             case "science":
