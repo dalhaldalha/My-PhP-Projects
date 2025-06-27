@@ -17,9 +17,9 @@ session_start(); //Starts session
         //Second Query
         $query2 = "SELECT * FROM questions;";
         $stmt2 = $pdo->prepare($query2);
-        $stmt2->excute();
+        $stmt2->execute();
 
-        $results2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+        $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
         $pdo = null;
         $stmt = null;
@@ -42,17 +42,29 @@ session_start(); //Starts session
     <title>General Knowledge</title>
 </head>
 <body>
+    
     <p>Hi, <?php echo isset($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : "User"; ?></p> <br>
     <section class="container">
         <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]) ?></h2>
-        <p class="question-p">What is the capital of Australia?</p>
+        <p class="question-p"><?php echo $results2[0]["question_text"]; ?></p>
         <div class="options-container">
-            <button class="option_1 options">option 1</button>
-            <button class="option_2 options">option 2</button>
-            <button class="option_3 options">option 3</button>
-            <button class="option_4 options">option 4</button>
+            <button class="option_1 options"><?php echo $results2[0]["option_a"]; ?></button>
+            <button class="option_2 options"><?php echo $results2[0]["option_b"]; ?></button>
+            <button class="option_3 options"><?php echo $results2[0]["option_c"]; ?></button>
+            <button class="option_4 options"><?php echo $results2[0]["option_d"]; ?></button>
         </div>
 
     </section>
+
+    <?php 
+
+        // foreach ($results2 as $row) {
+        //     echo htmlspecialchars($row["question_text"]) . "<br>";
+        //     echo htmlspecialchars($row["option_a"]) . "<br>";
+        //     echo htmlspecialchars($row["option_b"]) . "<br>";
+        //     echo htmlspecialchars($row["option_c"]) . "<br>";
+        //     echo htmlspecialchars($row["option_d"]) . "<br> <br>";
+        // }
+    ?>
 </body>
 </html>
