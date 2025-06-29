@@ -56,8 +56,8 @@ body {
 }
 
 .options:hover {
-    background: #fff;
-    color: #212529
+    background: red;
+    color: #212529;
 }
 
 .options:active {
