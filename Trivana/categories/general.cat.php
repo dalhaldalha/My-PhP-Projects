@@ -42,7 +42,7 @@ session_start(); //Starts session
     
     <p>Hi, <?php echo isset($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : "User"; ?></p> <br>
     <section class="container">
-        <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]) ?></h2>
+        <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
         <p class="question-p"><?php echo $results2[0]["question_text"]; ?></p>
         <div class="options-container">
             <button class="option_1 options"><?php echo $results2[0]["A"]; ?></button>
@@ -55,17 +55,21 @@ session_start(); //Starts session
 
     <?php 
 
-        foreach ($results2 as $row) {
-            $correctLetter = $row["correct_option"];
-            $correctAnswer; 
-            echo htmlspecialchars($row["question_text"]) . "<br>";
-            echo htmlspecialchars($row["A"]) . "<br>";
-            echo htmlspecialchars($row["B"]) . "<br>";
-            echo htmlspecialchars($row["B"]) . "<br>";
-            echo htmlspecialchars($row["D"]) . "<br> <br>";
-            echo htmlspecialchars($row["correct_option"]);
-            break;
-        }
+        $currentQuestionIndex = 0;
+        $userAnswers = [];
+
+        echo $results2[0]["question_text"] . "<br>";
+        // foreach ($results2 as $row) {
+        //     $correctLetter = $row["correct_option"];
+        //     $correctAnswer; 
+        //     echo htmlspecialchars($row["question_text"]) . "<br>";
+        //     echo htmlspecialchars($row["A"]) . "<br>";
+        //     echo htmlspecialchars($row["B"]) . "<br>";
+        //     echo htmlspecialchars($row["B"]) . "<br>";
+        //     echo htmlspecialchars($row["D"]) . "<br> <br>";
+        //     echo htmlspecialchars($row["correct_option"]);
+        //     break;
+        // }
     ?>
 </body>
 </html>
