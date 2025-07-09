@@ -56,7 +56,17 @@ session_start(); //Starts session
     <?php 
 
         $currentQuestionIndex = 0;
+        $numberOfQuestions = count($results2);
         $userAnswers = [];
+
+        while ($currentQuestionIndex < $numberOfQuestions) {
+            echo $results2[$currentQuestionIndex]["question_text"] . "<br>";
+
+
+            $currentQuestionIndex ++ ; 
+        }
+
+
 
         echo $results2[0]["question_text"] . "<br>";
 
