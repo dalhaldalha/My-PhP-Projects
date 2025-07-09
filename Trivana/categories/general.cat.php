@@ -57,18 +57,17 @@ session_start(); //Starts session
 
         $currentQuestionIndex = 0;
         $numberOfQuestions = count($results2);
-        $userAnswers = [];
 
         while ($currentQuestionIndex < $numberOfQuestions) {
             echo $results2[$currentQuestionIndex]["question_text"] . "<br>";
+            echo $results2[$currentQuestionIndex]["A"] . "<br>";
+            echo $results2[$currentQuestionIndex]["B"] . "<br>";
+            echo $results2[$currentQuestionIndex]["C"] . "<br>";
+            echo $results2[$currentQuestionIndex]["D"] . "<br>" . "<br>";
 
 
             $currentQuestionIndex ++ ; 
         }
-
-
-
-        echo $results2[0]["question_text"] . "<br>";
 
         // function onOptionSelected(selectedOption) {
         //     userAnsers[]
