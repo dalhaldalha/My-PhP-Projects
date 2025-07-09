@@ -43,12 +43,12 @@ session_start(); //Starts session
     <p>Hi, <?php echo isset($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : "User"; ?></p> <br>
     <section class="container">
         <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
-        <p class="question-p"><?php echo $results2[0]["question_text"]; ?></p>
+        <p class="question-p"><?php echo $results2[1]["question_text"]; ?></p>
         <div class="options-container">
-            <button class="option_1 options"><?php echo $results2[0]["A"]; ?></button>
-            <button class="option_2 options"><?php echo $results2[0]["B"]; ?></button>
-            <button class="option_3 options"><?php echo $results2[0]["C"]; ?></button>
-            <button class="option_4 options"><?php echo $results2[0]["D"]; ?></button>
+            <button class="option_1 options"><?php echo $results2[1]["A"]; ?></button>
+            <button class="option_2 options"><?php echo $results2[1]["B"]; ?></button>
+            <button class="option_3 options"><?php echo $results2[1]["C"]; ?></button>
+            <button class="option_4 options"><?php echo $results2[1]["D"]; ?></button>
         </div>
 
     </section>
@@ -59,6 +59,10 @@ session_start(); //Starts session
         $userAnswers = [];
 
         echo $results2[0]["question_text"] . "<br>";
+
+        // function onOptionSelected(selectedOption) {
+        //     userAnsers[]
+        // }
         // foreach ($results2 as $row) {
         //     $correctLetter = $row["correct_option"];
         //     $correctAnswer; 
