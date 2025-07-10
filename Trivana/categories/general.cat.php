@@ -44,58 +44,43 @@ session_start(); //Starts session
     <section class="container">
         <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
         <p class="question-p"><?php echo $results2[1]["question_text"]; ?></p>
-        <div class="options-container">
-            <button class="option_1 options"><?php echo $results2[1]["A"]; ?></button>
-            <button class="option_2 options"><?php echo $results2[1]["B"]; ?></button>
-            <button class="option_3 options"><?php echo $results2[1]["C"]; ?></button>
-            <button class="option_4 options"><?php echo $results2[1]["D"]; ?></button>
-        </div>
+        <form class="options-container">
+            <input type="submit" class="option_1 options" value="<?php echo $results2[1]['A']; ?>">
+            <input type="submit" class="option_2 options" value="<?php echo $results2[1]['B']; ?>">
+            <input type="submit" class="option_3 options" value="<?php echo $results2[1]['C']; ?>">
+            <input type="submit" class="option_4 options" value="<?php echo $results2[1]['D']; ?>">
+        <form>
 
     </section>
 
     <?php 
 
-        $currentQuestionIndex = 0;
-        $numberOfQuestions = count($results2);
-        $score = 0;
+        // $currentQuestionIndex = 0;
+        // $numberOfQuestions = count($results2);
+        // $score = 0;
 
-        while ($currentQuestionIndex < $numberOfQuestions) {
-            echo $results2[$currentQuestionIndex]["question_text"] . "<br>";
-            echo $results2[$currentQuestionIndex]["A"] . "<br>";
-            echo $results2[$currentQuestionIndex]["B"] . "<br>";
-            echo $results2[$currentQuestionIndex]["C"] . "<br>";
-            echo $results2[$currentQuestionIndex]["D"] . "<br>";
-            echo "<br>";
-            $userAnswer = "C"; // This variable will store the user's answer
-            $correctAnswer = $results2[$currentQuestionIndex]["correct_option"];
+        // while ($currentQuestionIndex < $numberOfQuestions) {
+        //     echo $results2[$currentQuestionIndex]["question_text"] . "<br>";
+        //     echo $results2[$currentQuestionIndex]["A"] . "<br>";
+        //     echo $results2[$currentQuestionIndex]["B"] . "<br>";
+        //     echo $results2[$currentQuestionIndex]["C"] . "<br>";
+        //     echo $results2[$currentQuestionIndex]["D"] . "<br>";
+        //     echo "<br>";
+        //     $userAnswer = "10"; // This variable will store the user's answer
+        //     $correctAnswer = $results2[$currentQuestionIndex]["correct_option"];
 
-            if ($userAnswer === $correctAnswer) {
-                echo "Correct! <br>";
-                $score ++;
-            } else {
-                echo "Incorrect! The correct answer is: " . htmlspecialchars($correctAnswer) . "<br>";
-            }
+        //     if ($userAnswer === $correctAnswer) {
+        //         echo "Correct! <br>";
+        //         $score ++;
+        //     } else {
+        //         echo "Incorrect! The correct answer is: " . htmlspecialchars($correctAnswer) . "<br>";
+        //     }
 
 
-            $currentQuestionIndex ++ ; 
-        }
-
-        echo "Your score is: " . $score . " out of " . $numberOfQuestions . "<br>";
-
-        // function onOptionSelected(selectedOption) {
-        //     userAnsers[]
+        //     $currentQuestionIndex ++ ; 
         // }
-        // foreach ($results2 as $row) {
-        //     $correctLetter = $row["correct_option"];
-        //     $correctAnswer; 
-        //     echo htmlspecialchars($row["question_text"]) . "<br>";
-        //     echo htmlspecialchars($row["A"]) . "<br>";
-        //     echo htmlspecialchars($row["B"]) . "<br>";
-        //     echo htmlspecialchars($row["B"]) . "<br>";
-        //     echo htmlspecialchars($row["D"]) . "<br> <br>";
-        //     echo htmlspecialchars($row["correct_option"]);
-        //     break;
-        // }
+
+        // echo "Your score is: " . $score . " out of " . $numberOfQuestions . "<br>";
     ?>
 </body>
 </html>
