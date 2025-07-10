@@ -72,13 +72,6 @@ session_start(); //Starts session
         <?php endfor; ?>
     </section>
 
-    <!-- <?php for ($i = 0; $i < 5; $i++): ?>
-        <div class="item">
-            <h2>Item <?php echo $i + 1; ?></h2>
-            <p>This is item number <?php echo $i + 1; ?> in the loop.</p>
-        </div>
-    <?php endfor; ?> -->
-
     <?php 
 
          // Gets the user's answer from the form submission
