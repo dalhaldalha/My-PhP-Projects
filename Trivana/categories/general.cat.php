@@ -27,6 +27,11 @@ session_start(); //Starts session
         die("Connection failed: " . $e->getMessage()); // 
     }
 
+    $currentQuestionIndex = 0;
+    $numberOfQuestions = count($results2);
+    $score = 0;
+    $userAnswer = $_POST["answer"] ?? null;
+
 ?>
 
 <!DOCTYPE html>
@@ -39,26 +44,31 @@ session_start(); //Starts session
     <title>General Knowledge</title>
 </head>
 <body>
-    
     <p>Hi, <?php echo isset($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : "User"; ?></p> <br>
     <section class="container">
-        <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
-        <p class="question-p"><?php echo $results2[1]["question_text"]; ?></p>
-        <form action="" method="post" class="options-container">
-            <button type="submit" class="option_1 options" name="answer"><?php echo $results2[1]['A']; ?></button>
-            <button type="submit" class="option_2 options" name="answer"><?php echo $results2[1]['B']; ?></button>
-            <button type="submit" class="option_3 options" name="answer"><?php echo $results2[1]['C']; ?></button>
-            <button type="submit" class="option_4 options" name="answer"><?php echo $results2[1]['D']; ?></button>
-
-        <form>
-
+        <?php for ($i = 0; $i <$numberOfQuestions; $i++): ?>
+            <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
+            <p class="question-p"><?php echo $results2[$i]["question_text"]; ?></p>
+            <form action="" method="post" class="options-container">
+                <button type="submit" class="option_1 options" name="answer" value="A"><?php echo $results2[$i]['A']; ?></button>
+                <button type="submit" class="option_2 options" name="answer" value="B"> <?php echo $results2[$i]['B']; ?></button>
+                <button type="submit" class="option_3 options" name="answer" value="C"> <?php echo $results2[$i]['C']; ?></button>
+                <button type="submit" class="option_4 options" name="answer" value="D"> <?php echo $results2[$i]['D']; ?></button>
+            <form>
+            
+        <?php endfor; ?>
     </section>
+
+    <!-- <?php for ($i = 0; $i < 5; $i++): ?>
+        <div class="item">
+            <h2>Item <?php echo $i + 1; ?></h2>
+            <p>This is item number <?php echo $i + 1; ?> in the loop.</p>
+        </div>
+    <?php endfor; ?> -->
 
     <?php 
 
-        $userAnswer = $_POST['answer'] ?? null; // Gets the user's answer from the form submission
-
-        echo "User's Answer: " . htmlspecialchars($userAnswer) . "<br>";
+         // Gets the user's answer from the form submission
         // $currentQuestionIndex = 0;
         // $numberOfQuestions = count($results2);
         // $score = 0;
