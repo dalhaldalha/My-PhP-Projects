@@ -63,7 +63,17 @@ session_start(); //Starts session
             echo $results2[$currentQuestionIndex]["A"] . "<br>";
             echo $results2[$currentQuestionIndex]["B"] . "<br>";
             echo $results2[$currentQuestionIndex]["C"] . "<br>";
-            echo $results2[$currentQuestionIndex]["D"] . "<br>" . "<br>";
+            echo $results2[$currentQuestionIndex]["D"] . "<br>";
+            echo "<br>";
+            $userAnswer = "B"; // This variable will store the user's answer
+            $correctAnswer = $results2[$currentQuestionIndex]["correct_option"];
+
+            if ($userAnswer === $correctAnswer) {
+                echo "Correct!<br>";
+            } else {
+                echo "Incorrect. The correct answer is: " . htmlspecialchars($correctAnswer) . "<br>";
+
+            }
 
 
             $currentQuestionIndex ++ ; 
