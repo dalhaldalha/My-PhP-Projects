@@ -57,6 +57,7 @@ session_start(); //Starts session
 
         $currentQuestionIndex = 0;
         $numberOfQuestions = count($results2);
+        $score = 0;
 
         while ($currentQuestionIndex < $numberOfQuestions) {
             echo $results2[$currentQuestionIndex]["question_text"] . "<br>";
@@ -65,19 +66,21 @@ session_start(); //Starts session
             echo $results2[$currentQuestionIndex]["C"] . "<br>";
             echo $results2[$currentQuestionIndex]["D"] . "<br>";
             echo "<br>";
-            $userAnswer = "B"; // This variable will store the user's answer
+            $userAnswer = "C"; // This variable will store the user's answer
             $correctAnswer = $results2[$currentQuestionIndex]["correct_option"];
 
             if ($userAnswer === $correctAnswer) {
-                echo "Correct!<br>";
+                echo "Correct! <br>";
+                $score ++;
             } else {
-                echo "Incorrect. The correct answer is: " . htmlspecialchars($correctAnswer) . "<br>";
-
+                echo "Incorrect! The correct answer is: " . htmlspecialchars($correctAnswer) . "<br>";
             }
 
 
             $currentQuestionIndex ++ ; 
         }
+
+        echo "Your score is: " . $score . " out of " . $numberOfQuestions . "<br>";
 
         // function onOptionSelected(selectedOption) {
         //     userAnsers[]
