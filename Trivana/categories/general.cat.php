@@ -44,17 +44,21 @@ session_start(); //Starts session
     <section class="container">
         <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
         <p class="question-p"><?php echo $results2[1]["question_text"]; ?></p>
-        <form class="options-container">
-            <input type="submit" class="option_1 options" value="<?php echo $results2[1]['A']; ?>">
-            <input type="submit" class="option_2 options" value="<?php echo $results2[1]['B']; ?>">
-            <input type="submit" class="option_3 options" value="<?php echo $results2[1]['C']; ?>">
-            <input type="submit" class="option_4 options" value="<?php echo $results2[1]['D']; ?>">
+        <form action="" method="post" class="options-container">
+            <button type="submit" class="option_1 options" name="answer"><?php echo $results2[1]['A']; ?></button>
+            <button type="submit" class="option_2 options" name="answer"><?php echo $results2[1]['B']; ?></button>
+            <button type="submit" class="option_3 options" name="answer"><?php echo $results2[1]['C']; ?></button>
+            <button type="submit" class="option_4 options" name="answer"><?php echo $results2[1]['D']; ?></button>
+
         <form>
 
     </section>
 
     <?php 
 
+        $userAnswer = $_POST['answer'] ?? null; // Gets the user's answer from the form submission
+
+        echo "User's Answer: " . htmlspecialchars($userAnswer) . "<br>";
         // $currentQuestionIndex = 0;
         // $numberOfQuestions = count($results2);
         // $score = 0;
