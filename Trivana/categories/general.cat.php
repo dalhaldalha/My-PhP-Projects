@@ -55,6 +55,19 @@ session_start(); //Starts session
                 <button type="submit" class="option_3 options" name="answer" value="C"> <?php echo $results2[$i]['C']; ?></button>
                 <button type="submit" class="option_4 options" name="answer" value="D"> <?php echo $results2[$i]['D']; ?></button>
             <form>
+
+            <?php 
+                if(isset($userAnswer)) {
+                    $correctAnswer = $results2[$i]["correct_option"];
+                    if ($userAnswer === $correctAnswer) {
+                        echo "Correct! <br>";
+                        $score++;
+                    } else {
+                        echo "Incorrect! The correct answer is: " . htmlspecialchars($correctAnswer) . "<br>";
+                    }
+                }
+            ?>
+
             
         <?php endfor; ?>
     </section>
