@@ -27,12 +27,13 @@ session_start(); //Starts session
         die("Connection failed: " . $e->getMessage()); // 
     }
 
-    $currentQuestionIndex = 0;
+    // $currentQuestionIndex = 0;
     $numberOfQuestions = count($results2);
-    $score = 0;
+    $_SESSION['score'] = 0;
     $userAnswer = $_POST["answer"] ?? null;
 
-    $_SESSION['currentQuestionIndex'] = $currentQuestionIndex; // Stores the current question index in the session
+    $_SESSION['currentQuestionIndex'] = 1;
+
 
 ?>
 
@@ -48,7 +49,7 @@ session_start(); //Starts session
 <body>
     <p>Hi, <?php echo isset($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : "User"; ?></p> <br>
     <section class="container">
-        <?php for ($i = 0; $i < $currentQuestionIndex; $i ++): ?>
+        <?php for ($i = -1; $i < $_SESSION['currentQuestionIndex']; $i ++): ?>
             
             <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
             <p class="question-p"><?php echo $results2[$i]["question_text"]; ?></p>
@@ -61,18 +62,25 @@ session_start(); //Starts session
             
 
             <?php 
+                // Check if the user has submitted an answer.
                 if(isset($userAnswer)) {
                     $correctAnswer = $results2[$i]["correct_option"];
                     if ($userAnswer === $correctAnswer) {
                         echo "Correct! <br>";
-                        $score++;
+                        $_SESSION['score'] ++;
                     } else {
-                        echo "Incorrect! The correct answer is: " . htmlspecialchars($correctAnswer) . "<br>";
+                        echo "Incorrect! The correct answer is: " . $_SESSION['score'] . "<br>";
                     }
                 }
                 
-                
-                $currentQuestionIndex ++;
+                // Increment the current question index.
+                if ($_SESSION['currentQuestionIndex'] < $numberOfQuestions) {
+                    $_SESSION['currentQuestionIndex'] ++;
+                } else {
+                    echo "Your score is: " . $score . " out of " . $numberOfQuestions . "<br>";
+                }
+
+
             ?>
 
             
