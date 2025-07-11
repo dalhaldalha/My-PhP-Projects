@@ -32,6 +32,8 @@ session_start(); //Starts session
     $score = 0;
     $userAnswer = $_POST["answer"] ?? null;
 
+    $_SESSION['currentQuestionIndex'] = $currentQuestionIndex; // Stores the current question index in the session
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +48,8 @@ session_start(); //Starts session
 <body>
     <p>Hi, <?php echo isset($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : "User"; ?></p> <br>
     <section class="container">
-        <?php for ($i = 0; $i <$numberOfQuestions; $i++): ?>
+        <?php for ($i = 0; $i < $currentQuestionIndex; $i ++): ?>
+            
             <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
             <p class="question-p"><?php echo $results2[$i]["question_text"]; ?></p>
             <form action="" method="post" class="options-container">
@@ -54,7 +57,8 @@ session_start(); //Starts session
                 <button type="submit" class="option_2 options" name="answer" value="B"> <?php echo $results2[$i]['B']; ?></button>
                 <button type="submit" class="option_3 options" name="answer" value="C"> <?php echo $results2[$i]['C']; ?></button>
                 <button type="submit" class="option_4 options" name="answer" value="D"> <?php echo $results2[$i]['D']; ?></button>
-            <form>
+            </form>
+            
 
             <?php 
                 if(isset($userAnswer)) {
@@ -66,7 +70,12 @@ session_start(); //Starts session
                         echo "Incorrect! The correct answer is: " . htmlspecialchars($correctAnswer) . "<br>";
                     }
                 }
+                
+                
+                $currentQuestionIndex ++;
             ?>
+
+            
 
             
         <?php endfor; ?>
