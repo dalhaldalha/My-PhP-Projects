@@ -77,7 +77,7 @@ session_start(); //Starts session
                 if ($_SESSION['currentQuestionIndex'] < $numberOfQuestions) {
                     $_SESSION['currentQuestionIndex'] ++;
                 } else {
-                    echo "Your score is: " . $score . " out of " . $numberOfQuestions . "<br>";
+                    echo "Your score is: " . $_SESSION['score'] . " out of " . $numberOfQuestions . "<br>";
                 }
 
 
