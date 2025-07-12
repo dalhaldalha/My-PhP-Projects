@@ -27,7 +27,7 @@ if (!isset($_SESSION['last_regeneration'])) {
 } else {
 
     //Creates a variable that we want to be the time that passes before we regenerate our SESSION id again
-    $interval = 60 * 30;
+    $interval = 60 * 1;
 
     //Takes the currect time and substracts our SESSION time from it then checks to see if it is equal to or greater than our Interval variable.
     if (time() - $_SESSION['last_regeneration'] >= $interval) {
