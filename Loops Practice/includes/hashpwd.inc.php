@@ -11,7 +11,8 @@
 
 
 $options = [
-    'cost' => 12,
+    'cost' => 20,
+
 ];
 
 $pwdSignUp = "Babandalha@28";
