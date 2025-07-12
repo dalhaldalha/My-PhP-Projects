@@ -7,7 +7,7 @@ $pepper ="ANotSoSecretPepperString";
 
 $dataToHash = $userName . $salt . $pepper;
 
-$hash = hash("sha256", $dataToHash);
+$hash = hash("sha512", $dataToHash);
 
 /*----------*/
 
@@ -17,7 +17,7 @@ $pepper = "ANotSoSecretPepperString";
 
 $dataToHash = $userName . $storedSalt . $pepper;
 
-$verificationHash = hash("sha256", $dataToHash);
+$verificationHash = hash("sha512", $dataToHash);
 
 if ($storedHash === $verificationHash) {
     echo "The data are the same!" . "<br>";
