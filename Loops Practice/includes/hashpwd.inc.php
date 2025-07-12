@@ -1,31 +1,31 @@
 <?php
 
-$userName = "Dalha";
+// $userName = "Dalha";
 
-$salt = bin2hex(random_bytes(16));
-$pepper ="ANotSoSecretPepperString";
+// $salt = bin2hex(random_bytes(16));
+// $pepper ="ANotSoSecretPepperString";
 
-$dataToHash = $userName . $salt . $pepper;
+// $dataToHash = $userName . $salt . $pepper;
 
-$hash = hash("sha512", $dataToHash);
+// $hash = hash("sha512", $dataToHash);
 
-/*----------*/
 
-$storedSalt = $salt;
-$storedHash = $hash;
-$pepper = "ANotSoSecretPepperString";
+$options = [
+    'cost' => 12,
+];
 
-$dataToHash = $userName . $storedSalt . $pepper;
+$pwdSignUp = "Babandalha@28";
 
-$verificationHash = hash("sha512", $dataToHash);
+$hashedPwd = password_hash($pwdSignUp, PASSWORD_BCRYPT, $options);
 
-if ($storedHash === $verificationHash) {
-    echo "The data are the same!" . "<br>";
-    echo "The stored Hash is: " . $storedHash . "<br>";
-    echo "The Verification Hash is: " . $verificationHash . "<br>";
+$pwdLogin = "Babandalha@29";
 
+if (password_verify($pwdLogin, $hashedPwd)) {
+    echo "Password is valid!" . "<br>";
+    echo "Hashed Password: " . $hashedPwd . "<br>";
+    echo "Original Password: " . $pwdLogin . "<br>";
 } else {
-    echo "The data are NOT the same!" . "<br>";
-    echo "The stored Hash is: " . $storedHash . "<br>";
-    echo "The Verification Hash is: " . $verificationHash . "<br>";
+    echo "Invalid password." . "<br>";
+    echo "Hashed Password: " . $hashedPwd . "<br>";
+    echo "Original Password: " . $pwdLogin . "<br>";
 }
