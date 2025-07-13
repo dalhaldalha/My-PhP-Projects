@@ -25,9 +25,9 @@ require_once 'config.php';
     <h2>Welcome to Penprofile</h2>
     <p>How would you like to proceed?</p>
 
-    <form action="inludes/formhandler.inc.php" method="post">
-        <button type="sumbit" name="login">Login</button>
-        <button type="submut" name="signUp">Sign Up</button>
+    <form action="includes/formhandler.inc.php" method="post">
+        <button type="submit" name="login">Login</button>
+        <button type="submit" name="signUp">Sign Up</button>
     </form>
 
 
