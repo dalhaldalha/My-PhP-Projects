@@ -15,12 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //Establishes a data connection from the details in the file.
         require_once "dbh.inc.php";
 
-        $query = "INSERT INTO users (username, email, firt_name, last_name, pwd) VALUES (?, ?, ?, ?, ?);";
+        $query = "INSERT INTO users (username, email, first_name, last_name, pwd) VALUES (?, ?, ?, ?, ?);";
         $stmt = $pdo->prepare($query);
-        $stmt->excute([$username, $email, $firstName, $lastName, $pwd]);
+        $stmt->execute([$username, $email, $firstName, $lastName, $pwd]);
+    
 
         $pdo = null;
         $stmt = null;
+
+        header("Location: ../pages/login.pg.php");
+        die();
     } catch (PDOException $e) {
         die("Query failed: " .$e->getMessage());
 
