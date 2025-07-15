@@ -8,12 +8,13 @@
 <body>
     <h2>Sign Up</h2>
     <p>Tell us about yourself</p>
-    <form action="" method="post">
+    <form action="../includes/signup.fh.inc.php" method="post">
         <input type="text" name="username" id="">
         <input type="email" name="email">
         <input type="text" name="firstName">
         <input type="text" name="lastName">
         <input type="password" name="pwd">
+        <button type="submit">Sign Up</button>
     </form>
 
 </body>
