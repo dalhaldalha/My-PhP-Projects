@@ -15,17 +15,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //Establishes a data connection from the details in the file.
         require_once "dbh.inc.php";
 
+        //Does a query to insert the data into their respective places in the database.
         $query = "INSERT INTO users (username, email, first_name, last_name, pwd) VALUES (?, ?, ?, ?, ?);";
+        //Prepares the query to be executed.
         $stmt = $pdo->prepare($query);
+        //Adds the inputed data to the query and executes it.
         $stmt->execute([$username, $email, $firstName, $lastName, $pwd]);
-    
 
+        //Closes the connection to the database.
+        //This is done to prevent memory leaks.
         $pdo = null;
         $stmt = null;
 
+        //Redirects the user to the login page after successful signup.
         header("Location: ../pages/login.pg.php");
+        // Stops the script here to prevent further execution.
         die();
+    //Catches any errors that may occur during the process and displays them.
     } catch (PDOException $e) {
+        //If an error occurs, this message will be displayed.
         die("Query failed: " .$e->getMessage());
 
     }
