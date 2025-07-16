@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     try {
 
         //Establishes a data connection from the details in the file.
-        require_once "dbh.inc.php";
+        // require_once "dbh.inc.php";
 
         //Does a query to insert the data into their respective places in the database.
         $query = "INSERT INTO users (username, email, first_name, last_name, pwd) VALUES (?, ?, ?, ?, ?);";
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //Takes in the pwd and hashes it using the BCRYPT method with a cost vector of 12.
         $hashedpwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
         //Adds the inputed data to the query and executes it.
-        $stmt->execute([$username, $email, $firstName, $lastName, $hashedpwd]);
+        $stmt->execute([$username, $email , $firstName, $lastName, $hashedpwd]);
 
         //Closes the connection to the database.
         //This is done to prevent memory leaks.

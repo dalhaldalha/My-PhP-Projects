@@ -2,9 +2,9 @@
 // Algorithm for Login System
 //#1.Main Page schould give you the option for If your want to Login or sign Up.
 //  #a.Login button should take you to a login page.
-//  #b. Sign Up button should take you to a sign up page.
-// 2. User should be able to input their personal details to sign up.
-//   a.Make sure that username, email and passowrd are required.
+//  #b.Sign Up button should take you to a sign up page.
+//#2. User should be able to input their personal details to sign up.
+//  #a.Make sure that username, email and passowrd are required.
 //  #b.All details should be stored in the database.
 //  #c.Passwords should be hashed once created before storing in the database.
 //  #d.Once all fields are created, user should be taken back to Login Page.
@@ -13,8 +13,9 @@
 // Bonus Futers:
 // 1. User Should pass a captcha test before being able to sign up.
 // 2. User should be able to reset their password if they forget it.
+// 3. Sign up fields should be able to securely required.
 require_once 'config.php';
-$usernameErorr = $_SESSION['nameError'];
+
 ?>
 
 <!DOCTYPE html>

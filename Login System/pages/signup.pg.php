@@ -1,8 +1,5 @@
 <?php
-    require_once '../config.php';
-
-    $usernameErorr = $_SESSION['nameError'];
-
+    // require_once '../config.php';
 
 ?>
 
@@ -18,10 +15,10 @@
     <p>Tell us about yourself</p>
     <form action="../includes/signup.fh.inc.php" method="post">
         <input required type="text" name="username" placeholder="username">
-        <input type="email" name="email" placeholder="email">
+        <input required type="email" name="email" placeholder="email">
         <input type="text" name="firstName" placeholder="First Name">
         <input type="text" name="lastName" placeholder="Last Name">
-        <input type="password" name="pwd" placeholder="password">
+        <input required type="password" name="pwd" placeholder="password">
         <button type="submit">Sign Up</button>
     </form>
 

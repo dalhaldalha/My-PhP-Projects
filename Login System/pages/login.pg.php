@@ -8,9 +8,10 @@
 <body>
     <h2>Login</h2>
     <p>welcome back</p>
-    <form action="" method="post">
+    <form action="../includes/login.fh.inc.php" method="post">
         <input type="text" name="usernameOrEmail">
-        <input type="text" name="pwd">
+        <input type="password" name="pwd">
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>
