@@ -1,5 +1,7 @@
 <?php
 
+require_once '../config.php';
+
 //Checks to see if user accessed the page through a post method.
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -9,6 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $firstName = htmlspecialchars($_POST["firstName"]);
     $lastName = htmlspecialchars($_POST["lastName"]);
     $pwd = htmlspecialchars($_POST["pwd"]);
+
+    echo $errorMessage;
+
+    // if(empty($username)) {
+    //     header("Location: ../pages/signup.pg.php");
+    //     echo "Your username field is empty";
+    //     exit;
+    // }
 
     try {
 

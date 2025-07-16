@@ -20,6 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         exit(); // Stops script here
     }
 
+    
+
 } else {
     // If the server was not accessed through the form, user gets redirected to homepage.
     header("Location: ../index.php");

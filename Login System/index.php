@@ -5,16 +5,16 @@
 //  #b. Sign Up button should take you to a sign up page.
 // 2. User should be able to input their personal details to sign up.
 //   a.Make sure that username, email and passowrd are required.
-//   b.All details should be stored in the database.
-//   c.Passwords should be hashed once created before storing in the database.
-//   d.Once all fields are created, user should be taken back to Login Page.
+//  #b.All details should be stored in the database.
+//  #c.Passwords should be hashed once created before storing in the database.
+//  #d.Once all fields are created, user should be taken back to Login Page.
 // 3. User should be able to login with either a suername or an email, with a password.
 //   a.If all details match, User should be taken to a welcome screeen.
 // Bonus Futers:
 // 1. User Should pass a captcha test before being able to sign up.
 // 2. User should be able to reset their password if they forget it.
 require_once 'config.php';
-
+$usernameErorr = $_SESSION['nameError'];
 ?>
 
 <!DOCTYPE html>
