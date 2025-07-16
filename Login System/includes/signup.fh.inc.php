@@ -19,8 +19,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $query = "INSERT INTO users (username, email, first_name, last_name, pwd) VALUES (?, ?, ?, ?, ?);";
         //Prepares the query to be executed.
         $stmt = $pdo->prepare($query);
+
+        //This declares another parameter that sets how difficult we want our hashing algorithm to be.
+        $options = [
+            'cost' => 12
+        ];
+
+        //Takes in the pwd and hashes it using the BCRYPT method with a cost vector of 12.
+        $hashedpwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
         //Adds the inputed data to the query and executes it.
-        $stmt->execute([$username, $email, $firstName, $lastName, $pwd]);
+        $stmt->execute([$username, $email, $firstName, $lastName, $hashedpwd]);
 
         //Closes the connection to the database.
         //This is done to prevent memory leaks.
