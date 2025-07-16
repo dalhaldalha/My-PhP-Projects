@@ -11,14 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $firstName = htmlspecialchars($_POST["firstName"]);
     $lastName = htmlspecialchars($_POST["lastName"]);
     $pwd = htmlspecialchars($_POST["pwd"]);
-
-    echo $errorMessage;
-
-    // if(empty($username)) {
-    //     header("Location: ../pages/signup.pg.php");
-    //     echo "Your username field is empty";
-    //     exit;
-    // }
+    
 
     try {
 

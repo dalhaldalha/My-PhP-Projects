@@ -1,3 +1,11 @@
+<?php
+    require_once '../config.php';
+
+    $usernameErorr = $_SESSION['nameError'];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +17,7 @@
     <h2>Sign Up</h2>
     <p>Tell us about yourself</p>
     <form action="../includes/signup.fh.inc.php" method="post">
-        <input type="text" name="username" placeholder="username">
+        <input required type="text" name="username" placeholder="username">
         <input type="email" name="email" placeholder="email">
         <input type="text" name="firstName" placeholder="First Name">
         <input type="text" name="lastName" placeholder="Last Name">
