@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     try {
 
         //Establishes a data connection from the details in the file.
-        // require_once "dbh.inc.php";
+        require_once "dbh.inc.php";
 
         //Does a query to insert the data into their respective places in the database.
         $query = "INSERT INTO users (username, email, first_name, last_name, pwd) VALUES (?, ?, ?, ?, ?);";

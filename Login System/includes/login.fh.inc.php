@@ -4,23 +4,48 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $usernameOrEmail = htmlspecialchars($_POST["usernameOrEmail"]);
     $pwd = htmlspecialchars($_POST["pwd"]);
 
+
     // Connect to the database
     require_once 'dbh.inc.php';
 
     // Check if the user exists
-    $query = "SELECT * FROM users WHERE email = ? AND pwd = ?;";
+    $query = "SELECT * FROM users WHERE email = ?;";
 
     $stmt = $pdo->prepare($query); 
 
-    $stmt->execute([$usernameOrEmail, $pwd]);
-    $users = $stmt->fetchALL();
+    $stmt->execute([$usernameOrEmail]);
+    $users = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
+    
+
+    // echo $users[0]['pwd'];
+
+    // die();
+
+    // if (password_verify($pwd, $users[0]['pwd'])) {
+    //     echo "The password is a match";
+    // } else {
+    //     echo "The password is not a match";
+    // }
+
+    // die();
+
+
+    // echo "Here is the password: " . $users[0]['pwd'];
+
 
     if (empty($users)) {
         echo "We found No results";
     } elseif (isset($users)) {
         foreach ($users as $user) {
-            echo "User email: ". $user['email'] . "<br>";
-            echo "User Password: ". $user['pwd'] . "<br>";
+            // $loginPwd = $user['pwd'];
+
+
+            // $verfy = password_verify($loginPwd, $pwd);
+
+            // echo "It is: " . $verfy;
+            // echo "User email: ". $user['email'] . "<br>";
+            // echo "User Password: ". $user['pwd'] . "<br>";
         }
     }
 
