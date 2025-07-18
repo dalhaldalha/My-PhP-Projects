@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $usernameOrEmail = htmlspecialchars($_POST["usernameOrEmail"]);
-    $pwd = htmlspecialchars($_POST["pwd"]);
+    $loginPwd = htmlspecialchars($_POST["pwd"]);
 
 
     // Connect to the database
@@ -16,7 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $stmt->execute([$usernameOrEmail]);
     $users = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
-    
+    $hashedPwd = $users[0]['pwd'];
+
+    if (isset($users) && password_verify($loginPwd, $hashedPwd) ) {
+        echo "Welcome User.";
+    } else {
+        echo "You are not a user.";
+    }
 
     // echo $users[0]['pwd'];
 
