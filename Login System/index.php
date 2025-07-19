@@ -37,17 +37,17 @@ require_once 'config.php';
         
         <nav class="nav-menu">
             <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Education <span class="dropdown-arrow">&#8964;</span></a>
-            <a href="#" class="nav-link">Innovation <span class="dropdown-arrow">&#8964;</span></a>
-            <a href="#" class="nav-link">Productivity <span class="dropdown-arrow">&#8964;</span></a>
-            <a href="#" class="nav-link">News <span class="dropdown-arrow">&#8964;</span></a>
+            <a href="#" class="nav-link">Education <span class="dropdown-arrow"><img src="assets/dropdown.png" alt="" style="width:12px;height:12px;"></span></a>
+            <a href="#" class="nav-link">Innovation <span class="dropdown-arrow"><img src="assets/dropdown.png" alt="" style="width:12px;height:12px;"></span></a>
+            <a href="#" class="nav-link">Productivity <span class="dropdown-arrow"><img src="assets/dropdown.png" alt="" style="width:12px;height:12px;"></span></a>
+            <a href="#" class="nav-link">News <span class="dropdown-arrow"><img src="assets/dropdown.png" alt="" style="width:12px;height:12px;"></span></a>
         </nav>
 
         <div class="nav-icons">
-            <button class="icon-btn">👤</button>
-            <button class="icon-btn">🔔</button>
-            <button class="icon-btn">🔍</button>
-            <button class="icon-btn">⋯</button>
+            <button class="icon-btn"> <img src="assets/user.png" alt="" style="width:20px;height:20px;"> </i></button>
+            <button class="icon-btn"> <img src="assets/bell.png" alt="" style="width:20px;height:20px;"> </button>
+            <button class="icon-btn"> <img src="assets/search.png" alt="" style="width:20px;height:20px;"> </button>
+            <button class="icon-btn"> <img src="assets/menu.png" alt="" style="width:20px;height:20px;"></button>
         </div>
     </div>
     </header>

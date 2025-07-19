@@ -41,6 +41,7 @@ body {
 
 /* Tagline */
 .tagline {
+  font-weight: 600;
   font-size: 1.25rem;
   color: #888;
   margin-bottom: 3rem;

@@ -17,10 +17,10 @@
         
         <nav class="nav-menu">
             <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Education <span class="dropdown-arrow">&#8964;</span></a>
-            <a href="#" class="nav-link">Innovation <span class="dropdown-arrow">&#8964;</span></a>
-            <a href="#" class="nav-link">Productivity <span class="dropdown-arrow">&#8964;</span></a>
-            <a href="#" class="nav-link">News <span class="dropdown-arrow">&#8964;</span></a>
+            <a href="#" class="nav-link">Education <span class="dropdown-arrow"><img src="../assets/dropdown.png" alt="" style="width:12px;height:12px;"></span></a>
+            <a href="#" class="nav-link">Innovation <span class="dropdown-arrow"><img src="../assets/dropdown.png" alt="" style="width:12px;height:12px;"></span></a>
+            <a href="#" class="nav-link">Productivity <span class="dropdown-arrow"><img src="../assets/dropdown.png" alt="" style="width:12px;height:12px;"></span></a>
+            <a href="#" class="nav-link">News <span class="dropdown-arrow"><img src="../assets/dropdown.png" alt="" style="width:12px;height:12px;"></span></a>
         </nav>
 
         <div class="nav-icons">
@@ -36,7 +36,7 @@
     <main class="main-content">
         <!-- Logo Icon -->
         <div class="logo-container">
-            <div class="logo-icon">✒️</div>
+            <div><img src="../assets/logo.png" alt="" style="width:6rem;height:6rem;"></div>
         </div>
 
         <!-- Tagline -->

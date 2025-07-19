@@ -56,6 +56,7 @@ body {
 
 .dropdown-arrow {
   font-size: 0.75rem;
+  padding-top: 8px;
   color: #888;
 }
 
