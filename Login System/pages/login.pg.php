@@ -3,15 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/login.css">
     <title>Document</title>
 </head>
 <body>
-    <h2>Login</h2>
-    <p>welcome back</p>
-    <form action="../includes/login.fh.inc.php" method="post">
-        <input type="text" name="usernameOrEmail">
-        <input type="password" name="pwd">
-        <button type="submit">Login</button>
-    </form>
+    <!-- Header -->
+    <header class="header">
+    <div class="container">
+        <div class="nav-brand">
+        <h1>Penprofile</h1>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Education <span class="dropdown-arrow">▼</span></a>
+            <a href="#" class="nav-link">Innovation <span class="dropdown-arrow">▼</span></a>
+            <a href="#" class="nav-link">Productivity <span class="dropdown-arrow">▼</span></a>
+            <a href="#" class="nav-link">News <span class="dropdown-arrow">▼</span></a>
+        </nav>
+
+        <div class="nav-icons">
+            <button class="icon-btn">👤</button>
+            <button class="icon-btn">🔔</button>
+            <button class="icon-btn">🔍</button>
+            <button class="icon-btn">⋯</button>
+        </div>
+    </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Logo Icon -->
+        <div class="logo-container">
+            <div class="logo-icon">✒️</div>
+        </div>
+
+        <!-- Tagline -->
+        <h2 class="tagline">Read . Connect . Write</h2>
+
+        <!-- Login Form -->
+        
+        <form class="login-form" action="../includes/login.fh.inc.php" method="post">
+            <div class="input-group">
+                <input class="form-input" type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group password-group">
+                <input class="form-input" id="password" type="password" name="pwd" placeholder="Password" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="remember" class="checkbox">
+                <label for="remember" class="checkbox-label">Remember Me</label>
+            </div>
+            <button class="login-btn" type="submit">Login</button>
+        </form>
 </body>
 </html>
