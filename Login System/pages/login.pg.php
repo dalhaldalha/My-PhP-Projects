@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/login.css">
     <title>Document</title>
 </head>
@@ -16,17 +17,17 @@
         
         <nav class="nav-menu">
             <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Education <span class="dropdown-arrow">▼</span></a>
-            <a href="#" class="nav-link">Innovation <span class="dropdown-arrow">▼</span></a>
-            <a href="#" class="nav-link">Productivity <span class="dropdown-arrow">▼</span></a>
-            <a href="#" class="nav-link">News <span class="dropdown-arrow">▼</span></a>
+            <a href="#" class="nav-link">Education <span class="dropdown-arrow">&#8964;</span></a>
+            <a href="#" class="nav-link">Innovation <span class="dropdown-arrow">&#8964;</span></a>
+            <a href="#" class="nav-link">Productivity <span class="dropdown-arrow">&#8964;</span></a>
+            <a href="#" class="nav-link">News <span class="dropdown-arrow">&#8964;</span></a>
         </nav>
 
         <div class="nav-icons">
-            <button class="icon-btn">👤</button>
-            <button class="icon-btn">🔔</button>
-            <button class="icon-btn">🔍</button>
-            <button class="icon-btn">⋯</button>
+            <button class="icon-btn"> <img src="../assets/user.png" alt="" style="width:20px;height:20px;"> </i></button>
+            <button class="icon-btn"> <img src="../assets/bell.png" alt="" style="width:20px;height:20px;"> </button>
+            <button class="icon-btn"> <img src="../assets/search.png" alt="" style="width:20px;height:20px;"> </button>
+            <button class="icon-btn"> <img src="../assets/menu.png" alt="" style="width:20px;height:20px;"></button>
         </div>
     </div>
     </header>

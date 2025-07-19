@@ -9,12 +9,13 @@
 //  #c.Passwords should be hashed once created before storing in the database.
 //  #d.Once all fields are created, user should be taken back to Login Page.
 // 3. User should be able to login with either a suername or an email, with a password.
-//   a.If all details match, User should be taken to a welcome screeen.
+//  #a.If all details match, User should be taken to a welcome screeen.
 // Bonus Futers:
 // 1. User Should pass a captcha test before being able to sign up.
 // 2. User should be able to reset their password if they forget it.
 // 3. Sign up fields should be able to securely required.
 require_once 'config.php';
+
 
 ?>
 
@@ -23,9 +24,34 @@ require_once 'config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/header.css">
+    <title>Penprofile</title>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+    <div class="container">
+        <div class="nav-brand">
+        <h1>Penprofile</h1>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Education <span class="dropdown-arrow">&#8964;</span></a>
+            <a href="#" class="nav-link">Innovation <span class="dropdown-arrow">&#8964;</span></a>
+            <a href="#" class="nav-link">Productivity <span class="dropdown-arrow">&#8964;</span></a>
+            <a href="#" class="nav-link">News <span class="dropdown-arrow">&#8964;</span></a>
+        </nav>
+
+        <div class="nav-icons">
+            <button class="icon-btn">👤</button>
+            <button class="icon-btn">🔔</button>
+            <button class="icon-btn">🔍</button>
+            <button class="icon-btn">⋯</button>
+        </div>
+    </div>
+    </header>
+
     <h2>Welcome to Penprofile</h2>
     <p>How would you like to proceed?</p>
 
