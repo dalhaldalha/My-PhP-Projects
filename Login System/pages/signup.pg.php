@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/logo.png" type="image/png">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/signup.css">
     <title>Sign Up</title>
@@ -42,12 +43,23 @@
         <h2>Sign Up</h2>
         <p>Tell us about yourself</p>
         <form class="signup-form" action="../includes/signup.fh.inc.php" method="post">
-            <input required type="text" name="username" placeholder="username">
-            <input required type="email" name="email" placeholder="email">
-            <input type="text" name="firstName" placeholder="First Name">
-            <input type="text" name="lastName" placeholder="Last Name">
-            <input required type="password" name="pwd" placeholder="password">
-            <button type="submit">Sign Up</button>
+            <div class="input-group">
+                <input class="form-input" required type="text" name="username" placeholder="username">
+            </div>
+            <div class="input-group">
+                <input class="form-input" required type="email" name="email" placeholder="email">
+            </div>
+            <div class="input-group">
+                <input class="form-input" type="text" name="firstName" placeholder="First Name">
+            </div>
+            <div class="input-group">
+                <input class="form-input" type="text" name="lastName" placeholder="Last Name">
+            </div>
+            <div class="input-group">
+                <input class="form-input" required type="password" name="pwd" placeholder="password">
+            </div>
+            
+            <button class="signup-btn" type="submit">Sign Up</button>
         </form>
     </main>
 
