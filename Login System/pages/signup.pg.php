@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/signup.css">
     <title>Sign Up</title>
 </head>
 <body>
@@ -36,16 +37,19 @@
     </div>
     </header>
 
-    <h2>Sign Up</h2>
-    <p>Tell us about yourself</p>
-    <form action="../includes/signup.fh.inc.php" method="post">
-        <input required type="text" name="username" placeholder="username">
-        <input required type="email" name="email" placeholder="email">
-        <input type="text" name="firstName" placeholder="First Name">
-        <input type="text" name="lastName" placeholder="Last Name">
-        <input required type="password" name="pwd" placeholder="password">
-        <button type="submit">Sign Up</button>
-    </form>
+    <main class="main-content">
+
+        <h2>Sign Up</h2>
+        <p>Tell us about yourself</p>
+        <form class="signup-form" action="../includes/signup.fh.inc.php" method="post">
+            <input required type="text" name="username" placeholder="username">
+            <input required type="email" name="email" placeholder="email">
+            <input type="text" name="firstName" placeholder="First Name">
+            <input type="text" name="lastName" placeholder="Last Name">
+            <input required type="password" name="pwd" placeholder="password">
+            <button type="submit">Sign Up</button>
+        </form>
+    </main>
 
 </body>
 </html>

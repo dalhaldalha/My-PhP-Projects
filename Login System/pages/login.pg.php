@@ -59,5 +59,6 @@
             </div>
             <button class="login-btn" type="submit">Login</button>
         </form>
+    </main>
 </body>
 </html>
