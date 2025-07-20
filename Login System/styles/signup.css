@@ -22,6 +22,14 @@ body {
     padding: 2rem;
 }
 
+.tagline {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #888;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
 .signup-form {
     width: 100%;
     max-width: 400px;
@@ -74,4 +82,20 @@ body {
 
 .signup-btn:active {
     transform: translateY(1px);
+}
+
+/* Form Footer */
+.form-footer {
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.footer-link {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #2563eb;
 }

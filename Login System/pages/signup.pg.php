@@ -40,14 +40,14 @@
 
     <main class="main-content">
 
-        <h2>Sign Up</h2>
-        <p>Tell us about yourself</p>
+        <h2 class="tagline">Create Account</h2>
+        
         <form class="signup-form" action="../includes/signup.fh.inc.php" method="post">
             <div class="input-group">
-                <input class="form-input" required type="text" name="username" placeholder="username">
+                <input class="form-input" required type="text" name="username" placeholder="Username">
             </div>
             <div class="input-group">
-                <input class="form-input" required type="email" name="email" placeholder="email">
+                <input class="form-input" required type="email" name="email" placeholder="Email Address">
             </div>
             <div class="input-group">
                 <input class="form-input" type="text" name="firstName" placeholder="First Name">
@@ -56,10 +56,14 @@
                 <input class="form-input" type="text" name="lastName" placeholder="Last Name">
             </div>
             <div class="input-group">
-                <input class="form-input" required type="password" name="pwd" placeholder="password">
+                <input class="form-input" required type="password" name="pwd" placeholder="Password">
             </div>
             
             <button class="signup-btn" type="submit">Sign Up</button>
+
+            <div class="form-footer">
+                <a href="login.pg.php" class="footer-link">Have an account? Login</a>
+            </div>
         </form>
     </main>
 

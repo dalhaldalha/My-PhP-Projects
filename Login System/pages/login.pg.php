@@ -58,6 +58,12 @@
                 <label for="remember" class="checkbox-label">Remember Me</label>
             </div>
             <button class="login-btn" type="submit">Login</button>
+
+            <div class="form-footer">
+                <a href="signup.pg.php" class="footer-link">Register</a>
+                <span class="separator">|</span>
+                <a href="#" class="footer-link">Lost your password?</a>
+            </div>
         </form>
     </main>
 </body>
