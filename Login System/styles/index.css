@@ -28,9 +28,19 @@ body {
     
 }
 
+.header-txt {
+    font-size: 2.5rem;
+}
+
+.sub-txt {
+    color: #6b7280;
+}
+
 
 .form {
     display: flex;
+    padding-right: 1rem;
+    padding-left: 1rem;
     gap: 0.5rem;
 }
 

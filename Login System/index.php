@@ -54,9 +54,9 @@ require_once 'config.php';
     </header>
 
     <main class="main-content">
-        <div>
-            <h2>Welcome to Penprofile</h2>
-            <p>How would you like to proceed?</p>
+        <div class="welcome-container">
+            <h2 class="header-txt">Welcome to Penprofile</h2>
+            <p class="sub-txt">How would you like to proceed?</p>
         </div>
         
 
