@@ -1,6 +1,6 @@
 <?php
 
-require_once "require_once";
+require_once "../config.php";
 
 ?>
 
@@ -37,7 +37,10 @@ require_once "require_once";
         </div>
     </div>
     </header>
-
-    <p>hi</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2 class="hi-mg">Hi, <?php echo $_SESSION['user']; ?>!</h2>
+        <p>Welcome back to your profile. How would you like to proceed with your session.</p>
+    </main>
 </body>
 </html>

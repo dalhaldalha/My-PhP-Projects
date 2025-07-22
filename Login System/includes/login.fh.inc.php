@@ -21,7 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hashedPwd = $users[0]['pwd'];
 
     if (isset($users) && password_verify($loginPwd, $hashedPwd) ) {
+        $usersName = $users[0]['first_name'];
+        $_SESSION['user'] = $usersName;
         header("Location: ../pages/welcome.pg.php");
+
         
     } else {
         echo "You are not a user.";
