@@ -1,5 +1,7 @@
 <?php
 
+require_once "../config.php";
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = htmlspecialchars($_POST["email"]);
     $loginPwd = htmlspecialchars($_POST["pwd"]);
@@ -19,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hashedPwd = $users[0]['pwd'];
 
     if (isset($users) && password_verify($loginPwd, $hashedPwd) ) {
-        echo "Welcome User.";
+        header("Location: ../pages/welcome.pg.php");
+        
     } else {
         echo "You are not a user.";
         header("Location: ../pages/login.pg.php");

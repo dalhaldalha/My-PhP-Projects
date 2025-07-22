@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/login.css">
-    <title>Document</title>
+    <title>User</title>
 </head>
 <body>
     <!-- Header -->
@@ -31,40 +30,7 @@
         </div>
     </div>
     </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Logo Icon -->
-        <div class="logo-container">
-            <div><img src="../assets/logo.png" alt="" style="width:6rem;height:6rem;"></div>
-        </div>
-
-        <!-- Tagline -->
-        <h2 class="tagline">Read . Connect . Write</h2>
-
-        <!-- Login Form -->
-        
-        <form class="login-form" action="../includes/login.fh.inc.php" method="post">
-            <div class="input-group">
-                <input class="form-input" type="email" name="email" placeholder="Email" required>
-            </div>
-
-            <div class="input-group password-group">
-                <input class="form-input" id="password" type="password" name="pwd" placeholder="Password" required>
-            </div>
-
-            <div class="checkbox-group">
-                <input type="checkbox" id="remember" class="checkbox">
-                <label for="remember" class="checkbox-label">Remember Me</label>
-            </div>
-            <button class="login-btn" type="submit">Login</button>
-
-            <div class="form-footer">
-                <a href="signup.pg.php" class="footer-link">Register</a>
-                <span class="separator">|</span>
-                <a href="#" class="footer-link">Lost your password?</a>
-            </div>
-        </form>
-    </main>
+    
+    <p>hi</p>
 </body>
 </html>

@@ -18,7 +18,7 @@
     <header class="header">
     <div class="container">
         <div class="nav-brand">
-        <h1>Penprofile</h1>
+        <a href="../index.php" class="site-txt">Penprofile</a>
         </div>
         
         <nav class="nav-menu">

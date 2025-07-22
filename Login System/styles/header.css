@@ -19,6 +19,13 @@ body {
     padding: 1rem 0;
 }
 
+.site-txt {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

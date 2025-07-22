@@ -99,3 +99,22 @@ body {
 .footer-link:hover {
     color: #2563eb;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .signup-form {
+        max-width: 320px;
+    }
+}

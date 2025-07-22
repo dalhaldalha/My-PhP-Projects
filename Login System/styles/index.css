@@ -65,3 +65,22 @@ body {
 .signup-btn:active {
     transform: translateY(1px);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .choice-form {
+        max-width: 320px;
+    }
+}
