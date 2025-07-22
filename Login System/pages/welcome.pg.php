@@ -9,6 +9,7 @@ require_once "../config.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/logo.png" type="image/png">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/welcome.css">
     <title>User</title>
@@ -43,7 +44,7 @@ require_once "../config.php";
             <h2 class="hi-mg">Hi, <span class="user-name"><?php echo $_SESSION['user']; ?>!</span></h2>
         <p class="welcome-mg">Welcome back to your profile. How would you like to proceed with your session.</p>
         </div>
-        <button class="proceed-btn">Proceed</button>
+        <a href="../index.php" class="proceed-btn">Proceed</a>
     </main>
 </body>
 </html>

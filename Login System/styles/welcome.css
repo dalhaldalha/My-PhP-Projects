@@ -54,6 +54,8 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+
 }
 
 .proceed-btn:hover {
