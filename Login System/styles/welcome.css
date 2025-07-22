@@ -21,7 +21,47 @@ body {
     min-height: calc(100vh - 80px);
     padding: 2rem;
     text-align: center;
-    
+
+}
+
+.txt-div {
+    padding-bottom: 1rem;
+}
+
+.hi-mg {
+    font-size: 3rem;
+}
+
+.user-name {
+    color: #2563eb;
+}
+
+.welcome-mg {
+    color: #6b7280;
+    max-width: 24rem;
+    line-height: 1;
+}
+
+/* Proceed Button */
+.proceed-btn {
+  width: 12rem;
+  padding: 0.875rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.proceed-btn:hover {
+  background: #1d4ed8;
+}
+
+.proceed-btn:active {
+  transform: translateY(1px);
 }
 
 

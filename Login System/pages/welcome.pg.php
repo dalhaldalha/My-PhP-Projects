@@ -39,8 +39,11 @@ require_once "../config.php";
     </header>
     <!-- Main Content -->
     <main class="main-content">
-        <h2 class="hi-mg">Hi, <?php echo $_SESSION['user']; ?>!</h2>
-        <p>Welcome back to your profile. How would you like to proceed with your session.</p>
+        <div class="txt-div">
+            <h2 class="hi-mg">Hi, <span class="user-name"><?php echo $_SESSION['user']; ?>!</span></h2>
+        <p class="welcome-mg">Welcome back to your profile. How would you like to proceed with your session.</p>
+        </div>
+        <button class="proceed-btn">Proceed</button>
     </main>
 </body>
 </html>
