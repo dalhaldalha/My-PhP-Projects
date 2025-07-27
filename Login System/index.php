@@ -14,7 +14,6 @@
 // 1. User Should pass a captcha test before being able to sign up.
 // 2. User should be able to reset their password if they forget it.
 // 3. Sign up fields should be able to securely required.
-require_once 'config.php';
 
 
 ?>

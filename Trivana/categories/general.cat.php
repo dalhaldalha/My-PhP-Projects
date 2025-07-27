@@ -5,11 +5,11 @@ session_start(); //Starts session
         require_once "../includes/dbh.inc.php"; // Links to the codes in the database connection page.
 
         //First Query
-        $query = "SELECT name FROM categories WHERE name = :category;"; // Does a SQL query to SELECT a category inside the database categories.
-        $stmt = $pdo->prepare($query); //This line is responsible for sumbiting the query into the database.
-        $stmt->bindParam(":category", $_SESSION["category"]); //Binds the user category to the database "categories
-        $stmt->execute(); // This line Final excutes the Query.
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        // $query = "SELECT name FROM categories WHERE name = :category;"; // Does a SQL query to SELECT a category inside the database categories.
+        // $stmt = $pdo->prepare($query); //This line is responsible for sumbiting the query into the database.
+        // $stmt->bindParam(":category", $_SESSION["category"]); //Binds the user category to the database "categories
+        // $stmt->execute(); // This line Final excutes the Query.
+        // $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
         //Second Query
         $query2 = "SELECT * FROM questions;";
@@ -47,9 +47,18 @@ session_start(); //Starts session
     <title>General Knowledge</title>
 </head>
 <body>
-    <p>Hi, <?php echo isset($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : "User"; ?></p> <br>
+    <p>Hi, User</p> <br>
     <section class="container">
-        <?php for ($i = -1; $i < $_SESSION['currentQuestionIndex']; $i ++): ?>
+        <h2 class="heading-txt">General Knowledge</h2>
+        <p class="question-p"><?php echo $results2[0]["question_text"]; ?></p>
+        <form action="" method="post" class="options-container">
+            <button type="submit" class="option_1 options" name="answer" value="A"><?php echo $results2[0]['A']; ?></button>
+            <button type="submit" class="option_2 options" name="answer" value="B"> <?php echo $results2[0]['B']; ?></button>
+            <button type="submit" class="option_3 options" name="answer" value="C"> <?php echo $results2[0]['C']; ?></button>
+            <button type="submit" class="option_4 options" name="answer" value="D"> <?php echo $results2[0]['D']; ?></button>
+        </form>
+
+        <!-- <?php for ($i = 0; $i < $_SESSION['currentQuestionIndex']; $i ++): ?>
             
             <h2 class="heading-txt"><?php echo htmlspecialchars($results["name"]); ?></h2>
             <p class="question-p"><?php echo $results2[$i]["question_text"]; ?></p>
@@ -86,7 +95,7 @@ session_start(); //Starts session
             
 
             
-        <?php endfor; ?>
+        <?php endfor; ?> -->
     </section>
 
     <?php 
