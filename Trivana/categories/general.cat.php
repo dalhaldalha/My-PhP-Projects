@@ -4,18 +4,10 @@ session_start(); //Starts session
     try { 
         require_once "../includes/dbh.inc.php"; // Links to the codes in the database connection page.
 
-        //First Query
-        // $query = "SELECT name FROM categories WHERE name = :category;"; // Does a SQL query to SELECT a category inside the database categories.
-        // $stmt = $pdo->prepare($query); //This line is responsible for sumbiting the query into the database.
-        // $stmt->bindParam(":category", $_SESSION["category"]); //Binds the user category to the database "categories
-        // $stmt->execute(); // This line Final excutes the Query.
-        // $results = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        //Second Query
-        $query2 = "SELECT * FROM questions;";
-        $stmt2 = $pdo->prepare($query2);
-        $stmt2->execute();
-        $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        $query = "SELECT * FROM questions;"; //Does an SQL query to select all from the questions table.
+        $stmt = $pdo->prepare($query); //This line is responsible for sumbiting the query into the database.
+        $stmt->execute(); // This line Finally excutes the Query.
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC); //This line fetches ALl the results
 
         //Resets all values to null
         $pdo = null;
@@ -28,7 +20,7 @@ session_start(); //Starts session
     }
 
     // $currentQuestionIndex = 0;
-    $numberOfQuestions = count($results2);
+    $numberOfQuestions = count($results);
     $_SESSION['score'] = 0;
     $userAnswer = $_POST["answer"] ?? null;
 
@@ -50,13 +42,42 @@ session_start(); //Starts session
     <p>Hi, User</p> <br>
     <section class="container">
         <h2 class="heading-txt">General Knowledge</h2>
-        <p class="question-p"><?php echo $results2[0]["question_text"]; ?></p>
-        <form action="" method="post" class="options-container">
-            <button type="submit" class="option_1 options" name="answer" value="A"><?php echo $results2[0]['A']; ?></button>
-            <button type="submit" class="option_2 options" name="answer" value="B"> <?php echo $results2[0]['B']; ?></button>
-            <button type="submit" class="option_3 options" name="answer" value="C"> <?php echo $results2[0]['C']; ?></button>
-            <button type="submit" class="option_4 options" name="answer" value="D"> <?php echo $results2[0]['D']; ?></button>
+        
+        <?php for ($i = 0; $i < $_SESSION['currentQuestionIndex']; $i++): ?>
+        <p class="question-p"><?php echo $results[0]["question_text"]; ?></p>
+
+        <form action="" method="post">
+            <button type="submit" name="option" value="A">A</button>
+            <button type="sumbit" name="option" value="B">B</button>
+            <button type="sumbit" name="option" value="C">C</button>
+            <button type="sumbit" name="option" value="D">D</button>
         </form>
+
+        <?php
+            if ($_SERVER['REQUEST_METHOD']= "POST") {
+                $option = $_POST["option"] ?? null;
+                $correctAnswer = "D";
+
+                echo "You selected option: " . $option . "<br>";
+                if ($option === $correctAnswer) {
+                    echo "Correct Answer!";
+
+                    
+                } else {
+                    echo "Wrong Answer!";
+                }
+
+            } else {
+                header("Location: ../categories/general.cat.php");
+            }
+
+
+
+        ?>
+
+
+        <?php endfor; ?>
+        
 
         <!-- <?php for ($i = 0; $i < $_SESSION['currentQuestionIndex']; $i ++): ?>
             
