@@ -48,12 +48,9 @@ session_start(); //Starts session
 
         <form action="" method="post">
             <button type="submit" name="option" value="A">A</button>
-            <button type="sumbit" name="option" value="B">B</button>
-            <button type="sumbit" name="option" value="C">C</button>
-            <button type="sumbit" name="option" value="D">D</button>
-        </form>
-
-        <form action="" method="post">
+            <button type="submit" name="option" value="B">B</button>
+            <button type="submit" name="option" value="C">C</button>
+            <button type="submit" name="option" value="D">D</button>
             <button type="submit" name="step" value="P">Previous</button>
             <button type="submit" name="step" value="N">Next</button>
         </form>
@@ -66,8 +63,10 @@ session_start(); //Starts session
                 $correctAnswer = "D";
 
                 if ($userStep === "N") {
-                    $i = $i++;
-                    echo  $results[$i]['question_text'];
+                    echo  $results[$_SESSION['currentQuestionIndex']]['question_text'];
+
+                    $_SESSION['currentQuestionIndex'] ++;
+
                 }
 
                 echo "You selected option: " . $usersOption . "<br>";
