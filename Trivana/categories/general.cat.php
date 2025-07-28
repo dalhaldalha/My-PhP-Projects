@@ -27,8 +27,11 @@
 
     if (!isset($_SESSION['currentQuestionIndex'])) {
         $_SESSION['currentQuestionIndex'] = 0;
-    } else if ($_SESSION['currentQuestionIndex'] > $numberOfQuestions) {
-        $_SESSION['currentQuestionIndex'] = 0;
+    } else if ($_SESSION['currentQuestionIndex'] >= $numberOfQuestions) {
+
+        echo "You have reached the end of the questions. Please restart.";
+        
+        
     } 
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
