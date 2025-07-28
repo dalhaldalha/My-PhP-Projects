@@ -44,7 +44,7 @@ session_start(); //Starts session
         <h2 class="heading-txt">General Knowledge</h2>
         
         <?php for ($i = 0; $i < $_SESSION['currentQuestionIndex']; $i++): ?>
-        <p class="question-p"><?php echo $results[0]["question_text"]; ?></p>
+        <p class="question-p"><?php echo $results[$i]["question_text"]; ?></p>
 
         <form action="" method="post">
             <button type="submit" name="option" value="A">A</button>
@@ -53,16 +53,28 @@ session_start(); //Starts session
             <button type="sumbit" name="option" value="D">D</button>
         </form>
 
+        <form action="" method="post">
+            <button type="submit" name="step" value="P">Previous</button>
+            <button type="submit" name="step" value="N">Next</button>
+        </form>
+
         <?php
             if ($_SERVER['REQUEST_METHOD']= "POST") {
-                $option = $_POST["option"] ?? null;
+                $usersOption = $_POST["option"] ?? null;
+                $userStep  = $_POST["step"] ?? null;
+                
                 $correctAnswer = "D";
 
-                echo "You selected option: " . $option . "<br>";
-                if ($option === $correctAnswer) {
-                    echo "Correct Answer!";
+                if ($userStep === "N") {
+                    $i = $i++;
+                    echo  $results[$i]['question_text'];
+                }
 
-                    
+                echo "You selected option: " . $usersOption . "<br>";
+                if ($usersOption === $correctAnswer) {
+                    echo "Correct Answer!" . $userStep;
+
+                    // $_SESSION['currentQuestionIndex'] ++;
                 } else {
                     echo "Wrong Answer!";
                 }
@@ -72,7 +84,7 @@ session_start(); //Starts session
             }
 
 
-
+            
         ?>
 
 
