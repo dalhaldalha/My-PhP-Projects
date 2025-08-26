@@ -8,7 +8,7 @@
 <body>
     <h1>To Do List</h1>
     <form action="includes/formhandler.inc.php" method="post">
-        <input type="text" name="task" placeholder="Write a new task" required>
+        <input type="text" name="newTask" placeholder="Write a new task" required>
         <button type="submit">Add Task</button>
     </form>
 
