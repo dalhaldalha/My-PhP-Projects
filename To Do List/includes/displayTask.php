@@ -1,6 +1,6 @@
 <?php
 
-require_once "../config/database.php";
+require_once "config/database.php";
 
 $query = "SELECT * FROM tasks ORDER BY created_at DESC;";
 $stmt = $pdo->prepare($query);
