@@ -19,8 +19,9 @@
 
     <div>
         <?php foreach ($tasks as $task): ?>
-            <form action="" method="post">
+            <form action="includes/deleteTask.php" method="post">
                 <label><?php echo htmlspecialchars($task['task']); ?></label>
+                <input type="checkbox" name="" id="">
                 <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
                 <button type="submit" name="delete">Delete</button>
             </form>
