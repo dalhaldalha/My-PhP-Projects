@@ -29,6 +29,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
     <title>Document</title>
 </head>
 <body>
@@ -61,20 +62,23 @@
 
     <div>
         <h2>All Tasks</h2>
-        <?php foreach ($tasks as $task): ?>
-            <form action="includes/deleteTask.php" method="post">
-                <label><?php echo htmlspecialchars($task['task']); ?></label>
-                <input type="checkbox" name="" id="">
-                <select name="priority" id="">
-                    <option value="">High</option>
-                    <option value="">Medium</option>
-                    <option value="">Low</option>
-                </select>
-                
-                <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
-                <button type="submit" name="delete">Delete</button>
-            </form>
-        <?php endforeach; ?>
+        <div class="form-div">
+            <?php foreach ($tasks as $task): ?>
+                <form class="form" action="includes/deleteTask.php" method="post">
+                    <label><?php echo htmlspecialchars($task['task']); ?></label>
+                    <input type="checkbox" name="" id="">
+                    <select name="priority" id="">
+                        <option value="">High</option>
+                        <option value="">Medium</option>
+                        <option value="">Low</option>
+                    </select>
+                    
+                    <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
+                    <button type="submit" name="delete">Delete</button>
+                </form>
+            <?php endforeach; ?>
+        </div>
+        
     </div>
 
     <script>
