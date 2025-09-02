@@ -3,27 +3,16 @@
     // Mark tasks as completed
         // Add a checkbox/button to mark a task as done.
         // Show completed tasks with a different style (e.g., strikethrough).
-
-    // Edit tasks
-        // Allow users to update the text of a task.
     
-    // Task due dates
-        // Let users set a due date for each task.
-        // Highlight overdue tasks.
 
     // Task priorities
         // Add a priority level (e.g., High, Medium, Low) and sort tasks by priority.
     
-    // Task categories or tags
-    // Organize tasks by category (e.g., Work, Personal) or add tags.
     // Search and filter
 
     // Add a search bar to find tasks.
     // Filter tasks by status, priority, or category.
     // User authentication
-
-    // Allow multiple users to have their own task lists.
-    // Persistent completion status
 
     // Store whether a task is completed in the database.
     // Task count and progress bar
@@ -55,10 +44,33 @@
             <form action="includes/deleteTask.php" method="post">
                 <label><?php echo htmlspecialchars($task['task']); ?></label>
                 <input type="checkbox" name="" id="">
+                <select name="priority" id="">
+                    <option value="">High</option>
+                    <option value="">Medium</option>
+                    <option value="">Low</option>
+                </select>
+                
                 <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
                 <button type="submit" name="delete">Delete</button>
             </form>
         <?php endforeach; ?>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // Select all checkboxes inside your task forms
+        document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                // Find the label in the same form as the checkbox
+                const label = this.closest('form').querySelector('label');
+                if (this.checked) {
+                    label.style.textDecoration = "line-through";
+                } else {
+                    label.style.textDecoration = "none";
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
