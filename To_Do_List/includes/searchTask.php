@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $pdo = null;
     $stmt = null;
+    header("Location: ../index.php");
 
     exit();
 
