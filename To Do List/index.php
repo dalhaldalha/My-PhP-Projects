@@ -39,7 +39,7 @@
         <button type="submit">Add Task</button>
     </form>
 
-    <form action="includes/searchTask.php" method="post">
+    <form action="" method="post">
         <input type="text" name="searchTerm">
         <button type="submit" >Search</button>
     </form>
@@ -52,6 +52,10 @@
             echo "No Results";
         } else {
 
+            var_dump($results);
+            // foreach ($results as $result) {
+            //     echo htmlspecialchars($result["task"] . "<br>");
+            // }
         }
     ?>
 

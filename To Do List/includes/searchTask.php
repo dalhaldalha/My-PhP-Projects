@@ -1,10 +1,11 @@
 <?php
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $searchTerm = $_POST['search'] ?? NULL;
 
-    require_once "../config/database.php";
+    require_once "config/database.php";
 
     $query = "SELECT * FROM tasks WHERE task = :searchterm;";
     $stmt = $pdo->prepare($query);
@@ -15,10 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $pdo = null;
     $stmt = null;
-    header("Location: ../index.php");
-
-    exit();
+    // header("Location: /index.php");
 
 } else {
-    header("Location: ../index.php");
+    // header("Location: /index.php");
 }
