@@ -33,13 +33,30 @@
 </head>
 <body>
     <h1>To Do List</h1>
-    <form action="includes/formhandler.inc.php" method="post">
+    <form action="includes/addTask.php" method="post">
         <input type="text" name="newTask" placeholder="Write a new task" required>
         
         <button type="submit">Add Task</button>
     </form>
 
+    <form action="includes/searchTask.php" method="post">
+        <input type="text" name="searchTerm">
+        <button type="submit" >Search</button>
+    </form>
+
+    <h2>Search Results</h2>
+    <?php
+        require_once "includes/searchTask.php";
+
+        if (empty($results)) {
+            echo "No Results";
+        } else {
+
+        }
+    ?>
+
     <div>
+        <h2>All Tasks</h2>
         <?php foreach ($tasks as $task): ?>
             <form action="includes/deleteTask.php" method="post">
                 <label><?php echo htmlspecialchars($task['task']); ?></label>
