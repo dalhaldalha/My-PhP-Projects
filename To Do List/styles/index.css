@@ -12,3 +12,22 @@ body {
     border-radius: 0.5rem;
     gap: 1rem;
 }
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    font-size: 1rem;
+}
+
+.delete-btn:hover {
+    background: hsl(0, 84%, 60%, 0.1);
+}
+
+.trash-can-icon {
+    width: 1rem;
+    height: 1rem;
+}

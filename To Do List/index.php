@@ -65,16 +65,16 @@
         <div class="form-div">
             <?php foreach ($tasks as $task): ?>
                 <form class="form" action="includes/deleteTask.php" method="post">
-                    <label><?php echo htmlspecialchars($task['task']); ?></label>
                     <input type="checkbox" name="" id="">
-                    <select name="priority" id="">
+                    <label><?php echo htmlspecialchars($task['task']); ?></label>
+                    <!-- <select name="priority" id="">
                         <option value="">High</option>
                         <option value="">Medium</option>
                         <option value="">Low</option>
-                    </select>
+                    </select> -->
                     
                     <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
-                    <button type="submit" name="delete">Delete</button>
+                    <button class="delete-btn" type="submit" name="delete"> <img class="trash-can-icon" src="assets/trash-can.png" alt="Trash-Can"> </button>
                 </form>
             <?php endforeach; ?>
         </div>
