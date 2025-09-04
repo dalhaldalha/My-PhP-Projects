@@ -79,8 +79,11 @@
                     </form>
                 <?php endforeach; ?>
             </div>
-            
         </div>
+
+        <form action="includes/exportTask.php" method="post">
+            <button type="submit">Export Tasks</button>
+        </form>
     </div>
 
     <script>
