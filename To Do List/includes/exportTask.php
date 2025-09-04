@@ -1,4 +1,6 @@
 <?php
+// Add a Header called "My Tasks to the txt file
+// Add bullet points to each task in the txt file
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -15,16 +17,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //     $taskfile = fopen("mytasks.txt", "w");
     // }
     // Create a file and write dummy text to it
-    $taskfile = fopen("mytasks.txt", "w");
-    $dummytext = "This is a dummy text to test file writing.";
-    fwrite($taskfile, $dummytext);
-    fwrite($taskfile, "\n Total Tasks: " . $totalTasks . "\n");
-    fclose($taskfile);
+    // $taskfile = fopen("mytasks.txt", "w");
+    // $dummytext = "This is a dummy text to test file writing.";
+    // fwrite($taskfile, $dummytext);
+    // fwrite($taskfile, "\n Total Tasks: " . $totalTasks . "\n");
+    // fclose($taskfile);
     
     $i = 0;
     while ($i < $totalTasks) {
-        $tasktContent = $tasks[$i]['task'];
-        $taskfile = fopen("mytasks.txt", )
+        $taskContent = $tasks[$i]['task'];
+        $taskfile = fopen("mytasks.txt", "a");
+        fwrite($taskfile, $taskContent . "\n");
+        fclose($taskfile);
+        $i++;
     }
 
     // Set up headers to prompt file download

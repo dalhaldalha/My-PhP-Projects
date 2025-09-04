@@ -1,2 +1,7 @@
-This is a dummy text to test file writing.
- Total Tasks: 6
+Go to park
+Eat out
+Go to bed
+COunt
+Park practive
+Go to work
+Go to park
