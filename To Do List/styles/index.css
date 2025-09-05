@@ -80,6 +80,7 @@ body {
     background: hsl(0, 0%, 98%);
     border-radius: 8px;
     transition: background-color 0.2s;
+    gap: 0.5rem;
 }
 
 .each-task:hover {
@@ -90,7 +91,7 @@ body {
     width: 20px;
     height: 20px;
     border: 2px solid hsl(0, 0%, 80%);
-    border-radius: 4px;
+    border-radius: 3rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -98,6 +99,7 @@ body {
     font-size: 12px;
     color: white;
     transition: all 0.2s;
+    accent-color: hsl(272, 81%, 47%);
 }
 
 .task-content {
@@ -122,8 +124,12 @@ body {
 }
 
 .trash-can-icon {
-    width: 1rem;
-    height: 1rem;
+    fill: hsl(272, 81%, 47%);
+
+}
+
+.trash-can-icon:hover {
+    fill: white;
 }
 
 /*--------------------EXPORT TASK SECTION----------------------------*/

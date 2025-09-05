@@ -23,9 +23,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // fwrite($taskfile, "\n Total Tasks: " . $totalTasks . "\n");
     // fclose($taskfile);
     
+
+    // Check if checkbox is checked
+    // if the checkbox is checked, the statues of the task Should be done
+    // if the checkbox is not checked, the status of the task should be not done
+    // 1 = done, 0 = not done
+
+    $checkbox = $_POST["checkbox"];
+    if (isset($checkbox)) {
+        $checkboxValue = "Done"; //True
+    } else {
+        $checkboxValue = "Done"; //False
+    }
     
     // Adds a header to the file before we add the tasks.
-    $headertxt = "<strong>My Tasks</strong>\n\n";
+    $headertxt = "My Tasks\n\n";
     $taskfile = fopen("mytasks.txt", "w");
     fwrite($taskfile, $headertxt);
     fclose($taskfile);
@@ -37,7 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $points = " - ";
         fwrite($taskfile, $points);
         $taskContent = $tasks[$i]['task'];
-        fwrite($taskfile, $taskContent . "\n");
+        fwrite($taskfile, $taskContent);
+        $status = "Status: " . $checkboxValue . "\n";
+        fwrite($taskfile, $status); 
         fclose($taskfile);
         $i++;
     }
