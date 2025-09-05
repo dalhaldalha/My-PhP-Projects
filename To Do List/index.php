@@ -41,29 +41,9 @@
             <button class="add-task-btn" type="submit">&#43;</button>
         </form>
 
-        <!-- <form action="" method="post">
-            <input type="text" name="searchTerm">
-            <button type="submit" >Search</button>
-        </form> -->
-
-        <!-- <h2>Search Results</h2> -->
-        <!-- <?php
-            // require_once "includes/searchTask.php";
-
-            // if (empty($results)) {
-            //     echo "No Results";
-            // } else {
-
-            //     var_dump($results);
-            //     // foreach ($results as $result) {
-            //     //     echo htmlspecialchars($result["task"] . "<br>");
-            //     // }
-            // }
-        ?> -->
-
         <div class="all-task-div, task-list">
             <h2>All Tasks</h2>
-            <div class="form-di">
+            <div class="form-div">
                 <?php foreach ($tasks as $task): ?>
                     <form class="each-task" action="includes/deleteTask.php" method="post">
                         <input class="checkbox" type="checkbox" name="" id="">
@@ -75,14 +55,14 @@
                         </select> -->
                         
                         <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
-                        <button class="delete-btn" type="submit" name="delete"> <img class="trash-can-icon" src="assets/trash-can.png" alt="Trash-Can"> </button>
+                        <button class="delete-btn" type="submit" name="delete"> <img class="trash-can-icon" src="assets/trash.svg" alt="Trash-Can"> </button>
                     </form>
                 <?php endforeach; ?>
             </div>
         </div>
 
         <form action="includes/exportTask.php" method="post">
-            <button type="submit">Export Tasks</button>
+            <button class="export-btn" type="submit">Export Tasks</button>
         </form>
     </div>
 

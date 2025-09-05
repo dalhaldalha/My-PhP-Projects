@@ -7,10 +7,13 @@ body {
 }
 
 .task-div {
+    display: flex;
+    flex-direction: column;
     background: white;
     border-radius: 12px;
     padding: 24px;
     box-shadow: 0 10px 30px -5px hsl(272, 81%, 47%, 0.2);
+    gap: 1.5rem;
 }
 
 /*--------------------ADD TASK SECTION----------------------------*/
@@ -55,7 +58,6 @@ body {
 .form-div {
     display: flex;
     flex-direction: column;
-    border: 0.2rem solid black;
     border-radius: 0.5rem;
     gap: 1rem;
 }
@@ -67,7 +69,6 @@ body {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
 }
 
 
@@ -117,10 +118,29 @@ body {
 }
 
 .delete-btn:hover {
-    background: hsl(0, 84%, 60%, 0.1);
+    background: hsl(272, 81%, 47%);
 }
 
 .trash-can-icon {
     width: 1rem;
     height: 1rem;
+}
+
+/*--------------------EXPORT TASK SECTION----------------------------*/
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 44px; */
+    height: 44px;
+    background: hsl(272, 81%, 47%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    /* font-size: 20px; */
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 0rem 1rem;
+    
 }
