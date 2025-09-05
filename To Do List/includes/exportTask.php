@@ -23,15 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // fwrite($taskfile, "\n Total Tasks: " . $totalTasks . "\n");
     // fclose($taskfile);
     
-    $i = 0;
-
-    $headertxt = "My Tasks\n\n";
+    
+    // Adds a header to the file before we add the tasks.
+    $headertxt = "<strong>My Tasks</strong>\n\n";
     $taskfile = fopen("mytasks.txt", "w");
     fwrite($taskfile, $headertxt);
     fclose($taskfile);
+
+    $i = 0;
     while ($i < $totalTasks) {
-        $taskContent = $tasks[$i]['task'];
+
         $taskfile = fopen("mytasks.txt", "a");
+        $points = " - ";
+        fwrite($taskfile, $points);
+        $taskContent = $tasks[$i]['task'];
         fwrite($taskfile, $taskContent . "\n");
         fclose($taskfile);
         $i++;
