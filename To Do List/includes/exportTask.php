@@ -24,6 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // fclose($taskfile);
     
     $i = 0;
+
+    $headertxt = "My Tasks\n\n";
+    $taskfile = fopen("mytasks.txt", "w");
+    fwrite($taskfile, $headertxt);
+    fclose($taskfile);
     while ($i < $totalTasks) {
         $taskContent = $tasks[$i]['task'];
         $taskfile = fopen("mytasks.txt", "a");
