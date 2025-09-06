@@ -1,6 +1,11 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    require_once "session.config.php";
+
+    $_SESSION["checkbox"] = $_POST["checkbox"];
+
     $taskId = $_POST['task_id'] ?? NULL;
 
     require_once "../config/database.php";

@@ -22,6 +22,7 @@
 
     // Add a confirmation dialog before deleting a task.
     require_once "includes/displayTask.php";
+    require_once "includes/session.config.php";
 ?>
 
 <!DOCTYPE html>

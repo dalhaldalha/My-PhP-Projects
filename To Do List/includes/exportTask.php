@@ -1,8 +1,11 @@
 <?php
-// Add a Header called "My Tasks to the txt file
-// Add bullet points to each task in the txt file
+// I want to add a way me to check if a checkbox is checked without having to sumbit it to the deleteTask file.
+// This is so that i can manage the state of the checkbox and add it to my export for each task as Done or Incomplete.
+// If the checkbox is checked, the status of the task should be Done.
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    require_once "session.config.php";
 
     // Database Query to fetch all tasks
     require_once "../config/database.php";
@@ -29,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // if the checkbox is not checked, the status of the task should be not done
     // 1 = done, 0 = not done
 
-    $checkbox = $_POST["checkbox"];
-    if (isset($checkbox)) {
-        $checkboxValue = "Done"; //True
+    
+    if (!isset($_SESSION["checkbox"])) {
+        $checkboxValue = "Not Done"; 
     } else {
-        $checkboxValue = "Done"; //False
-    }
+        $checkboxValue = "Done"; 
+    } 
     
     // Adds a header to the file before we add the tasks.
     $headertxt = "My Tasks\n\n";
