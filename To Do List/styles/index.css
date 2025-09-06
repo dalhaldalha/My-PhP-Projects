@@ -71,8 +71,15 @@ body {
     flex-direction: column;
 }
 
+.end-to-end {
+    display: flex;
+    gap: 0.4rem;
+}
+
 
 .each-task {
+    color: grey;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,7 +87,7 @@ body {
     background: hsl(0, 0%, 98%);
     border-radius: 8px;
     transition: background-color 0.2s;
-    gap: 0.5rem;
+    gap: 3rem;
 }
 
 .each-task:hover {
@@ -116,8 +123,8 @@ body {
     border: solid 0.1rem;
     border-radius: 0.5rem;
     height: 2rem;
-    color: white;
-    background-color: hsl(272, 81%, 47%);
+    color: hsl(272, 81%, 47%);
+    background-color: white;
     border-color: hsl(272, 81%, 47%);
     padding: 0rem 0.5rem;
 }
@@ -154,6 +161,15 @@ body {
     fill: white;
 }
 
+
+.task-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
 /*--------------------EXPORT TASK SECTION----------------------------*/
 
 .export-btn {
@@ -171,4 +187,10 @@ body {
     transition: background-color 0.2s;
     padding: 0rem 1rem;
     
+}
+
+/*--------------------LOAD MORE TASKS SECTION----------------------------*/
+.load-more {
+    color: hsl(272, 81%, 47%);
+    text-decoration: underline;
 }

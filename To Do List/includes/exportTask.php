@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         fwrite($taskfile, $points);
         $taskContent = $tasks[$i]['task'];
         fwrite($taskfile, $taskContent);
-        $status = "Status: " . $checkboxValue . "\n";
+        $status = "     Status: " . $checkboxValue . "\n";
         fwrite($taskfile, $status); 
         fclose($taskfile);
         $i++;

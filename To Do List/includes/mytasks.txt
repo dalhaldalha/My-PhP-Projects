@@ -1,5 +1,5 @@
 My Tasks
 
- - ExportStatus: Not Done
- - Go to schoolStatus: Not Done
- - Go to parkStatus: Not Done
+ - GO to work     Status: Not Done
+ - Go to school     Status: Not Done
+ - Go to park     Status: Not Done
