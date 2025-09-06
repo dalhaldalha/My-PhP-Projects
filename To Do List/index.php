@@ -46,17 +46,16 @@
             <h2>All Tasks</h2>
             <div class="form-div">
                 <?php foreach ($tasks as $task): ?>
+                    
                     <form class="each-task" action="includes/deleteTask.php" method="post">
                         <input class="checkbox" type="checkbox" name="checkbox" id="">
                         <label class="task-content"><?php echo htmlspecialchars($task['task']); ?></label>
-                        <!-- <select name="priority" id="">
-                            <option value="">High</option>
-                            <option value="">Medium</option>
-                            <option value="">Low</option>
-                        </select> -->
+                        <select class="status" name="status" id="">
+                            <option class="status-incomplete" value="I">Incomplete</option>
+                            <option class="status-done" value="D">Done</option>
+                        </select>
                         
                         <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
-                        <!-- <img class="trash-can-icon" src="assets/trash.svg" alt="Trash-Can"> -->
                         <button class="delete-btn" type="submit" name="delete">  
                             <svg class="trash-can-icon"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>

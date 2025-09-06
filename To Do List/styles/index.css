@@ -108,6 +108,28 @@ body {
     gap: 12px;
     flex: 1;
 }
+
+/*--------------------TASK STATUS SECTION----------------------------*/
+
+.status {
+    display: flex;
+    border: solid 0.1rem;
+    border-radius: 0.5rem;
+    height: 2rem;
+    color: white;
+    background-color: hsl(272, 81%, 47%);
+    border-color: hsl(272, 81%, 47%);
+    padding: 0rem 0.5rem;
+}
+
+.status-incomplete {
+    
+}
+
+.status-done {
+    background-color: green;
+}
+
 /*--------------------DELETE TASK SECTION----------------------------*/
 .delete-btn {
     background: none;
