@@ -7,11 +7,8 @@ $stmt = $pdo->prepare($query);
 $stmt->execute();
 $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
-if (mysqli_num_rows($tasks) > 0) {
-    // while () {
-
-    // }
-} else {
-    echo "You have no tasks";
-}
-
+// if (mysqli_num_rows($tasks) > 0) {
+    
+// } else {
+//     echo "You have no tasks";
+// }

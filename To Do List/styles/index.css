@@ -74,6 +74,7 @@ body {
 .end-to-end {
     display: flex;
     gap: 0.4rem;
+    align-items: center;
 }
 
 
@@ -114,6 +115,7 @@ body {
     align-items: center;
     gap: 12px;
     flex: 1;
+    max-width: 13.5rem;
 }
 
 /*--------------------TASK STATUS SECTION----------------------------*/
