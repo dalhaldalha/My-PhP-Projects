@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } 
     
     // Adds a header to the file before we add the tasks.
-    $headertxt = "My Tasks\n\n";
+    $headertxt = "My Tasks:\n\n";
     $taskfile = fopen("mytasks.txt", "w");
     fwrite($taskfile, $headertxt);
     fclose($taskfile);

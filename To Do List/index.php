@@ -35,8 +35,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
     <title>Document</title>
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.min.js" 
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#checkbox").checked(function(){
+                $("#test").load("includes/mytasks.txt", {data1: "value1", data2: "value2"});
+            });
+        });
+    </script>
 </head>
 <body>
+    <p id="test">Testing out load</p>
+    <button id="btn">Load Test</button>
     <h1>To Do List</h1>
     <div class="task-div">
         <form class="add-task" action="includes/addTask.php" method="post">
@@ -52,7 +66,7 @@
                     
                     <form class="each-task" action="includes/deleteTask.php" method="post">
                         <div class="end-to-end">
-                            <input class="checkbox" type="checkbox" name="checkbox" id="">
+                            <input id="checkbox" class="checkbox" type="checkbox" name="checkbox" id="">
                             <label class="task-content"><?php echo htmlspecialchars($task['task']); ?></label>
                         </div>
                         <div class="end-to-end">
@@ -76,7 +90,7 @@
 
         <div class="task-footer">
             <form action="includes/exportTask.php" method="post">
-                <button class="export-btn" type="submit">Export Tasks</button>
+                <button class="export-btn" type="submit">Export All Tasks</button>
             </form>
 
             <form action="" method="post">
