@@ -59,8 +59,9 @@
         <?php
         if ($numRows > 0) {
             foreach ($tasks as $task) {
+                // echo "<input class='checkbox' type='checkbox'>";
                 echo "<p class='task-content'>";
-                echo $task["task"];
+                    echo $task["task"];
                 echo "</p>";
             }
             // while ($row = mysqli_fetch_assoc($tasks)) {
