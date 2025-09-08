@@ -57,12 +57,15 @@
 
     <div id="tasks">
         <?php
-        if (mysqli_num_rows($tasks) > 0) {
-            while ($row = mysqli_fetch_assoc($tasks)) {
+        if ($numRows > 0) {
+            foreach ($tasks as $task) {
                 echo "<p class='task-content'>";
-                echo $row["task"];
+                echo $task["task"];
                 echo "</p>";
             }
+            // while ($row = mysqli_fetch_assoc($tasks)) {
+                
+            // }
         } else {
             echo "You have no tasks";
         }
