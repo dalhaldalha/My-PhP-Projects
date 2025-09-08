@@ -41,16 +41,16 @@
         crossorigin="anonymous">
     </script>
     <script>
-        $(document).ready(function(){
-            $("#checkbox").checked(function(){
-                $("#test").load("includes/mytasks.txt", {data1: "value1", data2: "value2"});
-            });
-        });
+        
     </script>
 </head>
 <body>
-    <p id="test">Testing out load</p>
-    <button id="btn">Load Test</button>
+
+    <div id="tasks">
+
+    </div>
+    
+    <button id="btn">Load more tasks</button>
     <h1>To Do List</h1>
     <div class="task-div">
         <form class="add-task" action="includes/addTask.php" method="post">
