@@ -1,5 +1,11 @@
 My Tasks:
 
- - Go to sleep     Status: Not Done
- - Go to work     Status: Not Done
- - Work out     Status: Not Done
+ - tour     Status: Not Done
+ - to wors     Status: Not Done
+ - to class     Status: Not Done
+ - working     Status: Not Done
+ - work     Status: Not Done
+ - school     Status: Not Done
+ - jog     Status: Not Done
+ - run     Status: Not Done
+ - Welcome     Status: Not Done

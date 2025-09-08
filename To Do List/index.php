@@ -47,31 +47,19 @@
 
     <script>
         $(document).ready(function(){
+            var taskCount = 4;
             $("#btn").click(function(){
-                $("#tasks").load("load.tasks.php");
+                taskCount = taskCount + 2;
+                $("#tasks").load("load.tasks.php", {
+                    taskNewCount: taskCount
+                });
             });
         });
     </script>
 </head>
 <body>
 
-    <div id="tasks">
-        <?php
-        if ($numRows > 0) {
-            foreach ($tasks as $task) {
-                // echo "<input class='checkbox' type='checkbox'>";
-                echo "<p class='task-content'>";
-                    echo $task["task"];
-                echo "</p>";
-            }
-            // while ($row = mysqli_fetch_assoc($tasks)) {
-                
-            // }
-        } else {
-            echo "You have no tasks";
-        }
-        ?>
-    </div>
+    
     <button id="btn">Load more tasks...</button>
     <h1>To Do List</h1>
     <div class="task-div">
@@ -84,7 +72,34 @@
         <div class="all-task-div, task-list">
             <h2>All Tasks</h2>
             <div class="form-div">
-                <?php foreach ($tasks as $task): ?>
+                <div id="tasks">
+                    <?php
+                    if ($numRows > 0) {
+                        foreach ($tasks as $task) {
+                            echo "<div class='end-to-end'>";
+                                echo "<input class='checkbox' type='checkbox'>";
+                                echo "<p class='task-content'>";
+                                    echo $task["task"];
+                                echo "</p>";
+                            echo "</div>";
+                            echo "<div class='end-to-end'>";
+                                echo "<select>";
+                                    echo "<option class='status-incomplete'>Incomplete</option>";
+                                    echo "<option class='status-done'>Done</option>";
+                                echo "</select>";
+
+                            echo "</div>";
+                            
+                        }
+                        // while ($row = mysqli_fetch_assoc($tasks)) {
+                            
+                        // }
+                    } else {
+                        echo "You have no tasks";
+                    }
+                    ?>
+                </div>
+                <!-- <?php foreach ($tasks as $task): ?>
                     
                     <form class="each-task" action="includes/deleteTask.php" method="post">
                         <div class="end-to-end">
@@ -106,7 +121,7 @@
                             </button>
                         </div>
                     </form>
-                <?php endforeach; ?>
+                <?php endforeach; ?> -->
             </div>
         </div>
 
