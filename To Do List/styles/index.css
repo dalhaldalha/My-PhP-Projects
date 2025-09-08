@@ -115,6 +115,7 @@ body {
     align-items: center;
     gap: 12px;
     flex: 1;
+    color: red;
     max-width: 13.5rem;
 }
 

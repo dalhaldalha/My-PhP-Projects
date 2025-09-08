@@ -35,22 +35,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
     <title>Document</title>
-    <script 
+    <!-- Load jQuery from CDN -->
+    <!-- <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js" 
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
         crossorigin="anonymous">
-    </script>
+    </script> -->
+
+    <!-- Load jQuery from Locally -->
+    <script src="js/jquery-3.7.1.js"></script>
+
     <script>
-        
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("#tasks").load("load.tasks.php");
+            });
+        });
     </script>
 </head>
 <body>
 
     <div id="tasks">
-
+        <?php
+        if (mysqli_num_rows($tasks) > 0) {
+            while ($row = mysqli_fetch_assoc($tasks)) {
+                echo "<p class='task-content'>";
+                echo $row["task"];
+                echo "</p>";
+            }
+        } else {
+            echo "You have no tasks";
+        }
+        ?>
     </div>
-    
-    <button id="btn">Load more tasks</button>
+    <button id="btn">Load more tasks...</button>
     <h1>To Do List</h1>
     <div class="task-div">
         <form class="add-task" action="includes/addTask.php" method="post">
@@ -92,11 +110,10 @@
             <form action="includes/exportTask.php" method="post">
                 <button class="export-btn" type="submit">Export All Tasks</button>
             </form>
+            
+            
+            <!-- <a id="btn" class="load-more" href="">Load more tasks...</a> -->
 
-            <form action="" method="post">
-                <label class="load-more" type="submit" for="">Load more tasks...</label>
-                
-            </form>
         </div>
         
     </div>
