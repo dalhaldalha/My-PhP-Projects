@@ -2,7 +2,7 @@
 
 require_once "config/database.php";
 
-$query = "SELECT * FROM tasks ORDER BY created_at DESC LIMIT 4;";
+$query = "SELECT * FROM tasks ORDER BY created_at DESC LIMIT 2;";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 

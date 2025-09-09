@@ -46,8 +46,10 @@
     <script src="js/jquery-3.7.1.js"></script>
 
     <script>
+
+        // Script to load more tasks by 2
         $(document).ready(function(){
-            var taskCount = 4;
+            var taskCount = 2;
             $("#btn").click(function(){
                 taskCount = taskCount + 2;
                 $("#tasks").load("load.tasks.php", {
@@ -78,13 +80,13 @@
                         foreach ($tasks as $task) {
                             echo "<div class='each-task'>";
                                 echo "<div class='end-to-end'>";
-                                    echo "<input class='checkbox' type='checkbox'>";
+                                    echo "<input id='checkbox' class='checkbox' type='checkbox'>";
                                     echo "<p class='task-content'>";
                                         echo $task["task"];
                                     echo "</p>";
                                 echo "</div>";
                                 echo "<div class='end-to-end'>";
-                                    echo "<select>";
+                                    echo "<select class='status'>";
                                         echo "<option class='status-incomplete'>Incomplete</option>";
                                         echo "<option class='status-done'>Done</option>";
                                     echo "</select>";
@@ -108,15 +110,15 @@
                     }
                     ?>
                 </div>
-                <?php foreach ($tasks as $task): ?>
+                <!-- <?php foreach ($tasks as $task): ?>
                     
                     <form class="each-task" action="includes/deleteTask.php" method="post">
                         <div class="end-to-end">
-                            <input id="checkbox" class="checkbox" type="checkbox" name="checkbox" id="">
+                            <input class="checkbox" type="checkbox" name="checkbox">
                             <label class="task-content"><?php echo htmlspecialchars($task['task']); ?></label>
                         </div>
                         <div class="end-to-end">
-                            <select class="status" name="status" id="">
+                            <select class="status" name="status">
                                 <option class="status-incomplete" value="I">Incomplete</option>
                                 <option class="status-done" value="D">Done</option>
                             </select>
@@ -130,7 +132,7 @@
                             </button>
                         </div>
                     </form>
-                <?php endforeach; ?>
+                <?php endforeach; ?> -->
             </div>
         </div>
 
