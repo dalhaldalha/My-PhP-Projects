@@ -16,6 +16,10 @@ body {
     gap: 1.5rem;
 }
 
+.strike {
+    text-decoration: line-through;
+}
+
 /*--------------------ADD TASK SECTION----------------------------*/
 
 /*-------GENERAL--------*/
@@ -111,7 +115,7 @@ body {
     accent-color: hsl(272, 81%, 47%);
 }
 
-.task-content {
+.taskContent {
     display: flex;
     align-items: center;
     gap: 12px;

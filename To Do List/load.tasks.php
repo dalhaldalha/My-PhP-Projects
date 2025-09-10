@@ -18,7 +18,7 @@ if ($numRows > 0) {
         echo "<div class='each-task'>";
             echo "<div class='end-to-end'>";
                 echo "<input id='checkbox' class='checkbox' type='checkbox'>";
-                echo "<p class='task-content'>";
+                echo "<p id='taskContent' class='task-content'>";
                     echo $task["task"];
                 echo "</p>";
             echo "</div>";

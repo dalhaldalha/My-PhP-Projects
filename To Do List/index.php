@@ -24,6 +24,7 @@
 
     <!-- Load jQuery from Locally -->
     <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/strike-through.js"></script>
 
     <script>
 
@@ -43,6 +44,18 @@
                 $.post("includes/deleteTask.php");
             });
         });
+
+        //Script to strike through text if checkbox is checked
+        // $(document).ready(function(){
+        //     $("#checkbox").change(function(){
+        //         if ($(this).is(" :checked")) {
+        //             $("#taskContent").addClass("strike");
+        //         } else {
+        //             $("#taskContent").removeClass("strike");
+        //         }
+        //     });
+        // });
+        
     </script>
 </head>
 <body>
@@ -64,7 +77,7 @@
                             echo "<div class='each-task'>";
                                 echo "<div class='end-to-end'>";
                                     echo "<input id='checkbox' class='checkbox' type='checkbox'>";
-                                    echo "<p class='task-content'>";
+                                    echo "<p id='taskContent' class='taskContent'>";
                                         echo $task["task"];
                                     echo "</p>";
                                 echo "</div>";
@@ -132,22 +145,5 @@
         </div>
         
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        // Select all checkboxes inside your task forms
-        document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                // Find the label in the same form as the checkbox
-                const label = this.closest('form').querySelector('label');
-                if (this.checked) {
-                    label.style.textDecoration = "line-through";
-                } else {
-                    label.style.textDecoration = "none";
-                }
-            });
-        });
-    });
-</script>
 </body>
 </html>
