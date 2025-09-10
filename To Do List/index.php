@@ -2,9 +2,11 @@
 
     //Today's Tasks:
         /*Strike through text when checkbox is clicked*/
-        //Checked Box needs to be stored and then manipulated in export
-        //Delete Task Actually deletes task
-        //Option to change to load less
+        //Checked Box needs to be stored and then manipulated in export.
+            //Check each status of each checkbox and add the state to the database.
+            //Select all the states and export them along with their respective task to a txt documnet.
+        //Delete Task Actually deletes task.
+        //Option to change to load less.
     require_once "includes/displayTask.php";
     require_once "includes/session.config.php";
 ?>
@@ -45,17 +47,6 @@
                 $.post("includes/deleteTask.php");
             });
         });
-
-        //Script to strike through text if checkbox is checked
-        // $(document).ready(function(){
-        //     $("#checkbox").change(function(){
-        //         if ($(this).is(" :checked")) {
-        //             $("#taskContent").addClass("strike");
-        //         } else {
-        //             $("#taskContent").removeClass("strike");
-        //         }
-        //     });
-        // });
         
     </script>
 </head>
@@ -77,7 +68,7 @@
                         foreach ($tasks as $task) {
                             echo "<div class='each-task'>";
                                 echo "<div class='end-to-end'>";
-                                    echo "<input class='checkbox' type='checkbox'>";
+                                    echo "<input id=' " . $task["id"] . "'class='checkbox' type='checkbox'>";
                                     echo "<p class='taskContent'>";
                                         echo $task["task"];
                                     echo "</p>";
