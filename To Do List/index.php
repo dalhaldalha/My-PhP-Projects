@@ -2,6 +2,7 @@
 
     //Today's Tasks:
         //Strike through text when checkbox is clicked
+        //Checked Box needs to be stored and then manipulated in export
         //Delete Task Actually deletes task
         //Option to change to load less
     require_once "includes/displayTask.php";
