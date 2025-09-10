@@ -1,5 +1,6 @@
 <?php
 
+
 require_once "config/database.php";
 $taskNewCount = $_POST['taskNewCount'];
 
@@ -17,8 +18,8 @@ if ($numRows > 0) {
     foreach ($tasks as $task) {
         echo "<div class='each-task'>";
             echo "<div class='end-to-end'>";
-                echo "<input id='checkbox' class='checkbox' type='checkbox'>";
-                echo "<p id='taskContent' class='task-content'>";
+                echo "<input class='checkbox' type='checkbox'>";
+                echo "<p class='taskContent'>";
                     echo $task["task"];
                 echo "</p>";
             echo "</div>";
