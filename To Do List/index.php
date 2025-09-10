@@ -67,9 +67,12 @@
                     <?php
                     if ($numRows > 0) {
                         foreach ($tasks as $task) {
+                            // echo "<pre>";
+                            // print_r($tasks);
+                            // echo "</pre>";
                             echo "<div class='each-task'>";
                                 echo "<div class='end-to-end'>";
-                                    echo "<input id=' " . $task["id"] . "'class='checkbox' type='checkbox'>";
+                                    echo "<input id='" . $task["id"] . "' class='checkbox' type='checkbox'>";
                                     echo "<p class='taskContent'>";
                                         echo $task["task"];
                                     echo "</p>";
