@@ -28,6 +28,7 @@
     <!-- Load jQuery from Locally -->
     <script src="js/jquery-3.7.1.js"></script>
     <script src="js/strike-through.js"></script>
+    <script src="js/status-check.js"></script>
 
     <script>
 

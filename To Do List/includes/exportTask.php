@@ -6,31 +6,24 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require_once "session.config.php";
-
-    // Database Query to fetch all tasks
     require_once "../config/database.php";
-    $query = "SELECT * FROM tasks ORDER BY created_at DESC;";
-    $stmt = $pdo->prepare($query);
+
+    //Checks status of the checkbox and adds it to the database.
+
+    $tasId = $_POST["id"];
+    $status = $_POST["status"];
+
+    $query1 = "UPDATE tasks SET status = ? WHERE id = ?";
+    $stmt = $pdo->prepare($query1);
+    $stmt->execute([$status, $taskID]);
+    
+    // Database Query to fetch all tasks
+    $query2 = "SELECT * FROM tasks ORDER BY created_at DESC;";
+    $stmt = $pdo->prepare($query2);
     $stmt->execute();
     $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
     $totalTasks = count($tasks);
-    // foreach ($tasks as $task) {
-    //     $tasktxt = $task['task'];
-    //     $taskfile = fopen("mytasks.txt", "w");
-    // }
-    // Create a file and write dummy text to it
-    // $taskfile = fopen("mytasks.txt", "w");
-    // $dummytext = "This is a dummy text to test file writing.";
-    // fwrite($taskfile, $dummytext);
-    // fwrite($taskfile, "\n Total Tasks: " . $totalTasks . "\n");
-    // fclose($taskfile);
-    
-
-    // Check if checkbox is checked
-    // if the checkbox is checked, the statues of the task Should be done
-    // if the checkbox is not checked, the status of the task should be not done
-    // 1 = done, 0 = not done
 
     
     if (!isset($_SESSION["checkbox"])) {
