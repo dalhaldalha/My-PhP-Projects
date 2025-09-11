@@ -5,6 +5,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    //Requried Connections
     require_once "session.config.php";
     require_once "../config/database.php";
 
@@ -18,23 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
     $totalTasks = count($tasks);
-
-    
-    // if (!isset($_SESSION["checkbox"])) {
-    //     $checkboxValue = "Not Done"; 
-    // } else {
-    //     $checkboxValue = "Done"; 
-    // } 
     
     // Adds a header to the file before we add the tasks.
     $headertxt = "My Tasks:\n\n";
     $taskfile = fopen("mytasks.txt", "w");
     fwrite($taskfile, $headertxt);
     fclose($taskfile);
-
-    //I need to check the status of each task. Give it a value of Uncompleted if 0 and Done if 1.
-    //I need to track each task id along with their status.
-    //Be able to print out each task together with their status
 
     
 
@@ -46,18 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $points = " - ";
         fwrite($taskfile, $points);
 
+        //Adds the latest tasks in order.
         $taskContent = $tasks[$i]['task'];
         fwrite($taskfile, $taskContent);
 
+        //Adds the status of each task and appends it to the task.
         $taskStatus = $tasks[$i]['status'];
-        if ($taskStatus == 0) {
+        if ($taskStatus === 0) {
             $taskStatus = "Uncompleted";
-        } elseif ($taskStatus == 1){
+        } elseif ($taskStatus === 1){
             $taskStatus = "Done";
         } else {
             $taskStatus = "Undefined";
         }
-        $status = "     Status: " . $taskStatus . "\n";
+        $status = "     Status: " . $taskStatus . "\n\n";
         fwrite($taskfile, $status); 
         
         fclose($taskfile);

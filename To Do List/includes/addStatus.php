@@ -2,16 +2,20 @@
 
 //Checks status of the checkbox and adds it to the database.
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-require_once "../config/database.php";
+    require_once "../config/database.php";
 
-// var_dump($_POST);
-// exit;
+    // var_dump($_POST);
+    // exit;
 
-$taskId = $_POST["id"];
-$status = $_POST["status"];
+    $taskId = $_POST["id"];
+    $status = $_POST["status"];
 
-$query1 = "UPDATE tasks SET status = ? WHERE id = ?";
-$stmt = $pdo->prepare($query1);
-$stmt->execute([$status, $taskId]);
+    $query1 = "UPDATE tasks SET status = ? WHERE id = ?";
+    $stmt = $pdo->prepare($query1);
+    $stmt->execute([$status, $taskId]);
+
+}
+
 

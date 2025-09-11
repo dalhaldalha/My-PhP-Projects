@@ -8,6 +8,6 @@ $(document).on("change", ".checkbox", function() {
         status: newStatus
     }, function(response) {
         console.log("Server says:", response);
-    })
+    });
 
-})
+});

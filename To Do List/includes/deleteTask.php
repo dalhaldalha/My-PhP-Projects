@@ -1,26 +1,38 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+require_once "session.config.php";
 
-    require_once "session.config.php";
+$taskId = $_POST['id'] ?? NULL;
 
-    $_SESSION["checkbox"] = $_POST["checkbox"];
+require_once "../config/database.php";
 
-    $taskId = $_POST['task_id'] ?? NULL;
+$query = "DELETE FROM tasks WHERE id = :id";
+$stmt = $pdo->prepare($query);
+$stmt->bindParam(":id", $taskId);
+$stmt->execute();
 
-    require_once "../config/database.php";
+$pdo = null;
+$stmt = null;
 
-    $query = "DELETE FROM tasks WHERE id = :id";
-    $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":id", $taskId);
-    $stmt->execute();
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $pdo = null;
-    $stmt = null;
+//     require_once "session.config.php";
 
-    header("Location: ../index.php");
-    exit();
+//     $taskId = $_POST['id'] ?? NULL;
 
-} else {
-    header("Location: ../index.php");
-}
+//     require_once "../config/database.php";
+
+//     $query = "DELETE FROM tasks WHERE id = :id";
+//     $stmt = $pdo->prepare($query);
+//     $stmt->bindParam(":id", $taskId);
+//     $stmt->execute();
+
+//     $pdo = null;
+//     $stmt = null;
+
+//     header("Location: ../index.php");
+//     exit();
+
+// } else {
+//     header("Location: ../index.php");
+// }
