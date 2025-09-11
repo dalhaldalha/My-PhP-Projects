@@ -1,3 +1,23 @@
 My Tasks:
 
- - RunningDone - Goal GOalDone - GoalDone - AddDone - AddDone - AddDone - AddDone - addDone - AddDone - AddDone - workingDone - workingDone - tourDone - to worsDone - to classDone - workingDone - workDone - schoolDone - jogDone - runDone - WelcomeDone
+ - Running     Status: Done
+ - Goal GOal     Status: Done
+ - Goal     Status: Done
+ - Add     Status: Done
+ - Add     Status: Uncompleted
+ - Add     Status: Done
+ - Add     Status: Uncompleted
+ - add     Status: Done
+ - Add     Status: Uncompleted
+ - Add     Status: Done
+ - working     Status: Uncompleted
+ - working     Status: Done
+ - tour     Status: Uncompleted
+ - to wors     Status: Uncompleted
+ - to class     Status: Uncompleted
+ - working     Status: Uncompleted
+ - work     Status: Uncompleted
+ - school     Status: Uncompleted
+ - jog     Status: Uncompleted
+ - run     Status: Done
+ - Welcome     Status: Done

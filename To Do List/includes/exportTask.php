@@ -50,15 +50,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         fwrite($taskfile, $taskContent);
 
         $taskStatus = $tasks[$i]['status'];
-        // if ($taskStatus = 0) {
-        //     $taskStatus = "Uncompleted";
-        // } elseif ($taskStatus = 1){
-        //     $taskStatus = "Done";
-        // } else {
-        //     $taskStatus = "Undefined";
-        // }
-        // $status = "     Status: " . $taskStatus . "\n";
-        fwrite($taskfile, $taskStatus); 
+        if ($taskStatus == 0) {
+            $taskStatus = "Uncompleted";
+        } elseif ($taskStatus == 1){
+            $taskStatus = "Done";
+        } else {
+            $taskStatus = "Undefined";
+        }
+        $status = "     Status: " . $taskStatus . "\n";
+        fwrite($taskfile, $status); 
         
         fclose($taskfile);
         $i++;
