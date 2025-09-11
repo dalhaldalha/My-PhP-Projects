@@ -49,15 +49,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $taskContent = $tasks[$i]['task'];
         fwrite($taskfile, $taskContent);
 
-        $taskStatus = 
-        $taskStatus = $task[$i]['status'];
-        if ($taskStatus = 0) {
-            $taskStatus = "Uncompleted";
-        } else {
-            $taskStatus = "Done";
-        }
-        $status = "     Status: " . $checkboxValue . "\n";
-        fwrite($taskfile, $status); 
+        $taskStatus = $tasks[$i]['status'];
+        // if ($taskStatus = 0) {
+        //     $taskStatus = "Uncompleted";
+        // } elseif ($taskStatus = 1){
+        //     $taskStatus = "Done";
+        // } else {
+        //     $taskStatus = "Undefined";
+        // }
+        // $status = "     Status: " . $taskStatus . "\n";
+        fwrite($taskfile, $taskStatus); 
         
         fclose($taskfile);
         $i++;
