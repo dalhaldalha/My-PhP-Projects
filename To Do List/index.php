@@ -18,16 +18,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
     <title>Document</title>
-    <!-- Load jQuery from CDN -->
-    <!-- <script 
-        src="https://code.jquery.com/jquery-3.7.1.min.js" 
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
-        crossorigin="anonymous">
-    </script> -->
 
     <!-- Load jQuery from Locally -->
     <script src="js/jquery-3.7.1.js"></script>
-    <script src="js/strike-through.js"></script>
+    <!-- Load Script that strikes through text as checkbox is checked -->
+    <script src="js/strike-through.js"></script>\
+    <!-- Load Script that monitors the status of a task -->
     <script src="js/status-check.js"></script>
 
     <script>
