@@ -5,7 +5,10 @@
         /*Checked Box needs to be stored and then manipulated in export.*/
             /*Check each status of each checkbox and add the state to the database.*/
             /*Select all the states and export them along with their respective task to a txt documnet.*/
+            //Once checked, a tasks checkbox should be saved in Sessions and deleted only after a certain period.
         //Delete Task Actually deletes task.
+            /*Tasks schould be deleted.*/
+            //Task list shoud load dynamically as user deletes
         //Tasks and their status should stay the same even after loading more tasks
         //Option to change to load less.
         
@@ -34,15 +37,25 @@
     <script>
 
         // Script to load more tasks by 2
-        $(document).ready(function(){
+
+        $(document).on("click", "#btn", function(){
             var taskCount = 2;
-            $("#btn").click(function(){
-                taskCount = taskCount + 2;
-                $("#tasks").load("load.tasks.php", {
-                    taskNewCount: taskCount
-                });
+            taskCount = taskCount + 2;
+            console.log("Number of Tasks to be added: ", taskCount);
+            $("#tasks").load("load.tasks.php", {
+                taskNewCount: taskCount
+            
             });
         });
+        // $(document).ready(function(){
+        //     var taskCount = 2;
+        //     $("#btn").click(function(){
+        //         taskCount = taskCount + 2;
+        //         $("#tasks").load("load.tasks.php", {
+        //             taskNewCount: taskCount
+        //         });
+        //     });
+        // });
 
         $(document).ready(function(){
             $("#deleteBtn").click(function(){
