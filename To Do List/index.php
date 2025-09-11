@@ -6,7 +6,9 @@
             //Check each status of each checkbox and add the state to the database.
             //Select all the states and export them along with their respective task to a txt documnet.
         //Delete Task Actually deletes task.
+        //Tasks and their status should stay the same even after loading more tasks
         //Option to change to load less.
+        
     require_once "includes/displayTask.php";
     require_once "includes/session.config.php";
 ?>
@@ -68,7 +70,7 @@
                             // echo "</pre>";
                             echo "<div class='each-task'>";
                                 echo "<div class='end-to-end'>";
-                                    echo "<input id='" . $task["id"] . "' class='checkbox' type='checkbox'>";
+                                    echo "<input data-id='" . $task["id"] . "' class='checkbox' type='checkbox'>";
                                     echo "<p class='taskContent'>";
                                         echo $task["task"];
                                     echo "</p>";
