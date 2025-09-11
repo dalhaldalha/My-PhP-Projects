@@ -3,7 +3,7 @@ $(document).on("change", ".checkbox", function() {
     let newStatus = $(this).is(" :checked") ? 1 : 0;
 
     console.log("Clicked task:", taskID, "New Status:", newStatus);
-    $.post("../includes/addStatus.php", {
+    $.post("includes/addStatus.php", {
         id: taskID,
         status: newStatus
     }, function(response) {

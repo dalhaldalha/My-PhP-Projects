@@ -5,11 +5,13 @@
 
 require_once "../config/database.php";
 
+// var_dump($_POST);
+// exit;
 
-$tasId = $_POST["id"];
+$taskId = $_POST["id"];
 $status = $_POST["status"];
 
 $query1 = "UPDATE tasks SET status = ? WHERE id = ?";
 $stmt = $pdo->prepare($query1);
-$stmt->execute([$status, $taskID]);
+$stmt->execute([$status, $taskId]);
 
