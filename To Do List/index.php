@@ -40,12 +40,12 @@
 
         // Script to load more tasks by 2
 
-        $(document).on("click", "#btn" function(){
-            let button = $(this);
-            var taskCount = 2;
-            task
+        // $(document).on("click", "#btn", function(){
+        //     let button = $(this);
+        //     var taskCount = 2;
+        //     task
             
-        });
+        // });
 
         // $(document).ready(function(){
         //     var taskCount = 2;
@@ -56,6 +56,25 @@
         //         });
         //     });
         // });
+
+        $(document).on("change", ".priority", function(){
+            let val = $(this).val();
+            let taskID = $(this).data('id'); 
+            console.log("Value selected: ", val);
+            console.log("Task ID: ", taskID);
+            
+            if (val === "high") {
+                $(this).css("background-color", "#ff6b6b").css("color", "white").css("border", "none");
+            } else if (val === "medium") {
+                $(this).css("background-color", "yellow").css("color", "white");
+            } else if (val === "low") {
+                $(this).css("background-color", "blue").css("color", "white");
+            } 
+        });
+        // $(".priority").on("change", function()){
+        //     let val = $(this).val();
+        //     console.log("The value selected is: ", val);
+        // };
         
     </script>
 </head>
@@ -67,6 +86,7 @@
             
             <button class="add-task-btn" type="submit">&#43;</button>
         </form>
+        
 
         <div class="all-task-div, task-list">
             <h2>All Tasks</h2>
@@ -83,7 +103,11 @@
                                     echo "</p>";
                                 echo "</div>";
                                 echo "<div class='end-to-end'>";
-                                    echo "<select class='priority'>";
+                                    echo "<select data-id='" . $task["id"] . "' id='priority' class='priority'>";
+                                        echo "<option value='' disabled selected>Select Priority</option>";
+                                        echo "<option  value='high'>High</option>";
+                                        echo "<option  value='medium'>Medium</option>";
+                                        echo "<option  value='low'>Low</option>";
                                     echo "</select>";
                                     echo "<button data-id='" . $task["id"] . "' class='delete-btn' type='submit' name='delete'>";
                                         echo "<svg class='trash-can-icon'  xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>";
