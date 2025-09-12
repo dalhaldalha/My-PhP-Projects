@@ -74,7 +74,7 @@
                     <?php
                     if ($numRows > 0) {
                         foreach ($tasks as $task) {
-                            echo "<div class='each-task'>";
+                            echo "<div class='each-task deleteClass'>";
                                 echo "<div class='end-to-end'>";
                                     echo "<input data-id='" . $task["id"] . "' class='checkbox' type='checkbox'>";
                                     echo "<p class='taskContent'>";
@@ -83,9 +83,6 @@
                                 echo "</div>";
                                 echo "<div class='end-to-end'>";
                                     echo "<select class='priority'>";
-                                        echo "<option class='priority'>High</option>";
-                                        echo "<option class='priority'>Medium</option>";
-                                        echo "<option class='priority'>Low</option>";
                                     echo "</select>";
                                     echo "<button data-id='" . $task["id"] . "' class='delete-btn' type='submit' name='delete'>";
                                         echo "<svg class='trash-can-icon'  xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>";
