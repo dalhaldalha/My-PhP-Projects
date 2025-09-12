@@ -8,9 +8,3 @@ $stmt->execute();
 
 $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
 $numRows = count($tasks);
-
-// if (mysqli_num_rows($tasks) > 0) {
-    
-// } else {
-//     echo "You have no tasks";
-// }

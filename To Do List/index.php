@@ -38,45 +38,22 @@
     <!-- Load Script that Deletes Task When Trash icon is clicked -->
     <script src="js/deleteTask.js"></script>
 
+    <!-- Load Script that styles the priority of a task -->
+    <script src="js/taskPriority.js"></script>
+
     <script>
 
         // Script to load more tasks by 2
 
-        // $(document).on("click", "#btn", function(){
-        //     let button = $(this);
-        //     var taskCount = 2;
-        //     task
-            
-        // });
-
-        // $(document).ready(function(){
-        //     var taskCount = 2;
-        //     $("#btn").click(function(){
-        //         taskCount = taskCount + 2;
-        //         $("#tasks").load("load.tasks.php", {
-        //             taskNewCount: taskCount
-        //         });
-        //     });
-        // });
-
-        $(document).on("change", ".priority", function(){
-            let val = $(this).val();
-            let taskID = $(this).data('id'); 
-            console.log("Value selected: ", val);
-            console.log("Task ID: ", taskID);
-            
-            if (val === "high") {
-                $(this).css("background-color", "#ff6b6b").css("color", "white").css("border", "#ff6b6b");
-            } else if (val === "medium") {
-                $(this).css("background-color", "yellow").css("color", "white");
-            } else if (val === "low") {
-                $(this).css("background-color", "blue").css("color", "white");
-            }
+        $(document).ready(function(){
+            var taskCount = 2;
+            $("#btn").click(function(){
+                taskCount = taskCount + 2;
+                $("#tasks").load("load.tasks.php", {
+                    taskNewCount: taskCount
+                });
+            });
         });
-        // $(".priority").on("change", function()){
-        //     let val = $(this).val();
-        //     console.log("The value selected is: ", val);
-        // };
         
     </script>
 </head>

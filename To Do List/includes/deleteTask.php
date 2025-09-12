@@ -1,20 +1,26 @@
 <?php
 
-require_once "session.config.php";
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    require_once "session.config.php";
 
-$taskId = $_POST['id'] ?? NULL;
+    $taskId = $_POST['id'] ?? NULL;
 
-require_once "../config/database.php";
+    require_once "../config/database.php";
 
-$query = "DELETE FROM tasks WHERE id = :id";
-$stmt = $pdo->prepare($query);
-$stmt->bindParam(":id", $taskId);
-// Executes the query and returns true or false. 
-if($stmt->execute()) {
-    echo "Successfully";
+    $query = "DELETE FROM tasks WHERE id = :id";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":id", $taskId);
+    // Executes the query and returns true or false. 
+    if($stmt->execute()) {
+        echo "Successfully";
+    } else {
+        echo "Unsuccessfully";
+    }
+
+    $pdo = null;
+    $stmt = null;
+    exit();
 } else {
-    echo "Unsuccessfully";
+    header("Location: ../index.php");
+    exit();
 }
-
-$pdo = null;
-$stmt = null;
