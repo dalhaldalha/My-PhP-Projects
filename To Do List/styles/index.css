@@ -70,6 +70,15 @@ body {
     gap: 1rem;
 }
 
+.priority-high {
+    background-color: red;
+
+}
+
+.priority-high:hover {
+    background-color: red;
+}
+
 /*--------------------DISPLAY ALL TASKS SECTION----------------------------*/
 
 

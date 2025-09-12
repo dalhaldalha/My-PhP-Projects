@@ -107,9 +107,9 @@
                                 echo "<div class='end-to-end'>";
                                     echo "<select data-id='" . $task["id"] . "' id='priority' class='priority'>";
                                         echo "<option value='' disabled selected>Select Priority</option>";
-                                        echo "<option  value='high'>High</option>";
-                                        echo "<option  value='medium'>Medium</option>";
-                                        echo "<option  value='low'>Low</option>";
+                                        echo "<option  value='high' class='priority-high'>High</option>";
+                                        echo "<option  value='medium' class='priority-medium'>Medium</option>";
+                                        echo "<option  value='low' class='priority-low'>Low</option>";
                                     echo "</select>";
                                     echo "<button data-id='" . $task["id"] . "' class='delete-btn' type='submit' name='delete'>";
                                         echo "<svg class='trash-can-icon'  xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>";
