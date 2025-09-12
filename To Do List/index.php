@@ -12,6 +12,8 @@
         //Tasks and their status should stay the same even after loading more tasks
         //Option to change to load less.
         //I should be able to determine the priority of a task. High, Medium, and Low.
+            /*Pick priority and change the color accordinly*/
+            //Tasks should get ordered by priority
         //Get the total amount of tasks from the task 
         
     require_once "includes/displayTask.php";
@@ -64,12 +66,12 @@
             console.log("Task ID: ", taskID);
             
             if (val === "high") {
-                $(this).css("background-color", "#ff6b6b").css("color", "white").css("border", "none");
+                $(this).css("background-color", "#ff6b6b").css("color", "white").css("border", "#ff6b6b");
             } else if (val === "medium") {
                 $(this).css("background-color", "yellow").css("color", "white");
             } else if (val === "low") {
                 $(this).css("background-color", "blue").css("color", "white");
-            } 
+            }
         });
         // $(".priority").on("change", function()){
         //     let val = $(this).val();
