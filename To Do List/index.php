@@ -11,6 +11,7 @@
             //Task list shoud load dynamically as user deletes
         //Tasks and their status should stay the same even after loading more tasks
         //Option to change to load less.
+        //I should be able to determine the priority of a task. High, Medium, and Low.
         
     require_once "includes/displayTask.php";
     require_once "includes/session.config.php";
@@ -81,9 +82,10 @@
                                     echo "</p>";
                                 echo "</div>";
                                 echo "<div class='end-to-end'>";
-                                    echo "<select class='status'>";
-                                        echo "<option class='status-incomplete'>Incomplete</option>";
-                                        echo "<option class='status-done'>Done</option>";
+                                    echo "<select class='priority'>";
+                                        echo "<option class='priority'>High</option>";
+                                        echo "<option class='priority'>Medium</option>";
+                                        echo "<option class='priority'>Low</option>";
                                     echo "</select>";
                                     echo "<button data-id='" . $task["id"] . "' class='delete-btn' type='submit' name='delete'>";
                                         echo "<svg class='trash-can-icon'  xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>";

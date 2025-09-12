@@ -123,9 +123,9 @@ body {
     max-width: 13.5rem;
 }
 
-/*--------------------TASK STATUS SECTION----------------------------*/
+/*--------------------TASK PRIORITY SECTION----------------------------*/
 
-.status {
+.priority {
     display: flex;
     border: solid 0.1rem;
     border-radius: 0.5rem;
@@ -136,13 +136,6 @@ body {
     padding: 0rem 0.5rem;
 }
 
-.status-incomplete {
-    
-}
-
-.status-done {
-    background-color: green;
-}
 
 /*--------------------DELETE TASK SECTION----------------------------*/
 .delete-btn {
@@ -196,12 +189,16 @@ body {
     
 }
 
+.export-btn:active {
+    transform: translateY(-3px);
+}
+
 /*--------------------LOAD MORE TASKS SECTION----------------------------*/
 .load-more {
     color: hsl(272, 81%, 47%);
     text-decoration: underline;
     background-color: transparent;
-    transition: transform 0.1s ease;
+    transition: transform 0.2s ease;
     border: none;
 }
 

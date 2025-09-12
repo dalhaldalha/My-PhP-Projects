@@ -1,4 +1,8 @@
 My Tasks:
 
+ - Go to school     Status: Uncompleted
+
+ - Go to work     Status: Uncompleted
+
  - Go to work     Status: Done
 
