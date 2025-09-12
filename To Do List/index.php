@@ -12,6 +12,7 @@
         //Tasks and their status should stay the same even after loading more tasks
         //Option to change to load less.
         //I should be able to determine the priority of a task. High, Medium, and Low.
+        //Get the total amount of tasks from the task 
         
     require_once "includes/displayTask.php";
     require_once "includes/session.config.php";
@@ -39,22 +40,22 @@
 
         // Script to load more tasks by 2
 
-        
-        $(document).ready(function(){
+        $(document).on("click", "#btn" function(){
+            let button = $(this);
             var taskCount = 2;
-            $("#btn").click(function(){
-                taskCount = taskCount + 2;
-                $("#tasks").load("load.tasks.php", {
-                    taskNewCount: taskCount
-                });
-            });
+            task
+            
         });
 
-        $(document).ready(function(){
-            $("#deleteBtn").click(function(){
-                $.post("includes/deleteTask.php");
-            });
-        });
+        // $(document).ready(function(){
+        //     var taskCount = 2;
+        //     $("#btn").click(function(){
+        //         taskCount = taskCount + 2;
+        //         $("#tasks").load("load.tasks.php", {
+        //             taskNewCount: taskCount
+        //         });
+        //     });
+        // });
         
     </script>
 </head>
