@@ -59,6 +59,10 @@ body {
     justify-content: center;
 }
 
+.add-task-btn:active {
+    transform: translateY(-3px);
+}
+
 .form-div {
     display: flex;
     flex-direction: column;
