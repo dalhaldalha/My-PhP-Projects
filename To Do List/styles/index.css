@@ -200,4 +200,15 @@ body {
 .load-more {
     color: hsl(272, 81%, 47%);
     text-decoration: underline;
+    background-color: transparent;
+    transition: transform 0.1s ease;
+    border: none;
+}
+
+.load-more:hover {
+    cursor: pointer;
+}
+
+.load-more:active {
+    transform: translateY(-3px);
 }
