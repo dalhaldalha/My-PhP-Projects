@@ -53,5 +53,5 @@ if ($numRows > 0) {
     // } else {
     //     echo "You have no tasks";
 } else {
-    echo "You have no tasks";
+    // echo "You have no tasks";
 }

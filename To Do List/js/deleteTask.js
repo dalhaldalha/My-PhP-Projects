@@ -12,6 +12,12 @@ $(document).on("click", ".delete-btn", function(){
         success: function(response) {
             console.log("Task deleted:", response);
             button.closest(".deleteClass").remove();
+
+            let taskCount = $(".taskContent").length;
+            console.log("Number of tasks: ", taskCount );
+            if(taskCount === 0 ) {
+                $(".each-task").html("<p>There are Many tasks</p>");
+            }
         },
         error: function(xhr, status, error) {
             console.error("Deletion failed:", error);

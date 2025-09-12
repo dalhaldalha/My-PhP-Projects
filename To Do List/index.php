@@ -6,9 +6,9 @@
             /*Check each status of each checkbox and add the state to the database.*/
             /*Select all the states and export them along with their respective task to a txt documnet.*/
             //Once checked, a tasks checkbox should be saved in Sessions and deleted only after a certain period.
-        //Delete Task Actually deletes task.
+        /*Delete Task Actually deletes task.*/
             /*Tasks schould be deleted.*/
-            //Task list shoud load dynamically as user deletes
+            /*Task list shoud load dynamically as user deletes*/
         //Tasks and their status should stay the same even after loading more tasks
         //Option to change to load less.
         //I should be able to determine the priority of a task. High, Medium, and Low.
@@ -98,7 +98,7 @@
                         }
                             
                     } else {
-                        echo "You have no tasks";
+                        // echo "You have no tasks";
                     }
                     ?>
                 </div>
