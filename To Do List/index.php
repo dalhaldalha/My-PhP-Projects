@@ -46,19 +46,19 @@
 
         // Script to load more tasks by 2
 
-        // $(document).ready(function(){
-        //     var taskCount = 2;
-        //     $("#loadBtn").click(function(){
-        //         taskCount = taskCount + 2;
-        //         $("#tasks").load("load.tasks.php", {
-        //             taskNewCount: taskCount
-        //         });
-        //     });
-        // });
-
-        $(document).on("click", "#loadBtn", function(){
-            
+        $(document).ready(function(){
+            var taskCount = 2;
+            $("#loadBtn").click(function(){
+                taskCount = taskCount + 2;
+                $("#tasks").load("load.tasks.php", {
+                    taskNewCount: taskCount
+                });
+            });
         });
+
+        // $(document).on("click", "#loadBtn", function(){
+
+        // });
 
 
         
