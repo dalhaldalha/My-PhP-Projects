@@ -15,6 +15,7 @@
             /*Pick priority and change the color accordinly*/
             //Tasks should get ordered by priority
         //Get the total amount of tasks from the task 
+        //Tasks should be loaded as an addition to the current tasks instead of reuploading the list of tasks
         
     require_once "includes/displayTask.php";
     require_once "includes/session.config.php";
@@ -45,15 +46,21 @@
 
         // Script to load more tasks by 2
 
-        $(document).ready(function(){
-            var taskCount = 2;
-            $("#btn").click(function(){
-                taskCount = taskCount + 2;
-                $("#tasks").load("load.tasks.php", {
-                    taskNewCount: taskCount
-                });
-            });
+        // $(document).ready(function(){
+        //     var taskCount = 2;
+        //     $("#loadBtn").click(function(){
+        //         taskCount = taskCount + 2;
+        //         $("#tasks").load("load.tasks.php", {
+        //             taskNewCount: taskCount
+        //         });
+        //     });
+        // });
+
+        $(document).on("click", "#loadBtn", function(){
+            
         });
+
+
         
     </script>
 </head>
@@ -114,7 +121,7 @@
                 <button class="export-btn" type="submit">Export All Tasks</button>
             </form>
             
-            <button id="btn" class="load-more">Load more tasks...</button>
+            <button id="loadBtn" class="load-more">Load more tasks...</button>
         </div>
         
     </div>
