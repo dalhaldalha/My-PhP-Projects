@@ -16,6 +16,7 @@
             //Tasks should get ordered by priority
         //Get the total amount of tasks from the task 
         //Tasks should be loaded as an addition to the current tasks instead of reuploading the list of tasks
+        //Iv'e been able to track and load the tasks as arrays, Now i need to output them as html elements with the correct formatting.
         
     require_once "includes/displayTask.php";
     require_once "includes/session.config.php";
