@@ -7,9 +7,11 @@ $offset = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
 
 try {
 
-    $query = "SELECT * FROM tasks LIMIT :limit OFFSET :offset;";
+    $query = "SELECT * FROM tasks ORDER BY created_at DESC LIMIT :limit OFFSET :offset;";
     $stmt = $pdo->prepare($query);
-    $stmt->execute([$limit, $offset]);
+    $stmt->bindParam(":limit", $limit, PDO::PARAM_INT);
+    $stmt->bindParam(":offset", $offset, PDO::PARAM_INT);
+    $stmt->execute();
     $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
     echo json_encode($tasks);
 
