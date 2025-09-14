@@ -43,6 +43,9 @@
     <!-- Load Script that styles the priority of a task -->
     <script src="js/taskPriority.js"></script>
 
+    <!-- Load Script that loads more tasks -->
+    <script src="js/loadTasks.js"></script>
+
     <script>
 
         // Script to load more tasks by 2
@@ -57,40 +60,7 @@
         //     });
         // });
 
-        $(document).ready(function(){
-
-            // function loadTasks() {
-
-            // }
-            $("#loadBtn").on("click", function(){
-                let offset = $(".taskContent").length;
-                console.log("Offset: ", offset);
-
-                $.ajax({
-                    url: "load.tasks.php",
-                    type: "POST",
-                    data: {offset: offset},
-                    dataType: "json",
-                    success : function(tasks){
-                        console.log("Tasks: ", tasks);
-                        tasks.forEach(function(task) {
-                            let taskElement = `
-                                <div class="taskContent">
-                                    <p>${task.task}</p>
-                                </div>
-                            `;
-
-                            $(".each-task").append(taskHtml);
-
-                        });
-                    },
-                        error: function(xhr, status, error) {
-                            console.error("AJAX Error: ", status, error);
-                        } 
-
-                });
-            });
-        });
+        
 
 
         
