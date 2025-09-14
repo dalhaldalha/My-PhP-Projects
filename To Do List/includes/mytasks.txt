@@ -2,8 +2,6 @@ My Tasks:
 
  - Bringing out     Status: Done
 
- - Working smooth     Status: Done
-
  - Working out     Status: Uncompleted
 
  - Task 001     Status: Done
