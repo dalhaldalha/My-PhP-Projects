@@ -12,6 +12,7 @@
         //There should be a filter option that:
             //Order by created date.
             //Odered by Priority.
+        //Everything should be saved in sessinos so that even after a page reload, the tasks stay the same.
 
         
     require_once "includes/displayTask.php";
@@ -47,7 +48,6 @@
             <button class="add-task-btn" type="submit">&#43;</button>
         </form>
         
-
         <div class="all-task-div, task-list">
             <h2>All Tasks</h2>
             <div class="form-div">
@@ -94,7 +94,7 @@
             <form action="includes/exportTask.php" method="post">
                 <button class="export-btn" type="submit">Export All Tasks</button>
             </form>
-            
+
             <button id="loadBtn" class="load-more">Load more tasks...</button>
         </div>
         
