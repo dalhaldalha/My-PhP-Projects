@@ -1,10 +1,17 @@
 <?php
 
-require_once "config/database.php";
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    require_once "config/database.php";
 
-$query = "SELECT * FROM tasks ORDER BY created_at DESC LIMIT 2;";
-$stmt = $pdo->prepare($query);
-$stmt->execute();
+    $query = "SELECT * FROM tasks ORDER BY created_at DESC LIMIT 2;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
 
-$tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
-$numRows = count($tasks);
+
+    $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
+    $numRows = count($tasks);
+
+} else {
+    header("Location: ../index.php");
+    exit();
+}
