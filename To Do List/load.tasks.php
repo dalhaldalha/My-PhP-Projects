@@ -17,12 +17,9 @@
         
         $pdo = null;
         $stmt = null;
-        exit();
+        // exit();
 
     } catch (PDOException $e){
         echo json_encode(["error" => $e->getMessage()]);
-        exit();
+        // exit();
     }
-
-
-

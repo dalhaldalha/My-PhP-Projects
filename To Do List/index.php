@@ -1,25 +1,20 @@
 <?php
 
     //Today's Tasks:
-        /*Strike through text when checkbox is clicked*/
-        /*Checked Box needs to be stored and then manipulated in export.*/
-            /*Check each status of each checkbox and add the state to the database.*/
-            /*Select all the states and export them along with their respective task to a txt documnet.*/
-            //Once checked, a tasks checkbox should be saved in Sessions and deleted only after a certain period.
-        /*Delete Task Actually deletes task.*/
-            /*Tasks schould be deleted.*/
-            /*Task list shoud load dynamically as user deletes*/
-        /*Tasks and their status should stay the same even after loading more tasks*/
-        //Option to change to load less.
-        //I should be able to determine the priority of a task. High, Medium, and Low.
-            /*Pick priority and change the color accordinly*/
-            //Tasks should get ordered by priority
-        //Get the total amount of tasks from the task 
-        /*Tasks should be loaded as an addition to the current tasks instead of reuploading the list of tasks*/
-        /*Iv'e been able to track and load the tasks as arrays, Now i need to output them as html elements with the correct formatting.*/
+        //If there are no tasks in the database, Show a message saying that all your tasks are completed.
+        //Differentiate between the list for Uncomplete and Completed tasks.
+            //Completed tasks should show up at the top.
+                //Completed tasks should log, the date and time it was completed.
+            //Uncompleted tasks should show up at the bottom.
+            //Checking or unchecking a task adds it to  either the completed or uncompleted sections.
+        //Adding task is dynamic, meaning it doesn't require a page reload.
+        //User should be able to star a task.
+        //There should be a filter option that:
+            //Order by created date.
+            //Odered by Priority.
+
         
     require_once "includes/displayTask.php";
-    require_once "includes/session.config.php";
 ?>
 
 <!DOCTYPE html>

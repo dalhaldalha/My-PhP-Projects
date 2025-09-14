@@ -18,5 +18,5 @@
 
     $pdo = null;
     $stmt = null;
-    exit();
+    // exit();
 

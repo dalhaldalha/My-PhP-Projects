@@ -9,5 +9,5 @@ $stmt->execute();
 
 $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
 $numRows = count($tasks);
-exit();
+// exit();
 
