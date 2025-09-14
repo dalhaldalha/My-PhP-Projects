@@ -18,11 +18,16 @@ $(document).on("click", ".delete-btn", function(){
             if(taskCount === 0 ) {
                 let completedText = `
                     <div class="completed-div">
-                        <img src="assets/checMark.svg" alt="Completed" class="completed-img">
+                        <img src="assets/checkMark.svg" alt="" class="completed-img">
+                        <p>Your tasks are completed!!</p>
                     </div>
+
+                    
                 
                 `;
-                $(".form-div").html("<p>You have no tasks.</p>");
+
+                $("#tasks").append(completedText);
+                // $(".form-div").append(completedText);
             }
         },
         error: function(xhr, status, error) {

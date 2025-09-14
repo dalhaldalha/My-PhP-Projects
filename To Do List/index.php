@@ -3,6 +3,7 @@
     //Today's Tasks:
         //If there are no tasks in the database, Show a message saying that all your tasks are completed.
         //Differentiate between the list for Uncomplete and Completed tasks.
+            //Should be able to toggle between the two types of tasks to be shown or hidden.
             //Completed tasks should show up at the top.
                 //Completed tasks should log, the date and time it was completed.
             //Uncompleted tasks should show up at the bottom.
