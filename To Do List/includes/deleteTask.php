@@ -1,6 +1,5 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once "session.config.php";
 
     $taskId = $_POST['id'] ?? NULL;
@@ -20,7 +19,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $pdo = null;
     $stmt = null;
     exit();
-} else {
-    header("Location: ../index.php");
-    exit();
-}
+

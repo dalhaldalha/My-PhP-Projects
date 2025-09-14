@@ -9,14 +9,14 @@
         /*Delete Task Actually deletes task.*/
             /*Tasks schould be deleted.*/
             /*Task list shoud load dynamically as user deletes*/
-        //Tasks and their status should stay the same even after loading more tasks
+        /*Tasks and their status should stay the same even after loading more tasks*/
         //Option to change to load less.
         //I should be able to determine the priority of a task. High, Medium, and Low.
             /*Pick priority and change the color accordinly*/
             //Tasks should get ordered by priority
         //Get the total amount of tasks from the task 
-        //Tasks should be loaded as an addition to the current tasks instead of reuploading the list of tasks
-        //Iv'e been able to track and load the tasks as arrays, Now i need to output them as html elements with the correct formatting.
+        /*Tasks should be loaded as an addition to the current tasks instead of reuploading the list of tasks*/
+        /*Iv'e been able to track and load the tasks as arrays, Now i need to output them as html elements with the correct formatting.*/
         
     require_once "includes/displayTask.php";
     require_once "includes/session.config.php";
@@ -36,42 +36,19 @@
     <script src="js/strike-through.js"></script>\
     <!-- Load Script that monitors the status of a task -->
     <script src="js/status-check.js"></script>
-
     <!-- Load Script that Deletes Task When Trash icon is clicked -->
     <script src="js/deleteTask.js"></script>
-
     <!-- Load Script that styles the priority of a task -->
     <script src="js/taskPriority.js"></script>
-
     <!-- Load Script that loads more tasks -->
     <script src="js/loadTasks.js"></script>
 
-    <script>
-
-        // Script to load more tasks by 2
-
-        // $(document).ready(function(){
-        //     var taskCount = 2;
-        //     $("#loadBtn").click(function(){
-        //         taskCount = taskCount + 2;
-        //         $("#tasks").load("load.tasks.php", {
-        //             taskNewCount: taskCount
-        //         });
-        //     });
-        // });
-
-        
-
-
-        
-    </script>
 </head>
 <body>
     <h1>To Do List</h1>
     <div class="task-div">
         <form class="add-task" action="includes/addTask.php" method="post">
             <input class="text-area" type="text" name="newTask" placeholder="Write a new task" required>
-            
             <button class="add-task-btn" type="submit">&#43;</button>
         </form>
         

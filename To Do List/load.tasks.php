@@ -1,7 +1,6 @@
 <?php
 
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once "config/database.php";
     $limit = 2;
     $offset = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
@@ -26,7 +25,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
 
-} else {
-    header("Location: ../index.php");
-    exit();
-}
+
