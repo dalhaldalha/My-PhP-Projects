@@ -10,7 +10,10 @@ $(document).on("click", ".starIcon", function(){
         type: "POST",
         data: {priority: priority, id:id},
         success : function (){
-            
+
+        }, 
+        error:function(xhr, status, error) {
+            console.log("Error message: ", status, error);
         }
     });
 });
