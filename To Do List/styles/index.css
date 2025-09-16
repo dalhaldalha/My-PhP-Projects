@@ -161,10 +161,10 @@ body {
     border-color: hsl(272, 81%, 47%);
     padding: 0rem 0.5rem;
 }
-/* 
-.starIcon {
-    background-color: ;
-} */
+
+.starIcon:active {
+    fill: hsl(272, 81%, 47%);
+}
 
 /*--------------------DELETE TASK SECTION----------------------------*/
 .delete-btn {
