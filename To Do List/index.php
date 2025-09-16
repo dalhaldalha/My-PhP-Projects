@@ -42,26 +42,6 @@
 
     <script>
 
-        $(document).on("click", ".starIcon", function(){
-            $(this).toggleClass("starIconActive");
-            let priority = $(this).hasClass("starIconActive") ? 1 : 0;
-            let id = $(this).data("id");
-            console.log("Task: ", id);
-            console.log("Priority: ", priority);
-        });
-
-
-        // $(document).ready(function(){
-
-        //     $(".starIcon").on("click", function(){
-        //         $(this).toggleClass("starIconActive");
-        //         let priority = $(this).hasClass("starIconActive") ? 1 : 0;
-        //         let id = $(this).data("id");
-        //         console.log("Task: ", id);
-        //         console.log("Priority: ", priority);
-        //     });
-        // });
-
 
     </script>
 
@@ -92,12 +72,6 @@
                                     echo "<svg data-id='" . $task["id"] . "' class='starIcon' xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='transparent' viewBox='0 0 24 24' stroke='hsl(272, 81%, 47%)'>";
                                         echo "<path d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z'/>";
                                     echo "</svg>";
-                                    // echo "<select data-id='" . $task["id"] . "' id='priority' class='priority'>";
-                                    //     echo "<option value='' disabled selected>Select Priority</option>";
-                                    //     echo "<option  value='high' class='priority-high'>High</option>";
-                                    //     echo "<option  value='medium' class='priority-medium'>Medium</option>";
-                                    //     echo "<option  value='low' class='priority-low'>Low</option>";
-                                    // echo "</select>";
                                     echo "<button data-id='" . $task["id"] . "' class='delete-btn' type='submit' name='delete'>";
                                         echo "<svg class='trash-can-icon'  xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>";
                                             echo "<path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z'/>";

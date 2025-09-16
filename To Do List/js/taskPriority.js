@@ -5,15 +5,15 @@ $(document).on("click", ".starIcon", function(){
     console.log("Task: ", id);
     console.log("Priority: ", priority);
 
-    $.ajax ({
-        url: "includes/taskPriority.php",
-        type: "POST",
-        data: {priority: priority, id:id},
-        success : function (){
+    // $.ajax ({
+    //     url: "includes/taskPriority.php",
+    //     type: "POST",
+    //     data: {priority: priority, id:id},
+    //     success : function (){
 
-        }, 
-        error:function(xhr, status, error) {
-            console.log("Error message: ", status, error);
-        }
-    });
+    //     }, 
+    //     error:function(xhr, status, error) {
+    //         console.log("Error message: ", status, error);
+    //     }
+    // });
 });
