@@ -4,4 +4,13 @@ $(document).on("click", ".starIcon", function(){
     let id = $(this).data("id");
     console.log("Task: ", id);
     console.log("Priority: ", priority);
+
+    $.ajax ({
+        url: "includes/taskPriority.php",
+        type: "POST",
+        data: {priority: priority, id:id},
+        success : function (){
+            
+        }
+    });
 });
