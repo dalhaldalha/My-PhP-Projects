@@ -40,6 +40,17 @@
     <!-- Load Script that loads more tasks -->
     <script src="js/loadTasks.js"></script>
 
+    <script>
+        $(Document).ready(function(){
+            $(".starIcon").click(function(){
+                $(this).toggleClass("starIconActive");
+                console.log("Priority: ",  );
+            });
+        });
+
+
+    </script>
+
 </head>
 <body>
     <h1>To Do List</h1>

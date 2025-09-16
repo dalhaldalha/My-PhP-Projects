@@ -162,7 +162,7 @@ body {
     padding: 0rem 0.5rem;
 }
 
-.starIcon:active {
+.starIconActive {
     fill: hsl(272, 81%, 47%);
 }
 
