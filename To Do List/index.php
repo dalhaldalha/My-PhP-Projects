@@ -59,6 +59,7 @@
             <div class="form-div">
                 <div id="tasks">
                     <?php
+                    
                     if ($numRows > 0) {
                         foreach ($tasks as $task) {
                             echo "<div class='each-task deleteClass'>";

@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $taskId = $_POST["id"];
     $status = $_POST["status"];
 
-    $query1 = "UPDATE tasks SET status = ? WHERE id = ?";
-    $stmt = $pdo->prepare($query1);
+    $query = "UPDATE tasks SET status = ? WHERE id = ?";
+    $stmt = $pdo->prepare($query);
     if($stmt->execute([$status, $taskId])) {
         echo "Successfull Update";
     } else {
