@@ -9,7 +9,7 @@
             //Uncompleted tasks should show up at the bottom.
             //Checking or unchecking a task adds it to  either the completed or uncompleted sections.
         //Adding task is dynamic, meaning it doesn't require a page reload.
-        //User should be able to star a task.
+        //User should be able to star a task. And store in database
         //There should be a filter option that:
             //Order by created date.
             //Odered by Priority.
@@ -41,15 +41,26 @@
     <script src="js/loadTasks.js"></script>
 
     <script>
-        $(Document).ready(function(){
-            $(".starIcon").click(function(){
-                $(this).toggleClass("starIconActive");
-                let priority = $(this).hasClass("starIconActive") ? 1 : 0;
-                let id = $(this).data("id");
-                console.log("Task: ", id);
-                console.log("Priority: ", priority);
-            });
+
+        $(document).on("click", ".starIcon", function(){
+            $(this).toggleClass("starIconActive");
+            let priority = $(this).hasClass("starIconActive") ? 1 : 0;
+            let id = $(this).data("id");
+            console.log("Task: ", id);
+            console.log("Priority: ", priority);
         });
+
+
+        // $(document).ready(function(){
+
+        //     $(".starIcon").on("click", function(){
+        //         $(this).toggleClass("starIconActive");
+        //         let priority = $(this).hasClass("starIconActive") ? 1 : 0;
+        //         let id = $(this).data("id");
+        //         console.log("Task: ", id);
+        //         console.log("Priority: ", priority);
+        //     });
+        // });
 
 
     </script>

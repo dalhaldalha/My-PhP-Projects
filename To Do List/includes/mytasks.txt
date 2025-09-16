@@ -1,18 +1,12 @@
 My Tasks:
 
- - Bringing out     Status: Done
-
  - Working out     Status: Uncompleted
 
- - Task 001     Status: Done
-
- - Look for      Status: Done
+ - Working     Status: Uncompleted
 
  - Work out     Status: Uncompleted
 
- - Books     Status: Uncompleted
+ - Go to work     Status: Uncompleted
 
- - Book     Status: Uncompleted
-
- - Work out     Status: Uncompleted
+ - Welcome     Status: Uncompleted
 
