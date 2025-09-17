@@ -11,7 +11,7 @@ $(document).on("click", ".starIcon", function(){
         data: {priority: priority, id:id},
         dataType: "json",
         success : function (){
-            console.log("Priority Added to the database");
+            console.log(message1);
         }, 
         error:function(xhr, status, error) {
             console.log("Error message: ", status, error);
