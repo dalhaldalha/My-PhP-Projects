@@ -9,7 +9,7 @@
             //Uncompleted tasks should show up at the bottom.
             //Checking or unchecking a task adds it to  either the completed or uncompleted sections.
         //Adding task is dynamic, meaning it doesn't require a page reload.
-        //User should be able to star a task. And store in database
+        /*User should be able to star a task. And store in database*/
         //There should be a filter option that:
             //Order by created date.
             //Odered by Priority.
@@ -59,7 +59,7 @@
             <div class="form-div">
                 <div id="tasks">
                     <?php
-                    
+
                     if ($numRows > 0) {
                         foreach ($tasks as $task) {
                             echo "<div class='each-task deleteClass'>";

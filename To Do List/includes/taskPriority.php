@@ -9,16 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     
     $query = "UPDATE tasks SET priority = ? WHERE id = ?";
-    $stmt = pdo->prepare($query);
+    $stmt = $pdo->prepare($query);
     if ($stmt->execute([$taskPriority, $taskID])){
-        $message1 = "Updated succesfully!";
-        echo json_encode($message1);
+        echo json_encode(["status" => "success", "message" => "Task updated successfully"]);
     } else {
-        $message2 = "Update failed!";
-        echo json_encode($message2);
+        echo json_encode(["status" => "failed", "message" => "Task failed to updated"]);
     }
-
-    
 }
 
 

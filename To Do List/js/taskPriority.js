@@ -10,11 +10,15 @@ $(document).on("click", ".starIcon", function(){
         type: "POST",
         data: {priority: priority, id:id},
         dataType: "json",
-        success : function (){
-            console.log(message1);
+        success : function (response){
+            if(response.status === "success") {
+                console.log(response.message);
+            } else {
+                console.log(response.message);
+            }
         }, 
         error:function(xhr, status, error) {
-            console.log("Error message: ", status, error);
+            console.log("AJAX error: ", error);
         }
     });
 });
