@@ -5,15 +5,16 @@ $(document).on("click", ".starIcon", function(){
     console.log("Task: ", id);
     console.log("Priority: ", priority);
 
-    // $.ajax ({
-    //     url: "includes/taskPriority.php",
-    //     type: "POST",
-    //     data: {priority: priority, id:id},
-    //     success : function (){
-
-    //     }, 
-    //     error:function(xhr, status, error) {
-    //         console.log("Error message: ", status, error);
-    //     }
-    // });
+    $.ajax ({
+        url: "includes/taskPriority.php",
+        type: "POST",
+        data: {priority: priority, id:id},
+        dataType: "json",
+        success : function (){
+            console.log("Priority Added to the database");
+        }, 
+        error:function(xhr, status, error) {
+            console.log("Error message: ", status, error);
+        }
+    });
 });

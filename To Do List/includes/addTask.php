@@ -6,8 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require_once "../config/database.php";
 
-    $query;
-    
     function addTask($newTask) {
         global $pdo;
         $query = "INSERT INTO tasks (task) VALUES (:task)";
