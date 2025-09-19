@@ -66,14 +66,25 @@
             </div>
         `;
         $(".add-task-btn").on("click", function(){
-            $("#tasks").append(firstTasks);
+            let taskInput = $(".text-area").val();
+            
 
             $.ajax({
-                url: "displayTask.php",
+                url: "addTask.php",
                 type: "POST",
+                data: {newTask: taskInput},
+                datatype: "json",
+                success: function(){
+
+                }, 
+                error: function(xhr, status, error){
+                    console.error("AJAX Error: ", status, error);
+                }
 
 
             });
+
+            $("#tasks").append(firstTasks);
         });
 
         

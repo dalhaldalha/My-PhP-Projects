@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $newTask = $_POST['newTask'] ?? NULL;
+    $newTask = $_POST['newTask'];
 
 
     require_once "../config/database.php";
