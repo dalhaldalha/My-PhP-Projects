@@ -47,6 +47,7 @@
         $("#addForm").on("submit", function(e){
             e.preventDefault();
             let taskInput = $(this).find(".text-area").val();
+            console.log("Task Input: ", taskInput);
             
 
             $.ajax({
@@ -55,7 +56,7 @@
                 data: {newTask: taskInput},
                 dataType: "json",
                 success: function(tasks){
-                    console.log(tasks);
+                    
                     tasks.foreach(function(task){
                         let firstTasks = `
                             <div class='each-task deleteClass'>
