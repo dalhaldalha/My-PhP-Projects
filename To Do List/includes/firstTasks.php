@@ -12,11 +12,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         echo json_encode($tasks);
         // echo json_encode($numRows);
+        $pdo = null;
+        $stmt = null;
+
+        exit();
 
     } catch (PDOException $e) {
         echo json_encode(["error" => $e->getMessage()]);
+        exit();
     }
 
 } else {
     echo json_encode(["error" => "Wrong Request Method"]);
+    exit();
 }
