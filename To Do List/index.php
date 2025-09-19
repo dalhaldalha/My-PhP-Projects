@@ -65,6 +65,18 @@
                 </div>
             </div>
         `;
+        $(".add-task-btn").on("click", function(){
+            $("#tasks").append(firstTasks);
+
+            $.ajax({
+                url: "displayTask.php",
+                type: "POST",
+
+
+            });
+        });
+
+        
     });
     </script>
 
@@ -83,35 +95,35 @@
                 <div id="tasks">
                     <?php
 
-                    if ($numRows > 0) {
-                        foreach ($tasks as $task) {
-                            echo "<div class='each-task deleteClass'>";
-                                echo "<div class='end-to-end'>";
-                                    echo "<input data-id='" . $task["id"] . "' class='checkbox' type='checkbox'>";
-                                    echo "<p class='taskContent'>";
-                                        echo $task["task"];
-                                    echo "</p>";
-                                echo "</div>";
-                                echo "<div class='end-to-end'>";
-                                    echo "<svg data-id='" . $task["id"] . "' class='starIcon' xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='transparent' viewBox='0 0 24 24' stroke='hsl(272, 81%, 47%)'>";
-                                        echo "<path d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z'/>";
-                                    echo "</svg>";
-                                    echo "<button data-id='" . $task["id"] . "' class='delete-btn' type='submit' name='delete'>";
-                                        echo "<svg class='trash-can-icon'  xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>";
-                                            echo "<path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z'/>";
-                                            echo "<path d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z'/>";
-                                        echo "</svg>";
-                                    echo "</button>";
+                    // if ($numRows > 0) {
+                    //     foreach ($tasks as $task) {
+                    //         echo "<div class='each-task deleteClass'>";
+                    //             echo "<div class='end-to-end'>";
+                    //                 echo "<input data-id='" . $task["id"] . "' class='checkbox' type='checkbox'>";
+                    //                 echo "<p class='taskContent'>";
+                    //                     echo $task["task"];
+                    //                 echo "</p>";
+                    //             echo "</div>";
+                    //             echo "<div class='end-to-end'>";
+                    //                 echo "<svg data-id='" . $task["id"] . "' class='starIcon' xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='transparent' viewBox='0 0 24 24' stroke='hsl(272, 81%, 47%)'>";
+                    //                     echo "<path d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z'/>";
+                    //                 echo "</svg>";
+                    //                 echo "<button data-id='" . $task["id"] . "' class='delete-btn' type='submit' name='delete'>";
+                    //                     echo "<svg class='trash-can-icon'  xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>";
+                    //                         echo "<path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z'/>";
+                    //                         echo "<path d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z'/>";
+                    //                     echo "</svg>";
+                    //                 echo "</button>";
 
-                                echo "</div>";
-                            echo "</div>";
+                    //             echo "</div>";
+                    //         echo "</div>";
                             
                             
-                        }
+                    //     }
                             
-                    } else {
-                        // echo "You have no tasks";
-                    }
+                    // } else {
+                    //     // echo "You have no tasks";
+                    // }
                     ?>
                 </div>
             </div>
