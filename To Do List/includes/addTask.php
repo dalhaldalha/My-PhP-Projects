@@ -3,33 +3,24 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newTask = $_POST['newTask'];
 
-
-
-    function addTask($newTask) {
-        require_once "../config/database.php";
-        global $pdo;
-        try {
-            $query = "INSERT INTO tasks (task) VALUES (:task)";
-            $stmt = $pdo->prepare($query);
-            $stmt->bindParam(':task', $newTask);
-            $stmt->execute();
-            $tasks = fetchALL(PDO::FETCH_ASSOC);
-            echo json_encode($tasks);
-
-        } catch(PDOException $e) {
-
-        }
-        
-        
+    
+    require_once "../config/database.php";
+    
+    try {
+        $query = "INSERT INTO tasks (task) VALUES (:task)";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':task', $newTask);
+        $stmt->execute();
+        $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
+        echo json_encode($tasks);
         header("Location: ../index.php");
+
         exit();
+
+    } catch(PDOException $e) {
+        echo json_encode(["error" => $e->getMessage]);
     }
 
-    if (!isset($newTask)) {
-        addTask($newTask);
-    } else {
-        echo "Task cannot be empty.";
-    }
     
 
 } else {

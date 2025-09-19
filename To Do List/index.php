@@ -54,6 +54,7 @@
                 data: {newTask: taskInput},
                 datatype: "json",
                 success: function(tasks){
+                    console.log(tasks);
                     tasks.foreach(function(task){
                         let firstTasks = `
                             <div class='each-task deleteClass'>
@@ -101,10 +102,10 @@
 <body>
     <h1>To Do List</h1>
     <div class="task-div">
-        <form class="add-task" action="includes/addTask.php" method="post">
+        <div class="add-task" action="includes/addTask.php" method="post">
             <input class="text-area" type="text" name="newTask" placeholder="Write a new task" required>
             <button class="add-task-btn" type="submit">&#43;</button>
-        </form>
+        </div>
         
         <div class="all-task-div, task-list">
             <h2>All Tasks</h2>
