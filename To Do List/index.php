@@ -44,7 +44,8 @@
 
     $(document).ready(function(){
         
-        $(".add-task-btn").on("click", function(){
+        $("#addForm").on("submit", function(e){
+            e.preventDefault();
             let taskInput = $(".text-area").val();
             
 
@@ -102,7 +103,7 @@
 <body>
     <h1>To Do List</h1>
     <div class="task-div">
-        <form class="add-task" action="includes/addTask.php" method="post">
+        <form id="addForm" class="add-task" action="includes/addTask.php" method="post">
             <input class="text-area" type="text" name="newTask" placeholder="Write a new task" required>
             <button class="add-task-btn" type="submit">&#43;</button>
         </form>
