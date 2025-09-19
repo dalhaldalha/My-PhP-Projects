@@ -1,4 +1,21 @@
 $(document).ready(function(){
+    $.ajax({
+        url: "includes/firstTasks.php",
+        type: "POST",
+        dataType: "json",
+
+        success: function(tasks){
+            console.log("AJAX success: ", tasks);
+            tasks.forEach(function(task){
+
+            });
+
+        },
+        error: function(xhr, status, error){
+            console.error("AJAX Error: ", status, error);
+        }
+
+    });
         
     $("#addForm").on("submit", function(e){
         e.preventDefault();
