@@ -1,10 +1,28 @@
 My Tasks:
 
- - Working out     Status: Uncompleted
+ - Writing     Status: Uncompleted
 
- - Working     Status: Uncompleted
+ - Work     Status: Uncompleted
 
- - Work out     Status: Uncompleted
+ - Work     Status: Uncompleted
+
+ - Work     Status: Uncompleted
+
+ - Go to school     Status: Uncompleted
+
+ - Worrk     Status: Uncompleted
+
+ - Run     Status: Uncompleted
+
+ - Go for a run     Status: Uncompleted
+
+ - Run     Status: Uncompleted
+
+ - Working out     Status: Done
+
+ - Working     Status: Done
+
+ - Work out     Status: Done
 
  - Go to work     Status: Uncompleted
 
