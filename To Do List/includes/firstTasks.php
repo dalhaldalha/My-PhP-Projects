@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] === "post") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once "../config/database.php";
 
     try {
