@@ -56,8 +56,9 @@
                 data: {newTask: taskInput},
                 dataType: "json",
                 success: function(tasks){
+                    console.log("AJAX Success: ", tasks);
                     
-                    tasks.foreach(function(task){
+                    tasks.forEach(function(task){
                         let firstTasks = `
                             <div class='each-task deleteClass'>
                                 <div class='end-to-end'>
