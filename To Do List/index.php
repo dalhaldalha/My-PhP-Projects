@@ -46,14 +46,14 @@
         
         $("#addForm").on("submit", function(e){
             e.preventDefault();
-            let taskInput = $(".text-area").val();
+            let taskInput = $(this).find(".text-area").val();
             
 
             $.ajax({
                 url: "addTask.php",
                 type: "POST",
                 data: {newTask: taskInput},
-                datatype: "json",
+                dataType: "json",
                 success: function(tasks){
                     console.log(tasks);
                     tasks.foreach(function(task){
