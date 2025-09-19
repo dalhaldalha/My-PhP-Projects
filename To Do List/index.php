@@ -51,12 +51,12 @@
             
 
             $.ajax({
-                url: "addTask.php",
+                url: "inlcudes/addTask.php",
                 type: "POST",
                 data: {newTask: taskInput},
                 dataType: "json",
                 success: function(tasks){
-                    console.log("AJAX Success: ", tasks);
+                    console.log("AJAX Success: ", response);
                     
                     tasks.forEach(function(task){
                         let firstTasks = `
