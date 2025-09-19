@@ -102,10 +102,10 @@
 <body>
     <h1>To Do List</h1>
     <div class="task-div">
-        <div class="add-task" action="includes/addTask.php" method="post">
+        <form class="add-task" action="includes/addTask.php" method="post">
             <input class="text-area" type="text" name="newTask" placeholder="Write a new task" required>
             <button class="add-task-btn" type="submit">&#43;</button>
-        </div>
+        </form>
         
         <div class="all-task-div, task-list">
             <h2>All Tasks</h2>
