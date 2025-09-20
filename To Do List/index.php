@@ -105,6 +105,8 @@
                     dataType: "json",
                     success: function(tasks){
                         console.log("AJAX Success: ", tasks);
+
+                        fetchTasks();
                         
                     }, 
                     error: function(xhr, status, error){
