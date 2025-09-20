@@ -13,6 +13,8 @@ $(document).on("click", ".delete-btn", function(){
             console.log("Task deleted:", response);
             button.closest(".deleteClass").remove();
 
+            fetchTasks();
+
             let taskCount = $(".taskContent").length;
             console.log("Number of tasks remaining: ", taskCount );
             if(taskCount === 0 ) {
@@ -27,7 +29,7 @@ $(document).on("click", ".delete-btn", function(){
                 `;
 
                 $("#tasks").append(completedText);
-                // $(".form-div").append(completedText);
+
             }
         },
         error: function(xhr, status, error) {
