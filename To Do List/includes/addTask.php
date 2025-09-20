@@ -10,7 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query1 = "INSERT INTO tasks (task) VALUES (:task)";
         $stmt = $pdo->prepare($query1);
         $stmt->bindParam(':task', $newTask);
-        $stmt->execute();
+        
+        if ($stmt->execute()) {
+            echo json_encode(["success" => "Task added successfully."]);
+        } else {
+            echo json_encode(["error" => "Failed to add task."]);
+        }
 
         $pdo = null;
         $stmt = null;

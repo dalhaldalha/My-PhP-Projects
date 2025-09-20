@@ -103,8 +103,8 @@
                     type: "POST",
                     data: {newTask: taskInput},
                     dataType: "json",
-                    success: function(tasks){
-                        console.log("AJAX Success: ", tasks);
+                    success: function(response){
+                        console.log("AJAX Success: ", response.success);
 
                         fetchTasks();
                         
