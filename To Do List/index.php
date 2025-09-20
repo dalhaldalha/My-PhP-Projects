@@ -56,6 +56,7 @@
 
                     success: function(tasks){
                         console.log("AJAX success: ", tasks);
+                        $("#tasks").empty();
                         tasks.forEach(function(task){
                             let firstTasks = `
                                 <div class='each-task deleteClass'>
@@ -107,6 +108,9 @@
                         console.log("AJAX Success: ", response.success);
 
                         fetchTasks();
+
+                        // Clears the input field after submission
+                        $("#addForm").trigger("reset");
                         
                     }, 
                     error: function(xhr, status, error){
