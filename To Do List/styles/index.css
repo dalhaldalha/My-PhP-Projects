@@ -241,3 +241,20 @@ body {
 .load-more:active {
     transform: translateY(-3px);
 }
+
+
+/*--------------------COMPLETED TASKS SECTION----------------------------*/
+
+.completedTasks {
+    /* visibility: hidden; */
+    
+}
+
+.completedTasks:hover {
+    cursor: pointer;
+    background: hsl(0, 0%, 96%);
+}
+
+.hiddenDiv {
+    display: none;
+}

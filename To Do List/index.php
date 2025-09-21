@@ -1,14 +1,14 @@
 <?php
 
     //Today's Tasks:
-        //If there are no tasks in the database, Show a message saying that all your tasks are completed.
+        /*If there are no tasks in the database, Show a message saying that all your tasks are completed.*/
         //Differentiate between the list for Uncomplete and Completed tasks.
             //Should be able to toggle between the two types of tasks to be shown or hidden.
             //Completed tasks should show up at the top.
                 //Completed tasks should log, the date and time it was completed.
             //Uncompleted tasks should show up at the bottom.
             //Checking or unchecking a task adds it to  either the completed or uncompleted sections.
-        //Adding task is dynamic, meaning it doesn't require a page reload.
+        /*Adding task is dynamic, meaning it doesn't require a page reload.*/
         /*User should be able to star a task. And store in database*/
         //There should be a filter option that:
             //Order by created date.
@@ -51,7 +51,7 @@
                     console.log("AJAX success: ", tasks);
                     
 
-                    
+                    //Determines how each task from the database is displayed
                     $("#tasks").empty();
                     tasks.forEach(function(task){
                         let firstTasks = `
@@ -79,6 +79,8 @@
                         $("#tasks").append(firstTasks);
                     });
 
+
+                    //If there are zero Tasks, a, tasks are completed message will be shown.
                     let numOfTasks = $(tasks).length;
                     console.log("Number of Tasks: ", numOfTasks);
                     if(numOfTasks === 0 ) {
@@ -101,9 +103,12 @@
             });
         }
 
-            // let taskCount = $("#tasks").length;
-            // console.log("Number of tasks remaining: ", taskCount );
-            
+        $(document).ready(function(){
+            $(".completedTasks").click(function(){
+                console.log("Completed Tasks have been clicked");
+                $(".completeTasks-div").slideToggle("hiddenDiv");
+            });
+        });
 
     </script>
 
@@ -117,11 +122,17 @@
         </form>
         
         <div class="all-task-div, task-list">
-            <h2>All Tasks</h2>
+            <h2>Uncompleted Tasks</h2>
             <div class="form-div">
                 <div id="tasks">
                     
                 </div>
+            </div>
+
+            <h2 class="completedTasks">Completed Tasks</h2>
+            <div class="completeTasks-div">
+                <p>Task 1</p>
+                <p>Task 2</p>
             </div>
         </div>
 
