@@ -1,8 +1,22 @@
 My Tasks:
 
- - Load more     Status: Uncompleted
+ - Write up     Status: Done
 
- - Work     Status: Uncompleted
+ - Work out     Status: Uncompleted
 
- - Walk to club     Status: Uncompleted
+ - Sleep     Status: Done
+
+ - Sleeping     Status: Done
+
+ - Duplicate     Status: Uncompleted
+
+ - Writing out     Status: Done
+
+ - Welcome home     Status: Uncompleted
+
+ - Writing     Status: Uncompleted
+
+ - Run     Status: Uncompleted
+
+ - Welcome     Status: Uncompleted
 

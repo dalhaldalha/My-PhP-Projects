@@ -108,8 +108,20 @@
                 console.log("Completed Tasks have been clicked");
                 $(".completeTasks-div").slideToggle("hiddenDiv");
             });
+
+            $(".checkbox").change(function(){
+                console.log("Task has been checked");
+            });
+
+            // $(".checkbox").on("change", function(){
+            //     console.log("Task has been checked");
+            //     $(this).siblings(".taskContent").toggleClass("strike", this.checked);
+            // });
         });
 
+        // $(document).on("change", ".checkbox", function(){
+//     $(this).siblings(".taskContent").toggleClass("strike", this.checked);
+// });
     </script>
 
 </head>
