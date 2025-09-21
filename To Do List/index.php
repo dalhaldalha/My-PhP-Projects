@@ -49,6 +49,9 @@
 
                 success: function(tasks){
                     console.log("AJAX success: ", tasks);
+                    
+
+                    
                     $("#tasks").empty();
                     tasks.forEach(function(task){
                         let firstTasks = `
@@ -76,6 +79,20 @@
                         $("#tasks").append(firstTasks);
                     });
 
+                    let numOfTasks = $(tasks).length;
+                    console.log("Number of Tasks: ", numOfTasks);
+                    if(numOfTasks === 0 ) {
+                        let completedText = `
+                            <div class="completed-div">
+                                <img src="assets/checkMark.svg" alt="" class="completed-img">
+                                <p>Your tasks are completed!!</p>
+                            </div>
+                        
+                        `;
+
+                        $("#tasks").append(completedText);
+                    }
+
                 },
                 error: function(xhr, status, error){
                     console.error("AJAX Error: ", status, error);
@@ -83,6 +100,10 @@
 
             });
         }
+
+            // let taskCount = $("#tasks").length;
+            // console.log("Number of tasks remaining: ", taskCount );
+            
 
     </script>
 
