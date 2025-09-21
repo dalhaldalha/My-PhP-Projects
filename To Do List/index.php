@@ -129,7 +129,7 @@
                 </div>
             </div>
 
-            <h2 class="completedTasks">Completed Tasks</h2>
+            <h2 class="completedTasks">Completed Tasks  &#9660</h2>
             <div class="completeTasks-div">
                 <p>Task 1</p>
                 <p>Task 2</p>
