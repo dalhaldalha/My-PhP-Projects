@@ -1,8 +1,6 @@
 $(document).ready(function(){
 
-    // function loadTasks() {
-
-    // }
+    
     $("#loadBtn").on("click", function(){
         let offset = $(".taskContent").length;
         console.log("Offset: ", offset);
