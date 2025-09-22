@@ -48,6 +48,7 @@
                 dataType: "json",
 
                 success: function(tasks){
+                    
                     console.log("AJAX success: ", tasks);
                     
 
@@ -76,7 +77,19 @@
                                 </div>
                             </div>
                         `;
+                        let taskStatus = ${task.satus};
+
+                        console.log("Tasks Status is: ", taskStatus);
                         $("#tasks").append(firstTasks);
+                        
+                        // if (${task.status} === 0) {
+                        //     console.log("Tasks Status is: ", ${task.status});
+                        //     $("#tasks").append(firstTasks);
+                        // } else {
+                        //     $("#tasks2").append(firstTasks);
+                        // }
+                        
+                        
                     });
 
 
@@ -109,9 +122,9 @@
                 $(".completeTasks-div").slideToggle("hiddenDiv");
             });
 
-            $(".checkbox").change(function(){
-                console.log("Task has been checked");
-            });
+            // $(".checkbox").change(function(){
+            //     console.log("Task has been checked");
+            // });
 
             // $(".checkbox").on("change", function(){
             //     console.log("Task has been checked");
@@ -143,8 +156,11 @@
 
             <h2 class="completedTasks">Completed Tasks  &#9660</h2>
             <div class="completeTasks-div">
-                <p>Task 1</p>
-                <p>Task 2</p>
+                <div id="tasks2">
+                    <p>Task 1</p>
+                    <p>Task 2</p>
+                </div>
+                
             </div>
         </div>
 
