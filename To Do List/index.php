@@ -4,7 +4,7 @@
         /*If there are no tasks in the database, Show a message saying that all your tasks are completed.*/
         //Differentiate between the list for Uncomplete and Completed tasks.
             //Should be able to toggle between the two types of tasks to be shown or hidden.
-            //Completed tasks should show up at the top.
+            //Completed tasks should show up at the bottom.
                 //Completed tasks should log, the date and time it was completed.
             //Uncompleted tasks should show up at the bottom.
             //Checking or unchecking a task adds it to  either the completed or uncompleted sections.
@@ -77,17 +77,16 @@
                                 </div>
                             </div>
                         `;
-                        let taskStatus = ${task.satus};
+                        let taskStatus = task.satus;
 
-                        console.log("Tasks Status is: ", taskStatus);
-                        $("#tasks").append(firstTasks);
                         
-                        // if (${task.status} === 0) {
-                        //     console.log("Tasks Status is: ", ${task.status});
-                        //     $("#tasks").append(firstTasks);
-                        // } else {
-                        //     $("#tasks2").append(firstTasks);
-                        // }
+                        
+                        if (task.status === 0) {
+                            console.log("Tasks Status is: ", task.status);
+                            $("#tasks").append(firstTasks);
+                        } else {
+                            $("#tasks2").append(firstTasks);
+                        }
                         
                         
                     });
@@ -145,9 +144,10 @@
             <input class="text-area" type="text" name="newTask" placeholder="Write a new task" required>
             <button class="add-task-btn" type="submit">&#43;</button>
         </form>
-        
+
+
         <div class="all-task-div, task-list">
-            <h2>Uncompleted Tasks</h2>
+            <h3>Uncompleted Tasks</h3>
             <div class="form-div">
                 <div id="tasks">
                     
@@ -157,8 +157,7 @@
             <h2 class="completedTasks">Completed Tasks  &#9660</h2>
             <div class="completeTasks-div">
                 <div id="tasks2">
-                    <p>Task 1</p>
-                    <p>Task 2</p>
+
                 </div>
                 
             </div>
