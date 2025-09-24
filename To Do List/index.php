@@ -61,18 +61,19 @@
                     $("#tasks2").empty();
                     tasks.forEach(function(task){
                         
-                        renderTask(task);
+                        let firstTasks = renderTask(task);
                         
                         let taskStatus = task.status;
                         
                         if (task.status === 0) {
                             console.log("Tasks Status is: ", task.status);
                             $("#tasks").append(firstTasks);
-                            $(".checkbox").prop("checked", false);
+                            $(".checkbox[data-id='" + task.id + "']").prop("checked", false);
 
                             
                             
                         } else {
+                            console.log("Tasks Status is: ", task.status);
                             $("#tasks2").append(firstTasks);
                             // $(".checkbox").prop("checked", true);
 
@@ -104,7 +105,7 @@
             });
         }
 
-        function renderTask(){
+        function renderTask(task){
             let firstTasks = `
                 <div class='each-task deleteClass'>
                     <div class='end-to-end'>
