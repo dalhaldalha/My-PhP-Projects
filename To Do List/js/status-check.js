@@ -12,7 +12,8 @@ $(document).on("change", ".checkbox", function() {
         success: function(response){
             console.log("Server says:", response);
 
-            fetchTasks();
+            
+            //Check if the task already exits, if it does not exist, fetchTasks(); else don't fetch
         }, 
         error: function(chr, status, error){
             console.error("AJAX Error: ", status, error);
