@@ -3,11 +3,29 @@ $(document).on("change", ".checkbox", function() {
     let newStatus = $(this).is(" :checked") ? 1 : 0;
 
     console.log("Clicked task:", taskID, "New Status:", newStatus);
-    $.post("includes/addStatus.php", {
-        id: taskID,
-        status: newStatus
-    }, function(response) {
-        console.log("Server says:", response);
+
+    $.ajax({
+        url: "includes/addStatus.php",
+        type: "POST",
+        data: {id: taskID, status: newStatus},
+        
+        success: function(response){
+            console.log("Server says:", response);
+
+            fetchTasks();
+        }, 
+        error: function(chr, status, error){
+            console.error("AJAX Error: ", status, error);
+
+        }
     });
+    // $.post("includes/addStatus.php", {
+    //     id: taskID,
+    //     status: newStatus
+    // }, function(response) {
+    //     console.log("Server says:", response);
+
+    //     fetchTasks();
+    // });
 
 });

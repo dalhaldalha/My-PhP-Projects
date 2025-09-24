@@ -78,17 +78,18 @@
                             </div>
                         `;
                         let taskStatus = task.satus;
-
-                        
                         
                         if (task.status === 0) {
                             console.log("Tasks Status is: ", task.status);
+                            $(".checkbox").prop("checked", false);
                             $("#tasks").append(firstTasks);
+                            
+                            
                         } else {
+                            $(".checkbox").prop("checked", true);
                             $("#tasks2").append(firstTasks);
+                            
                         }
-                        
-                        
                     });
 
 

@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $query = "UPDATE tasks SET status = ? WHERE id = ?";
     $stmt = $pdo->prepare($query);
     if($stmt->execute([$status, $taskId])) {    
-        echo "Successfull Update";
+        // echo "Successfull Update";
+        json_encode("Successfull Update");
     } else {
         echo "Unsuccessfull Update";
     }

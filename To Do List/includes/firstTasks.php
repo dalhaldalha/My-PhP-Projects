@@ -4,11 +4,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once "../config/database.php";
 
     try {
-        $query2 = "SELECT * FROM tasks ORDER BY created_at DESC LIMIT 2;";
+        $query2 = "SELECT * FROM tasks ORDER BY created_at DESC LIMIT 4;";
         $stmt = $pdo->prepare($query2);
         $stmt->execute();
         $tasks = $stmt->fetchALL(PDO::FETCH_ASSOC);
         echo json_encode($tasks);
+        $taskCount = count($tasks);
+        // echo json_encode($taskCount);
 
         $pdo = null;
         $stmt = null;

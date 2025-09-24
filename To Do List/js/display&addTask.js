@@ -17,7 +17,7 @@ $(document).ready(function(){
             success: function(response){
                 console.log("AJAX Success: ", response.success);
 
-                fetchTasks();
+                // fetchTasks();
 
                 // Clears the input field after submission
                 $("#addForm").trigger("reset");
